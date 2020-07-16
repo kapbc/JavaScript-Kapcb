@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcb JavaScript</title>
+</head>
+
+<body>
+    <h3>我的JavaScript</h3>
+    <p id="demo">
+        JavaScript能够改变HTML元素内容
+    </p>
+
+    <script>
+        function demoFunction() {
+            var a = document.getElementById("demo");
+            a.innerHTML = "Hello,JavaScript！";
+        };
+    </script>
+
+    <button type="button" onclick="demoFunction()">点击触发事件</button>
+
+</body>
+
+</html>

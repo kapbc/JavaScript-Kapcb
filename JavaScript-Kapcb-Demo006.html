@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcb JavaScript</title>
+</head>
+
+<body>
+
+    <h2>JavaScript</h2>
+    <p>请输入内容，如果不输入内容，浏览器会进行提示！</p>
+
+    <input type="text" id="demo">
+
+    <script>
+        function demoFunction() {
+            var a = document.getElementById("demo").value;
+            if (a == "") {
+                alert("请输入内容!");
+            }
+        };
+    </script>
+
+    <button type="button" onclick="demoFunction()">点击确认</button>
+</body>
+
+</html>
