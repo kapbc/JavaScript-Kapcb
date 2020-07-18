@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcb JavaScript</title>
+</head>
+
+<body>
+
+    <p>点击按钮检测年龄</p>
+    年龄:
+    <input id="age" value="17" />
+    <p>是否达到投票年龄?</p>
+    <button onclick="myFunction()">点击按钮</button>
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var age;
+            var voteable;
+            age = document.getElementById("age").value;
+            voteable = (age < 18) ? "年龄太小" : "年龄已达到！";
+            document.getElementById("demo").innerHTML = voteable;
+        };
+    </script>
+
+</body>
+
+</html>
