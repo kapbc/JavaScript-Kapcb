@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 初识jQuery -->
+    <title>Kapcb jQuery</title>
+    <!-- 使用原生DOM -->
+    <script>
+        window.onload= function(){
+            var btn1 = document.getElementById('btn1')
+            btn1.onclick = function(){
+                var value = document.getElementById('username').value
+                alert(value)
+            };
+        };
+    </script>
+
+    <!-- 使用jQuery -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 绑定文档加载完成的监听事件
+        $(function(){
+            $('#btn2').click(function(){//给btn2绑定点击监听
+                var value = $('#username').val();
+                alert(value)
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!-- 需求:点击确定按钮，提示输入内容 -->
+
+    用户名：<input type="text" id="username">
+    <button id="btn1">确定（原生版）</button>
+    <button id="btn2">确定（jQuery）版</button>
+
+</body>
+</html>
