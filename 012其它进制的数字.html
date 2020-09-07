@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其它进制的数字</title>
+    <script>
+        // 在JS中如果需要表示16进制的数字，需要以0x开头，输出的时候转换为10进制输出
+        // 如果需要表示8进制的数字，需要以0开头
+        // 如果需要表示2进制的数字，需要以0b开头，但并不是所有浏览器都支持
+
+        // 可以在parseInt(xx,10)方法中传入第二个参数，来指定数字的进制
+        var a = 0x10;
+        console.log(a);
+
+        var b = 070;
+        console.log(b);
+
+        var c = 0b10;
+        console.log(c);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
