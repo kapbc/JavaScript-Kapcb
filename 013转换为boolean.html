@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转换为boolean</title>
+    <script>
+        // 将其它的数据类型转换为Boolean
+        // 使用Boolean()函数
+        //      数字--> 布尔
+        //      除了0和NaN,其余的数字转换都是true 
+        // 
+        //      字符串--> 布尔
+        //      除了空串(""),其余都是true
+        // 
+        //      null 和 nudefined--> 布尔
+        //      都是false
+        //      
+        //      对象也会转换为 true
+
+
+        var a = 123;
+        a = Boolean(a);
+        console.log(typeof a);
+        console.log(a);
+
+        var b = -123;
+        b = Boolean(b);
+        console.log(typeof b);
+        console.log(b);
+
+        var c = 0;
+        c = Boolean(c);
+        console.log(c);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
