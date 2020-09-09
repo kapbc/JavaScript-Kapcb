@@ -52,9 +52,88 @@
         <td><a style="text-decoration: none;" href="#" target="_blank"><strong>Web前端Vue.js学习项目(规划中、含笔记)</strong></a></td>
     </tr>
 </table>
+### 项目简介
 
-### 后期计划
-我会花更多的时间去学习。喜欢的欢迎大家互相交流学习，如果觉得对您有帮助，您的`Start`就是对我的最大认可。
+> JavaScript-Kapcb
+
+<table>
+    <tr>
+    	<td><strong>HelloWorld</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>001HelloWorld</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>js代码编写的位置</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>002js代码编写的位置</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>js基本语法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>003js基本语法</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>字面量和变量</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>004字面量和变量</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>标识符</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>005标识符</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>字符串</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>006字符串</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>数值</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>007数值</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>布尔值</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>008布尔值</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>Null和Undefined</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>009Null和Undefined</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>强制类型转换</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>010强制类型转换</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>强制类型转换2</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>011强制类型转换2</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>其它进制的数字</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>012其它进制的数字</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>转换为boolean</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>013转换为boolean</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>算术运算符</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>014算术运算符</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>一元运算符</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>015一元运算符</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>自增自减</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>016自增自减</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>逻辑运算符</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>017逻辑运算符</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>非布尔值的与或运算符</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>018非布尔值的与或运算符</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>赋值运算符</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>019赋值运算符</strong></a></td>
+    </tr>
+</table>
 
 ### 感言
 置身黑暗，才能愈见光明
