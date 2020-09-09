@@ -16,9 +16,13 @@
         // 
         // && 与
         //      - &&可以对符号两侧的值进行运算并返回结果
-        //      - 运算规则
+        //      - 运算规则：两个值中只要有一个false就返回false，只有两个值都为true时，才返回true
+        //      - JS中的“与”为短路“与”：如果第一个值为false，则不需要判断第二个值
         // 
         // || 或
+        //      - ||可以对符号两侧的值进行运算并返回结果
+        //      - 两个值中只要有一个true就返回true，两个值都为false时，才返回false
+        //      - JS中的“或”为短路“或”：如果第一个值为true。则不需要判断第二个值
         // 
         // 
 
@@ -30,7 +34,15 @@
 
 
         var result = true && false;
-        
+        console.log(result);
+
+        true && console.log("你好！！！");
+
+        // 第一个值为false，不会检查第二个值
+        false && console.log("你好呀！！！！");
+
+        false || console.log("短路或");
+        true || console.log("短路或222");
     </script>
 </head>
 
