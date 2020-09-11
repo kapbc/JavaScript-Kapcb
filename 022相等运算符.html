@@ -13,6 +13,16 @@
             - 当使用==来比较两个值时，如果值的类型不同，则会自动进行类型转换
             ，将其转换为相同的类型，然后在比较。
 
+        undefined 衍生自null
+            所以这两个值做相等判断时，会返回true
+
+        NaN不和任何值相等，包括它本身
+
+        可以通过 isNaN() 函数判断一个值是否等于NaN
+
+
+        不相等
+            用于判断两个值是否不相等，如果不相等返回true，否则返回false
      -->
     <script>
 
@@ -21,6 +31,15 @@
         console.log("1" == 1);//true
         console.log("1" === 1);
         console.log(1 === 1);
+        console.log(true == "1");
+        console.log(true === "1");
+        console.log(null == 0);//false
+        console.log(null == undefined);
+        console.log(NaN == NaN);//false
+
+        var a = NaN;
+        console.log(isNaN(a));
+        console.log(isNaN(123));
     </script>
 </head>
 
