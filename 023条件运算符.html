@@ -22,6 +22,20 @@
         var a = 10;
         var b = 20;
         a > b ? console.log("a大于b") : console.log("b大于a");
+
+
+        // 获取a和b中的最大值
+        var max = a > b ? a : b;
+        console.log(max);
+
+        // 获取 a b c中的最大值
+        var c = 30;
+        var max = max > c ? max : c;
+        console.log(max);
+
+        // 不推荐使用，不方便阅读代码
+        var max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+        console.log(max);
     </script>
 </head>
 
