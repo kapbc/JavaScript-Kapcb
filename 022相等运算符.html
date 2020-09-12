@@ -23,6 +23,15 @@
 
         不相等
             用于判断两个值是否不相等，如果不相等返回true，否则返回false
+            不相等也会对变量进行自动的类型转换，如果转换后相等它也会返回false
+
+        === 全等
+            全等用来判断两个值是否全等，它和相等类似，但是它不会做自动类型转换
+            如果两个值的类型不同直接返回false
+
+        !== 不全等
+            用来判断两个值是否不全等，和不等类似，但是它不会做自动类型转换
+            如果两个值的类型不同直接返回false
      -->
     <script>
 
@@ -40,6 +49,14 @@
         var a = NaN;
         console.log(isNaN(a));
         console.log(isNaN(123));
+
+        console.log("abcd" != "abcd");
+
+        console.log("123" == 123);
+        console.log("123" === 123);
+
+        console.log(null == undefined);
+        console.log(null === undefined);
     </script>
 </head>
 
