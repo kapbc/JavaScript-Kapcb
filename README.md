@@ -165,6 +165,14 @@
     	<td><strong>if语句</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>027if语句</strong></a></td>
     </tr>
+    <tr>
+    	<td><strong>条件分支语句</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>028条件分支语句</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>while循环</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>029while循环</strong></a></td>
+    </tr>
 </table>
 
 ### 感言
