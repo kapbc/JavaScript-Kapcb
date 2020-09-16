@@ -22,14 +22,18 @@
     <script>
         var score = prompt("请输入小明的期末成绩!!!");
 
-        if (score == 100) {
-            alert("奖励一辆BWM");
-        } else if (80 < score) {
-            alert("奖励一台iphone15s");
-        } else if (60 <= score) {
-            alert("奖励一本黄冈密卷");
+        if (score > 100 || score < 0 || isNaN(score)) {
+            alert("您输入的参数不正确!!!请从重新输入");
         } else {
-            alert("下次再接再厉");
+            if (score == 100) {
+                alert("奖励一辆BWM");
+            } else if (80 < score) {
+                alert("奖励一台iphone15s");
+            } else if (60 <= score) {
+                alert("奖励一本黄冈密卷");
+            } else {
+                alert("下次再接再厉");
+            }
         }
     </script>
 </head>
