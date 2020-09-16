@@ -8,24 +8,34 @@
     <!-- 
         编写程序，由键盘输入三个整数分别存入变量num1，num2，num3
         对这三个数进行排序，并且按照从小到大输出
+
+        prompt()函数的返回值是String类型的
      -->
     <script>
-        var num1 = prompt("请输入第一个数!");
-        var num2 = prompt("请输入第二个数!");
-        var num3 = prompt("请输入第三个数!");
-        if ((num1 > num2 ? num1 : mun2) > num3 ? true : fasle) {
-            if (num1 > num2) {
-                alert("最小" + num3 + "其次" + num2 + "最大" + num1);
+        var num1 = +prompt("请输入第一个数!");
+        var num2 = +prompt("请输入第二个数!");
+        var num3 = +prompt("请输入第三个数!");
+
+        if (num1 < num2 && num1 < num3) {
+            if (num2 < num3) {
+                alert("最小：" + num1 + "," + "其次：" + num2 + "," + "最大：" + num3);
             } else {
-                alert("最小" + num3 + "其次" + num1 + "最大" + num2);
+                alert("最小：" + num1 + "," + "其次：" + num3 + "," + "最大：" + num2);
+            }
+        } else if (num2 < num1 && num2 < num3) {
+            if (num1 < num3) {
+                alert("最小：" + num2 + "," + "其次：" + num1 + "," + "最大：" + num3);
+            } else {
+                alert("最小：" + num2 + "," + "其次：" + num3 + "," + "最大：" + num1);
             }
         } else {
-            if (num1 > num2) {
-                alert("最小" + num2 + "其次" + num1 + "最大" + num3);
+            if (num1 < num2) {
+                alert("最小：" + num3 + "," + "其次：" + num1 + "," + "最大：" + num2);
             } else {
-                alert("最小" + num1 + "其次" + num2 + "最大" + num3);
+                alert("最小：" + num3 + "," + "其次：" + num2 + "," + "最大：" + num1);
             }
         }
+
     </script>
 </head>
 
