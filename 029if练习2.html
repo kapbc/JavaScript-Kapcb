@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if练习2</title>
+    <!-- 
+        女方家长要嫁女儿，条件：
+            高：180cm以上，富：1000w以上，帅：500以上
+            如果这三个条件同时满足则： '我一定要嫁给他'
+            如果这三个条件都有为真的情况则： '嫁吧，比上不足比下有余'
+            如果这三个条件都不满足则： '不嫁'
+     -->
+    <script>
+        var high = prompt("请输入身高");
+        var count = prompt("请输入剩额");
+        var shuai = prompt("请输入颜值");
+        if (180 < high || 100000000 < count || 500 < shuai) {
+            if (180 < high && 100000000 < count && 500 < shuai) {
+                alert("我一定要嫁给他");
+            } else {
+                alert("嫁吧，比上不足比下有余");
+            }
+        } else {
+            alert("不嫁")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

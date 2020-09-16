@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if练习</title>
+    <!-- 
+        从键盘输入小明的期末成绩
+        当成绩为100时， '奖励一辆BWM'
+        当成绩为[80-99]时， '奖励一台iphone15s'
+        当成绩为[60-80]时， '奖励一本黄冈密卷'
+        当成绩为其它时，什么奖励都没有 
+
+
+        prompt()函数可以弹出一个提示框，该提示框会带有一个文本框，
+            用户可以在文本框中输入一段内容,该函数需要一个字符串作为参数，
+            该字符串会作为提示框的提示文字
+
+        用户输入的内容将会作为函数的返回值返回，可以定义一个变量来接收该内容
+     -->
+    <script>
+        var score = prompt("请输入小明的期末成绩!!!");
+
+        if (score == 100) {
+            alert("奖励一辆BWM");
+        } else if (80 < score) {
+            alert("奖励一台iphone15s");
+        } else if (60 <= score) {
+            alert("奖励一本黄冈密卷");
+        } else {
+            alert("下次再接再厉");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
