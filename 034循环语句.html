@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环语句</title>
+    <!-- 
+        向页面中输出连续的数字
+
+        循环语句：
+            通过循环语句可以反复的执行一段代码多次
+
+        while循环
+            - 语法：
+            while(条件表达式){
+                语句....
+            } 
+
+            - while语句在执行时，先对条件表达式进行求值判断，
+                如果为true ，则执行循环体，循环体执行完毕以后，
+                继续对表达式进行判断，如果为true则继续执行循环体，以此类推
+                如果值为false，则终止while循环 
+
+            将条件表达式写死为true的循环，叫做死循环，该循环不会停止
+            ，除非关闭浏览器，死循环在开发中禁用
+     -->
+    <script>
+        for (var i = 0; i < 10; i++) {
+            document.write(i + "<br />")
+        }
+
+        // var n = 1;
+        // while (n<3) {
+        //     alert(n++);
+        // }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
