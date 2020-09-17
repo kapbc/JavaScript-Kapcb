@@ -30,8 +30,15 @@
             执行流程：
                 switch...case...语句
                 在执行时会依次将case后的表达式的值和switch后的条件表达式中
-                的值进行全等比较，如果比较结果为true，则从当前case处开始执行代码
+                的值进行全等比较，如果比较结果为true，则从当前case处开始执
+                行代码（当前case后的代码都会执行），可以使用break关键字来
+                退出switch语句，这样可以确保只会执行当前case语句，而不会执行后面
+                所有的case语句
                 如果比较结果为false，则继续向下比较
+                如果所有的比较结果都为false，则执行default后的语句
+
+            switch语句和if语句的功能实际上有重复的，使用switch可以实现if的功能
+            同样使用if也可以实习那switch的功能
      -->
     <script>
         var num = +prompt("请输入！！")
@@ -43,7 +50,7 @@
                 alert("2");
                 break;
             default:
-                alert("其它");
+                alert("非法数字");
                 break;
         }
     </script>

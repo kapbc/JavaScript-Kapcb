@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch练习</title>
+    <!-- 
+        对于成绩大于60分的，输出 '合格'
+        低于60分的，输出 '不合格'
+     -->
+    <script>
+        var score = prompt("请输入您的分数!");
+        var judeg = 0;
+        if (score >= 60) {
+            judeg = 1;
+        } else if (score < 60) {
+            judeg = 2;
+        }
+        switch (judeg) {
+            case 1:
+                alert("合格!");
+                break;
+            case 2:
+                alert("不合格!");
+                break;
+            default:
+                alert("输入的参数不合法!");
+                break;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
