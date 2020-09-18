@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while循环练习</title>
+    <!-- 
+        假如投资一年的利率为5%，试求从1000块增长到5000块，需要花费多少年
+     -->
+    <script>
+        var point = 0.05;
+        var money = 1000;
+        var year = 0;
+        while (money <= 5000) {
+            money = money * (1 + point);
+            year++;
+        }
+        alert("时间为：" + year + "年,余额为：" + money + "元")
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
