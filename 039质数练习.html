@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质数练习</title>
+    <!-- 
+        在页面中接受用户输入的数据，判断是否为质数
+            质数：只能被1和它自身整除的数为质数，注意1既不是质数也不是合数，质数必须是大于1的自然数
+     -->
+
+    <script>
+        var num = prompt("请输入一个数");
+
+        // 默认当前变量是质数
+        var flag = true;
+
+        for (var a = 2; a < num; a++) {
+            if (num % a == 0) {
+                flag = false;
+            }
+        }
+
+        if (flag) {
+            alert(num + "为质数");
+        } else {
+            alert(num + "不是质数");
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
