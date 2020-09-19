@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水仙花数</title>
+    <!-- 
+        水仙花数是指一个3位数，它的每个个位上的数字的 3 次幂之和等于它本身，例如（1^3 + 5^3 + 3^3 = 153）
+     -->
+    <script>
+
+        for (var a = 100; a < 1000; a++) {
+            var bai = parseInt(a / 100);
+            var shi = parseInt((a - bai * 100) / 10);
+            var ge = parseInt(a - bai * 100 - shi * 10);
+            if (bai * bai * bai + shi * shi * shi + ge * ge * ge == a) {
+                console.log(a);
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
