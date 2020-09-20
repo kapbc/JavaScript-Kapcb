@@ -18,9 +18,16 @@
         for (var i = 0; i < 6; i++) {
             var s = "";
             for (var j = 0; j < i + 1; j++) {
-                s += "*";
+                s += "*&nbsp;";
             }
             document.write(s + "<br />");
+        }
+
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < 6 - i; j++) {
+                document.write("*&nbsp;");
+            }
+            document.write("<br />");
         }
     </script>
 </head>
