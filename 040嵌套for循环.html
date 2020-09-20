@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌套for循环</title>
+    <!-- 
+        通过程序，在页面中输出如下图形:
+        *
+        **
+        ***
+        ****
+        *****
+        ******
+     -->
+    <script>
+        for (var i = 0; i < 6; i++) {
+            var s = "";
+            for (var j = 0; j < i + 1; j++) {
+                s += "*";
+            }
+            document.write(s + "<br />");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
