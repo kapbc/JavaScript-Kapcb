@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的基本操作</title>
+    <!-- 
+
+        在对象中保存的值称为属性
+        向对象添加属性
+            语法：对象.属性名 = 属性值;
+
+        读取对象中的属性
+            语法：对象.属性;
+
+        修改对象的属性值
+            语法：对象.属性名 = 新值;
+
+        删除对象的属性
+            语法：delete 对象.属性
+            删除之后为undefined
+     -->
+    <script>
+        // 创建对象
+        // 使用new关键字调用的函数，是构造函数constructor
+        // 构造函数是专门用于创建对象的函数
+
+        var obj = new Object();
+
+        console.log(typeof obj);
+
+        // 向对象中添加一个属性
+        obj.name = "kapcb";
+        obj.gender = "男";
+        obj.age = "18";
+
+        delete obj.gender;
+
+        // 读取对象中的属性
+        // 如果读取对象中没有的属性，不会报错而是返回undefined
+        console.log(obj.gender);
+        console.log(obj);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
