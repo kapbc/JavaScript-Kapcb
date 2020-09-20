@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环练习</title>
+    <!-- 
+        1.打印9x9乘法表
+
+        2.打印1-100之间的所有质数
+     -->
+    <script>
+
+        for (var i = 1; i < 10; i++) {
+            var mul = 0;
+            for (j = 1; j < i + 1; j++) {
+                mul = i * j;
+                document.write(j + "&nbsp;*&nbsp;" + i + "&nbsp;=&nbsp;" + mul + "&nbsp;&nbsp;");
+            }
+            document.write("<br />");
+        }
+
+        document.write("<hr />");
+
+
+        for (i = 2; i < 101; i++) {
+            var flag = true;
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                }
+
+            }
+            if (flag) {
+                document.write(i + "<br />")
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
