@@ -16,6 +16,7 @@
         break将会结束指定的循环，而不是最近的循环
 
         continue可以用来跳出当此循环
+        同样continue也是默认只会对离它最近的循环起作用
      -->
     <script>
         kapcb:
@@ -38,6 +39,18 @@
             document.write(i + "&nbsp;");
         }
 
+        document.write("<hr />");
+
+        ccc:
+        for (var i = 0; i < 5; i++) {
+            document.write("=========外层循环========" + i + "<br />");
+            for (var j = 0; j < 5; j++) {
+                if (j == 2) {
+                    continue ccc;
+                }
+                document.write("内层循环" + j + "<br />");
+            }
+        }
     </script>
 </head>
 
