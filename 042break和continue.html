@@ -15,6 +15,7 @@
         使用break语句时，可以在break后跟着一个label，这样
         break将会结束指定的循环，而不是最近的循环
 
+        continue可以用来跳出当此循环
      -->
     <script>
         kapcb:
@@ -26,6 +27,15 @@
                 }
                 console.log("内层循环" + j);
             }
+        }
+
+        document.write("<hr />");
+
+        for (var i = 0; i < 5; i++) {
+            if (i == 2) {
+                continue;
+            }
+            document.write(i + "&nbsp;");
         }
 
     </script>
