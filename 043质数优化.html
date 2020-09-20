@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质数优化</title>
+    <script>
+
+
+        // 开启计时器
+        // console.time()可以用来开启一个计时器，需要一个字符串作为参数，这个
+        // 字符串会作为计时器的标识
+        console.time("kapcb");
+        for (var i = 2; i < 101; i++) {
+            var flag = true;
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
+
+            }
+            if (flag) {
+                document.write(i + "<br />");
+            }
+        }
+
+        // console.timeEnd()用来停止一个计时器，需要一个计时器的名字作为参数
+
+        console.timeEnd("kapcb");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
