@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性名和属性值</title>
+    <!-- 
+            向对象中添加属性 
+            属性名：
+                - 对象的属性名不强制要求尊搜标识符规范
+                    什么乱七八糟的名字都可以，尽量使用标识符规范
+
+                - 如果要使用特殊的属性名，不能使用.的方式来操作，
+                    需要使用另外一种方式：
+                        语法：对象["属性名"] = 属性值;
+                        读取时也需要采用这种方式
+
+                - 使用[]这种形式去操作属性，更加灵活，在[]中可以
+                    直接传递一个变量，这样变量值是多少就会读取那个属性值
+
+            属性值：
+                - JS对象的属性值，可以是任意的数据类型
+
+            in 运算符
+                - 通过该运算符可以检查一个对象中是否含有指定的属性
+                    如果有返回true，没有则返回false
+                - 语法： "属性名" in 对象
+
+        -->
+    <script>
+        var obj = new Object();
+
+
+        obj.name = "kapcb";
+        obj.age = 18;
+        obj["123"] = 789;
+        obj["bfkakjbfaufnfnvjdndfjdhfalfnalfha"] = "kapcb awesome man!!";
+
+        console.log(obj["123"]);
+        console.log(obj["bfkakjbfaufnfnvjdndfjdhfalfnalfha"]);
+
+        var n = "123";
+        console.log(obj[n]);
+
+        console.log("age" in obj);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
