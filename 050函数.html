@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <!-- 
+        函数
+            - 函数也是一个对象
+            - 函数中可以封装一些功能(代码),在需要时可以执行这些功能(代码)
+            - 函数中可以保存一些代码，在需要的时候调用
+            - 使用typeof检查一个函数对象时，会返回function
+
+
+        创建一个函数对象
+        可以将要封装的代码以字符串的形式传递给构造函数
+        封装到函数中的代码不会立即执行，函数中的代码会在函数被调用的时候执行
+
+        调用函数语法：
+            函数对象(args);
+            
+        当调用函数时，函数中封装的代码会按照顺序执行
+
+        在实际开发中一般不使用构造函数来创建一个函数对象
+        
+        一般都是使用函数声明来创建一个函数
+        语法：
+            function 函数名([arg1,arg2,arg3...argn]){
+                语句...
+            }
+     -->
+    <script>
+
+        console.log("我是王大锤");
+        console.log("我要抢银行");
+        console.log("我要做亿万富翁");
+
+
+        var fun = new Function("console.log('这是我的第一个函数')");
+        console.log(typeof fun);
+        console.log(fun);
+
+        fun();
+        
+        function demo() {
+            console.log("kapcb awesome man!!!");
+        }
+
+        demo();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
