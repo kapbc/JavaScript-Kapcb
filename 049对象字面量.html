@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象字面量</title>
+    <!-- 
+        创建一个对象，使用构造器的方式过于麻烦
+        var obg = new Object();
+
+        使用字面量来创建一个对象
+        var obg = {};
+
+        使用字面量创建对象时，可以直接指定对象中的属性
+        语法：{属性名:属性值,属性名:属性值,...}
+        对象字面量的属性名可以加引号，也可以不加引号，建议不加，如果要使用特殊名字
+        则必须添加引号
+
+        属性名和属性值是一组一组的名值对结构，名和值之间使用:连接，多个
+        名值之间使用,隔开，如果一个属性后没有其它属性了，就不要写,
+     -->
+    <script>
+        var obj = {};
+        obj.name = "kapcb";
+        console.log(obj);
+
+        var kapcb = { 
+            name: "ccc", 
+            gender: "男", 
+            age: 18 ,
+            "dba%$#^#^$":"awesome man!!!"
+            }
+        console.log(kapcb);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
