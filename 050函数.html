@@ -24,11 +24,17 @@
 
         在实际开发中一般不使用构造函数来创建一个函数对象
         
-        一般都是使用函数声明来创建一个函数
+        一般都是使用函数声明来创建一个函数,注意[]中的参数表达可有可无
         语法：
             function 函数名([arg1,arg2,arg3...argn]){
                 语句...
             }
+
+        
+        使用函数表达式的方式来创建一个函数
+        var 函数名 = function([arg1,arg2,arg3...argn]){
+            语句...
+        };
      -->
     <script>
 
@@ -42,12 +48,18 @@
         console.log(fun);
 
         fun();
-        
+
         function demo() {
             console.log("kapcb awesome man!!!");
         }
 
         demo();
+
+        var democ = function () {
+            console.log("使用函数表达式创建的函数对象");
+        }
+
+        democ();
     </script>
 </head>
 
