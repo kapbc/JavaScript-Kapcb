@@ -9,6 +9,9 @@
         定义一个函数，判断一个数字是否是偶数，如果是偶数返回true，否则返回false
 
         定义一个函数，可以根据半径计算一个圆的面积，并返回计算结果
+
+        创建一个函数，可以在控制台输出一个人的信息，
+        可以输出人的name age gender address
      -->
     <script>
         function judge(a) {
@@ -24,6 +27,20 @@
 
         var c = jisuan(1);
         console.log(c);
+
+
+        function out(person) {
+            console.log(person.name);
+            console.log(person.age);
+            console.log(person.gender);
+            console.log(person.address);
+        }
+
+        var obj = { name: "kapcb", age: 18, gender: "男", address: "武汉" }
+
+        out(obj);
+
+
     </script>
 </head>
 
