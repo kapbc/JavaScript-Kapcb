@@ -12,6 +12,8 @@
 
         创建一个函数，可以在控制台输出一个人的信息，
         可以输出人的name age gender address
+
+        实参可以是一个对象，也可以是一个函数
      -->
     <script>
         function judge(a) {
@@ -39,6 +41,12 @@
         var obj = { name: "kapcb", age: 18, gender: "男", address: "武汉" }
 
         out(obj);
+
+        function fun(a) {
+            console.log("a = " + a);
+        }
+
+        fun(jisuan(2));
 
 
     </script>
