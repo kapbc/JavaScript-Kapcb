@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即执行函数</title>
+    <!-- 
+        用括号表示这个匿名函数是一个整体，调用函数时，使用()即可
+
+        立即执行函数
+            - 函数再定义完之后，立即被调用，这种函数叫立即执行函数
+            这种函数往往只会执行一次
+     -->
+    <script>
+        (function () {
+            console.log("我是一个匿名函数");
+        })();
+
+        (function (a, b) {
+            console.log(a + b);
+        })(123, 1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
