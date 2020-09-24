@@ -29,6 +29,19 @@
             return 10;
         }
         console.log(fun2());
+
+        function fun3() {
+            function fun4() {
+                console.log("我是fun4");
+            }
+
+            // fun4();
+            // 将fun4函数对象作为返回值返回
+            return fun4;
+        }
+
+        a = fun3();
+        console.log(a);
     </script>
 </head>
 
