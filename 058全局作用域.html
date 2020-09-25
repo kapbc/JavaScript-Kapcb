@@ -5,8 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全局作用域</title>
-    <script>
+    <!-- 
+        作用域
+            - 作用域值一个变量的作用范围
+            - JS中一共有两种作用域
+                1.全局作用域
+                    - 直接编写在script标签中的JS代码，都在全局作用域中
+                    - 全局作用域在页面打开时创建，页面关闭时销毁
+                    - 在全局作用域中有一个全局对象window，可以直接使用
 
+                2.局部作用域
+                    - 
+     -->
+    <script>
+        function fun() {
+            var a = 123;
+        }
+
+        console.log(a);
     </script>
 </head>
 
