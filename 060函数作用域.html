@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数作用域</title>
+    <!-- 
+
+        函数作用域
+            - 调用函数时创建函数作用域，函数执行完毕之后，函数作用域销毁
+            - 没调用一次函数就会船舰一个新的函数作用域，它们之间是相互独立的
+            - 在函数作用域中可以访问到全局作用域的变量,在全局作用域中无法访问到函数作用域中的变量
+            - 当在函数作用域中操作一个变量时，它会先在自身作用域中寻找，如果有就直接使用，如果没有则向上一级作用域中寻找,
+            直到找到全局作用域，如果全局作用域中依然没有找到，则会报错ReferenceError
+            - 在函数中要访问全局变量可以使用window对象
+
+     -->
+    <script>
+        var a = 10;
+
+        function fun() {
+            console.log(123);
+            console.log(a);
+        }
+
+        fun();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

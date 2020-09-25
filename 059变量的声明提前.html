@@ -22,10 +22,12 @@
 
         fun();
 
+        // 函数声明会被提前创建
         function fun() {
             console.log("我是一个fun函数");
         }
 
+        // 函数表达式不会被声明体检
         var fun2 = function () {
             console.log("我是一个fun2函数");
         }
