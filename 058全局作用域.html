@@ -13,16 +13,28 @@
                     - 直接编写在script标签中的JS代码，都在全局作用域中
                     - 全局作用域在页面打开时创建，页面关闭时销毁
                     - 在全局作用域中有一个全局对象window，可以直接使用
+                        它代表的是浏览器的窗口，它由浏览器创建可以直接使用
+                    - 在全局作用域中：
+                        创建的变量都会作为window对象的属性保存
+                        创建的对象都会作为window对象的方法保存
 
                 2.局部作用域
                     - 
      -->
     <script>
+        console.log(window);
+
         function fun() {
             var a = 123;
         }
 
-        console.log(a);
+        // console.log(a);
+
+        function fun2() {
+            console.log("我是fun2");
+        }
+
+        window.fun2();
     </script>
 </head>
 
