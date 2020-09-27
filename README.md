@@ -166,12 +166,36 @@
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>027if语句</strong></a></td>
     </tr>
     <tr>
-    	<td><strong>条件分支语句</strong></td>
-        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>028条件分支语句</strong></a></td>
+    	<td><strong>if练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>028if练习</strong></a></td>
     </tr>
     <tr>
-    	<td><strong>while循环</strong></td>
-        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>029while循环</strong></a></td>
+    	<td><strong>if练习2</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>029if练习2</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>if练习3</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>030if练习3</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>条件分支语句</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>031条件分支语句</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>switch语句1</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>032switch语句1</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>switch语句2</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>033switch语句2</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>循环语句</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>034循环语句</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>while循环练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>035while循环练习</strong></a></td>
     </tr>
 </table>
 
