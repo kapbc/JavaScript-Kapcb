@@ -197,6 +197,14 @@
     	<td><strong>while循环练习</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>035while循环练习</strong></a></td>
     </tr>
+    <tr>
+    	<td><strong>for循环</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>036for循环</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>for循环练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>037for循环练习</strong></a></td>
+    </tr>
 </table>
 
 ### 感言
