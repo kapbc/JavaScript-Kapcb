@@ -16,7 +16,7 @@
     <script>
         function fun(a, b) {
             // console.log("a=" + a + ", b=" + b);
-            console.log(this);
+            console.log(this.name);
         }
 
         fun(123, 456);
@@ -25,9 +25,15 @@
             name: "kapcb",
             syaName: fun
         };
+
         console.log(obj.syaName == fun);
 
+        // 以方法的形式调用，this指向调用方法的对象
         obj.syaName();
+
+        var name = "全局的name属性";
+        // 以函数的形式调用，this指向的是window
+        fun()
     </script>
 </head>
 
