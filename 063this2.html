@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+    <script>
+        // 创建一个name全局变量
+        var name = "全局name属性";
+
+        // 创建fun()函数
+        function fun() {
+            console.log(this.name);
+        }
+
+        // 创建两个对象
+        var obj = {
+            name: "kapcb",
+            syaName: fun
+        }
+        var obj2 = {
+            name: "ccc",
+            syaName: fun
+        }
+
+        obj.syaName();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
