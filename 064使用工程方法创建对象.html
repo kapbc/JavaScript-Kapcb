@@ -20,20 +20,38 @@
 
         // 使用工厂方法创建对象
         // 通过该方法可以大批量创建对象
-        function createdPerson() {
+        function createdPerson(name, age, gender) {
             var obj = new Object();
-            obj.name = "kapcb";
-            obj.age = 18;
-            obj.gender = "男";
+            obj.name = name;
+            obj.age = age;
+            obj.gender = gender;
             obj.syaName = function () {
-                console.log("工厂方法创建对象中的sayName");
+                console.log(this.name);
             }
             // 将新的对象返回
             return obj;
         }
 
-        var obj2 = createdPerson();
+        var obj2 = createdPerson("kapcb", 19, "男");
         console.log(obj2);
+        obj2.syaName();
+
+        // 使用工厂方法创建的对象，使用的构造函数都是Object
+        // 所以创建的对象都是Obbject类型，就导致无法区分出多种不同
+        // 类型的对象
+        function createDog(name, age) {
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.syaName = function () {
+                console.log(this.name);
+            }
+            return obj;
+        };
+
+        // 创建一个狗的对象
+        var dog = createDog("小黄", 12);
+        console.log(dog);
     </script>
 </head>
 
