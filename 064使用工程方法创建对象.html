@@ -17,6 +17,23 @@
         };
 
         obj.syaName();
+
+        // 使用工厂方法创建对象
+        // 通过该方法可以大批量创建对象
+        function createdPerson() {
+            var obj = new Object();
+            obj.name = "kapcb";
+            obj.age = 18;
+            obj.gender = "男";
+            obj.syaName = function () {
+                console.log("工厂方法创建对象中的sayName");
+            }
+            // 将新的对象返回
+            return obj;
+        }
+
+        var obj2 = createdPerson();
+        console.log(obj2);
     </script>
 </head>
 
