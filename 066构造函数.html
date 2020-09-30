@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+    <!-- 
+        创建person构造函数
+        - 在Person构造函数中，为每一个对象都添加了一个sayName方法
+            目前方法实在构造函数内部创建的，构造函数每执行一次都会创建一个新的
+            sayName方法，也就是说所有sayName的实例都是独立的，浪费内存空间
+
+     -->
+    <script>
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            // 向对象中添加一个方法
+            this.sayName = fun;
+        };
+
+        // 将sayName方法在全局作用域中定义
+        // 将函数定义在全局作用域，污染了作用域的命名空间
+        // 而且定义在全局作用域中也很不安全
+        function fun() {
+            console.log("Hello，I am " + this.name);
+        }
+
+        // 创建一个Person的实例
+        var person = new Person("kapcb", 13, "男");
+        var person2 = new Person("ccc", 13, "男");
+        person.sayName();
+        person2.sayName();
+        console.log(person.sayName == person2.sayName);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
