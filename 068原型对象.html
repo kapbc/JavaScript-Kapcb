@@ -36,7 +36,12 @@
 
         console.log(mc.__proto__.hasOwnProperty("hasOwnProperty"));
 
+        // 原型对象也是对象，所以原型对象也存在原型
         // 存在于原型对象的原型中
+        // 当使用一个对象的属性或者方法时，会先在自身中寻找
+        //      如果自身中有，则直接使用
+        //      如果对象中没有则去原型对象中寻找，如果原型中有则直接使用
+        //      如果原型对象中没有就会继续去原型对象的原型中找,如果有则直接使用
         console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
     </script>
 </head>
