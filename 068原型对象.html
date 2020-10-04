@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象</title>
+    <!-- 
+        创建一个构造函数
+     -->
+    <script>
+        function MyClass() {
+
+        }
+        MyClass.
+        prototype.name = "我是原型中的name属性";
+
+        var mc = new MyClass();
+        console.log(mc.name);
+
+        // 使用in检查对象中是否存在目标属性
+        console.log("name" in mc);
+
+        mc.name = "我是对象中的name属性";
+        console.log(mc.name);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
