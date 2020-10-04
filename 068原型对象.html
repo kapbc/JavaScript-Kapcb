@@ -42,6 +42,8 @@
         //      如果自身中有，则直接使用
         //      如果对象中没有则去原型对象中寻找，如果原型中有则直接使用
         //      如果原型对象中没有就会继续去原型对象的原型中找,如果有则直接使用
+        //      直到找到Object对象的原型
+        //      Object对象的原型没有原型,如果在Object中依然没有找到,则返回undefined
         console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
     </script>
 </head>
