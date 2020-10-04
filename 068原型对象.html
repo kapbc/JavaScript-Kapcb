@@ -18,11 +18,26 @@
         var mc = new MyClass();
         console.log(mc.name);
 
+        // 可以使用对象的hasOwnProperty()来检查对象自身是否含有该属性
+        // 使用该方法只有对象自身中含有该属性时，才会返回true
+        console.log(mc.hasOwnProperty("name"));
+
         // 使用in检查对象中是否存在目标属性
         console.log("name" in mc);
 
         mc.name = "我是对象中的name属性";
         console.log(mc.name);
+
+
+        console.log(mc.hasOwnProperty("name"));
+        console.log(mc.hasOwnProperty("age"));
+
+        console.log(mc.hasOwnProperty("hasOwnProperty"));
+
+        console.log(mc.__proto__.hasOwnProperty("hasOwnProperty"));
+
+        // 存在于原型对象的原型中
+        console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
     </script>
 </head>
 
