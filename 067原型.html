@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型</title>
+    <!-- 
+        原型 prototype
+
+        创建的每一个函数，解析器都会向函数中添加一个prototype
+        这个属性对应着一个对象，这个对象就是原型对象
+
+        如果函数作为普通函数调用prototype没有任何作用
+        当函数通以造函数调用时，它所创建的对象中都会有一个隐含的
+        属性指向该构造函数的原型对象,可以通过__proto__来访问该属性
+     -->
+    <script>
+        function Person() {
+
+        }
+
+        function MyClass() {
+
+        }
+
+        console.log(Person.prototype)
+
+        var per = new Person();
+        var clazz = new MyClass();
+        var clazz1 = new MyClass();
+        var clazz2 = new MyClass();
+
+        console.log(clazz.__proto__ == MyClass.prototype);
+        console.log(clazz1.__proto__ == MyClass.prototype);
+        console.log(clazz2.__proto__ == MyClass.prototype);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
