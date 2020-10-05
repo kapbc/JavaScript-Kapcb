@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+    <!-- 
+        使用字面量创建数组:
+            语法：[]
+            使用字面量创建数组时，可以在创建时就指定数组中的元素
+
+        使用构造函数创建数组时，也可以同时添加元素，将要添加的元素作为构造函数的参数传递
+        元素之间使用逗号分隔
+
+        数组中的元素可以是任意的数据类型
+     -->
+    <script>
+        // 创建一个数组
+        var array = new Array(12, 45, 78, 61, 45, 41);
+
+        // 使用字面量来创建数组
+        var arr = [];
+
+        console.log(arr);
+        console.log(typeof arr);
+
+        var a = [1, 2, 4, 5, 6, 7];
+        console.log(a);
+        console.log(a.length);
+
+        console.log(array);
+
+        // 创建一个数组，数组中只有一个元素12
+        var arr1 = [12];
+        console.log(arr1);
+        console.log(arr1.length);
+
+        // 创建一个长度为10的空数组
+        var arr2 = new Array(10);
+        console.log(arr2);
+        console.log(arr2.length);
+
+        var arr3 = ["hello", 123, null, true, undefined];
+        console.log(arr3[2]);
+        console.log(arr3[3]);
+        console.log(arr3[4]);
+
+        var obj = {
+            name: "kapcb",
+            age: 18
+        };
+        var arr4 = [obj];
+        console.log(arr4);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
