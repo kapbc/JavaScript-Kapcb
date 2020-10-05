@@ -21,10 +21,56 @@
 
             - 索引：
                 从0开始的整数就是索引
-                
+            
+            - 数组的存储性能比普通对象要好，在开发中经常使用数组来存储一些数据
+
+            向数组中添加元素
+                语法：数组[索引] = 值;
+
+            读取数组中的元素
+                语法：数组[索引];
+
+            如果读取不存在的索引，不会报错而是返回undefinded
+
+            获取数组的长度(元素的个数)
+                语法：数组.length;
+
+            对于连续的数组，使用length可以获得数组的长度
+            对于非连续的数组，使用length可以获取到最大索引+1
+            尽量不要创建非连续数组
+
+            修改length
+                数组.length = xx;
+            如果修改的length大于原长度，则多出部门会空出来
+            如果修改的length小于原长度，则多出的元素会被删除
+
+            向数组的最后一个位置添加元素
      -->
     <script>
+        // 创建数组对象
 
+        var array = new Array();
+
+        // 使用typeOf检查array会返回Object
+        console.log(typeof array);
+
+        for (var a = 0; a < 5; a++) {
+            array[a] = a;
+        }
+
+        console.log(array);
+
+        console.log(array[0]);
+
+        console.log(array.length);
+
+        // 设置数组的长度
+        array.length = 7;
+        console.log(array.length);
+
+        // 向数组最后一位添加一个元素
+        array[array.length]=10;
+        console.log(array);
     </script>
 </head>
 
