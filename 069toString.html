@@ -14,6 +14,7 @@
 
         // 创建一个Person实例
         var per = new Person("kapcb", 18, "男");
+        var per2 = new Person("ccc", 19, "男");
 
         // 当直接在页面中打印一个对象时，事实上是输出对象的toString()方法的返回值
         // 如果希望在输出对象时，不希望输出[Object Object]，可以为对象添加一个toString()方法
@@ -36,6 +37,16 @@
 
         console.log(per);
         console.log(per.toString());
+
+        // 修改原型的toString()方法
+        Person.prototype.toString = function () {
+            name = this.name;
+            age = this.age;
+            gender = this.gender;
+            return "Person[name=" + name + ",age=" + age + ",gender=" + gender + "]";
+        }
+
+        console.log(per2);
     </script>
 </head>
 
