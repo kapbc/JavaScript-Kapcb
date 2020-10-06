@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+    <!-- 
+        一般都是使用for循环去遍历数组，JS中提供了一个方法，用来遍历数组
+        
+        forEach()
+            - forEach()需要一个函数作为参数
+            - 像这种函数，由自己创建不由自己调用的函数，称为回调函数(由浏览器调用的函数)
+            - 执行次数由数组中的元素个数决定，数组中有几个元素就执行几次
+            - 每次执行时，浏览器会将遍历的元素以实参的形式传递进来，可以来定义形参读取这些数据内容
+            - 浏览器会在回调函数中传递三个参数：
+                第一个参数：当前正在遍历的元素
+                第二个参数：当前正在遍历元素的索引
+                第三个参数：正在遍历的数组
+     -->
+    <script>
+        // 创建一个数组
+        var array = ["kapcb", "ccc", "eirc", 123, 456];
+
+        array.forEach(function (value, index, obj) {
+            console.log("value:" + value + "," + " index:" + index + "," + " obj:" + obj);
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
