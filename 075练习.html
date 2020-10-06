@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习
+    </title>
+    <script>
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        Person.prototype.toString = function () {
+            return "Person[name=" + this.name + "age=" + this.age + "gender=" + this.gender + "]";
+        }
+
+        // 创建一个Person对象
+        var per1 = new Person("kapcb", 18, "男");
+        var per2 = new Person("ccc", 19, "男");
+        var per3 = new Person("eirc", 20, "男");
+        var array = [per1, per2, per3];
+        for (var a = 0; a < array.length; a++) {
+            console.log(array[a]);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
