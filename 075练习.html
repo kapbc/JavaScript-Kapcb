@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>练习
-    </title>
+    <title>练习</title>
     <script>
         function Person(name, age, gender) {
             this.name = name;
@@ -18,13 +17,32 @@
         }
 
         // 创建一个Person对象
-        var per1 = new Person("kapcb", 18, "男");
+        var per1 = new Person("kapcb", 16, "男");
         var per2 = new Person("ccc", 19, "男");
-        var per3 = new Person("eirc", 20, "男");
-        var array = [per1, per2, per3];
+        var per3 = new Person("eirc", 15, "男");
+        var per4 = new Person("aaa", 10, "男");
+        var per5 = new Person("bbb", 21, "男");
+        var per6 = new Person("ddd", 22, "男");
+        var per7 = new Person("eee", 23, "男");
+        var per8 = new Person("ccds", 18, "男");
+        var array = [per1, per2, per3, per4, per5, per6, per7, per8];
+
         for (var a = 0; a < array.length; a++) {
             console.log(array[a]);
         }
+
+        // 创建一个函数，将array中满18岁的Person对象提取出来，然后封装到一个新的数组中并返回
+        var fun = function (array) {
+            var arr = [];
+            for (var i = 0; i < array.length; i++) {
+                if (array[i].age >= 18) {
+                    arr.push(array[i]);
+                }
+            }
+            return arr;
+        }
+
+        console.log(fun(array))
     </script>
 </head>
 
