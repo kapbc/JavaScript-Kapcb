@@ -50,8 +50,23 @@
             name: "kapcb",
             age: 18
         };
-        var arr4 = [obj];
+        var obj1 = {
+            name: "ccc",
+            age: 19
+        };
+        var obj2 = {
+            name: "eirc",
+            age: 20
+        };
+        var arr4 = [obj, obj1, obj2, function () {
+            console.log("匿名函数1")
+        }, function () {
+            console.log("匿名函数2")
+        }];
         console.log(arr4);
+
+        arr4[3]();
+        arr4[4]();
     </script>
 </head>
 
