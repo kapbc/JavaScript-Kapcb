@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        // 除去数组中重复的数组
+        var array = [1, 2, 3, 2, 2, 2, 1, 3, 4, 2, 5];
+
+        function deleteRepeat(array) {
+            for (var i = 0; i < array.length; i++) {
+                var a = [];
+                var n = 0;
+                for (var j = i + 1; j < array.length; j++) {
+                    if (array[i] == array[j]) {
+                        b++;
+                    }
+                }
+                
+                console.log(a)
+                if (a.length == 1) {
+                    array.splice(a[0], 1);
+                } else {
+                    for (var k = 0; k < a.length; k++) {
+
+                    }
+                }
+            }
+            return array;
+        }
+
+        var a = deleteRepeat(array);
+        console.log("===================");
+        console.log(a);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
