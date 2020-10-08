@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的方法</title>
+    <!-- 
+        concat()可以连接两个或多个数组，并将新的数组返回
+            - 该方法不会对原数组产生影响
+            - 参数可以是数组，也可以是元素，个数不限
+
+        join()
+            - 该方法可以将数组转换为一个字符串
+            - 该方法不会对原数组产生影响
+            - 在join()中可以指定字符串作为参数，这个字符串将会成为数组中元素的连接符,如果不指定连接符，则默认
+                使用逗号作为连接符，如果不想使用逗号作为连接符，可以使用空串
+
+        reverse()
+            - 该方法用来反转数组(数组前面的元素去后面，后面的元素去前面)
+            - 该方法会对原数组产生影响
+     -->
+    <script>
+        var array = [123, 456, 1554, 789];
+        var array2 = ["kapcb", "ccc", "eirc"];
+        var array3 = ["dsd", "dsd", "dsd1"];
+
+        var result = array.concat(array2);
+        console.log(result);
+
+        var result1 = array.concat(array2, array3, "11111", "2222222");
+        console.log(result1);
+
+        var result3 = array3.join(" ");
+        console.log(result3);
+        console.log(typeof result3);
+
+        var result4 = array.join("aaa");
+        console.log(result4);
+
+        array.reverse();
+        console.log(array);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
