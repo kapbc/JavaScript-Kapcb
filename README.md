@@ -205,7 +205,172 @@
     	<td><strong>for循环练习</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>037for循环练习</strong></a></td>
     </tr>
+    <tr>
+    	<td><strong>水仙花数</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>038水仙花数</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>质数练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>039质数练习</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>嵌套for循环</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>040嵌套for循环</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>for循环练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>041for循环练习</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>break和continue</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>042break和continue</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>质数优化</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>043质数优化</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>质数优化</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>044质数优化</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>对象</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>045对象</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>对象的基本操作</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>046对象的基本操作</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>属性名和属性值</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>047属性名和属性值</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>基本数据类型和引用数据类型</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>048基本数据类型和引用数据类型</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>对象字面量</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>049对象字面量</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>函数</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>050函数</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>函数的参数</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>051函数的参数</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>返回值</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>052返回值</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>053练习</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>返回值的类型</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>054返回值的类型</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>立即执行函数</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>055立即执行函数</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>基础</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>056基础</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>枚举对象的属性</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>057枚举对象的属性</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>全局作用域</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>058全局作用域</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>变量的声明提前</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>059变量的声明提前</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>函数作用域</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>060函数作用域</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>debug</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>061debug</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>this</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>062this</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>this2</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>063this2</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>使用工厂方法创建对象</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>064使用工厂方法创建对象</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>构造函数</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>065构造函数</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>构造函数</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>066构造函数</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>原型</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>067原型</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>原型对象</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>068原型对象</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>toString</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>069toString</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>垃圾回收</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>070垃圾回收</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>数组</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>071数组</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>数组2</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>072数组2</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>数组3</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>073数组3</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>数组的遍历</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>074数组的遍历</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>075练习</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>forEach</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>076forEach</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>数组方法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>077数组方法</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>078练习</strong></a></td>
+    </tr>
 </table>
+
 
 ### 感言
 置身黑暗，才能愈见光明
