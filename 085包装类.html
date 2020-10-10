@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包装类</title>
+    <!-- 
+        基本数据类型
+            String Number Boolean Null Undefined
+
+        引用数据类型
+            Object
+
+        在JS中提供了三个包装类，通过这三个包装类可以将基本技术类型转换为对象
+            - String()：可以将基本数据类型的字符串转换为String对象
+            - Number()：可以将基本数据类型的数字转换为Number对象
+            - Boolean()：可以将基本数据类型的布尔值转换为Boolean对象
+     -->
+    <script>
+        // 创建一个Number类型的对象
+        var num = new Number(3);
+        var str = new String("hello");
+        var flag = new Boolean(true);
+
+        console.log(num);
+        console.log(typeof num);
+
+        console.log(str);
+        console.log(typeof str);
+
+        console.log(flag);
+        console.log(typeof flag);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
