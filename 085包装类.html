@@ -16,6 +16,8 @@
             - String()：可以将基本数据类型的字符串转换为String对象
             - Number()：可以将基本数据类型的数字转换为Number对象
             - Boolean()：可以将基本数据类型的布尔值转换为Boolean对象
+
+        在实际开发中，不会使用基本数据类型的对象，如果使用基本数据类型的对象，在做比较时可能会带来一些不可预料的结果
      -->
     <script>
         // 创建一个Number类型的对象
@@ -31,6 +33,22 @@
 
         console.log(flag);
         console.log(typeof flag);
+
+        var n = new Boolean(false);
+
+        // 对象n会进行自动转型为boolean
+        if (n) {
+            alert("我运行了");
+        }
+
+        var s = 123;
+
+        // 基本数据类型中没有方法
+        // 当对基本数据类型的值调用属性和方法时，浏览器会临时使用包装类将其转换为对象，然后再调用对象的属性和方法
+        // 在调用完之后再将其转换为基本数据类型
+        s = s.toString();
+        console.log(s);
+        console.log(typeof s);
     </script>
 </head>
 
