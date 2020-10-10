@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <!-- 
+        Math和其它对象不同，它不是一个构造函数，它属于一个工具类
+            不用创建对象，它封装了数学运算相关的属性和方法
+            Math.PI:表示圆周率
+        
+            Math.abs()可以用来计算一个数的绝对值
+
+            Math.ceil()：对一个数进行向上取整，小数位只要有值就自动向上进1
+            Math.floor()：对一个数进行向下取整，小数位只要有值就自动舍去
+            Math.round()：对一个数进行四舍五入取整
+
+            Math.random()：随机生成0-1之间的随机数(不包含0，包含1)
+
+            随机生成一个0-x之间数字
+            Math.round(Math.random()*x);
+
+            生成一个x-y之间的随机数
+            Math.round(Math.random()*(y-x)+x)
+
+            Math.max()：获取多个数中的最大值
+
+            Math.pow(x,y)：返回x的y次幂
+
+            Math.sqrt()：对一个数字进行开方
+     -->
+    <script>
+        console.log(Math);
+        console.log(Math.PI);
+        console.log(Math.abs(-1));
+
+        console.log(Math.ceil(1.1));
+        console.log(Math.floor(1.99));
+        console.log(Math.round(1.6));
+        console.log(Math.random());
+
+        // 随机生成一个0-10之间的随机数
+        console.log(Math.round(Math.random() * 10));
+
+        var max = Math.max(10, 45, 30, 100);
+        var min = Math.min(10, 45, 30, 100);
+        console.log(max);
+        console.log(min);
+
+        console.log(Math.pow(2, 3));
+
+        console.log(Math.sqrt(4))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
