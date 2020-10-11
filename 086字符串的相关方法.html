@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串的相关方法</title>
+    <!-- 
+        字符串在底层是以数组的形式保存的
+        ["K","a","p","c","b"]
+
+        字符串的大部分方法都是不会对原字符串造成影响的
+
+        - length属性
+            - 可以用来获取字符串的长度
+
+        - charAt()
+            - 返回指定位置的字符
+            - 根据索引获取指定的字符
+
+        - charCodeAt()
+            - 返回指定位置字符的Unicode编码
+
+        - String.fromCharCode()
+            - 根据字符编码创建一个字符串
+
+        - concat()
+            - 可以用来连接两个或多个字符串
+
+        - indexOf()
+            - 该方法可以检索一个字符串中是否含有指定内容,如果字符串中含有该内容则会返回其第一次出现的索引
+                如果不包含指定内容则返回-1
+            - 可以指定第二个参数，指定开始查找的索引位置(包含指定的参数索引值)
+
+        - lastIndexOf()
+            - 该方法于indexOf()效果相同，不同的是lastIndexOf()是从后往前找,存在则返回从后往前计算的索引位置
+                如果不存在则返回-1
+            - 可以指定第二个参数，指定开始查找的索引位置(包含指定的参数索引值)
+     -->
+    <script>
+        var str = "kapcb";
+
+        console.log(str.length);
+        console.log(str[1]);
+
+        var result = str.charAt(3);
+        console.log(result);
+
+        var result1 = str.charCodeAt(3);
+        console.log(result1);
+
+        var result2 = String.fromCharCode(20016);
+        console.log(result2);
+
+        var result3 = str.concat(" awesome man!!!");
+        console.log(result3);
+        console.log(str);
+
+        var result5 = str.indexOf("h");
+        console.log(result5);
+
+        var result6 = str.lastIndexOf("h");
+        console.log(result6);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
