@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <!-- 
+        使用字面量创建正则表达式
+            语法：var 变量 = /正则表达式/匹配模式
+            
+        使用字面量创建更加简单，使用构造函数创建更加灵活
+     -->
+    <script>
+        var reg = new RegExp("a", "i");
+        console.log(reg.test("abc"));
+
+
+        var reg1 = /a/i;
+        console.log(reg1.test("abc"));
+
+        // 创建一个正则表达式，检查一个字符串中是否含有a或b
+        // 使用 | 表示 或
+        // [] 中的内容也是或的关系
+        // [ab] == a|b
+        // [a-z]：表示任意小写字母
+        // [A-Z]：表示任意大写字母
+        // [A-z]：表示任意字母
+        var reg2 = /a|b/;
+        console.log(reg2.test("acbd"));
+
+        var reg3 = /[a-z]/;
+        console.log(reg3.test("A"));
+
+
+        // 检查一个字符串中是否含有 abc 或 adc 或 aec
+        var reg4 = /a[bde]c/;
+        console.log(reg4.test("adc"))
+
+        // [^ ] 除了
+
+        var reg5 = /[^ab]/;
+        console.log(reg5.test("c"));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
