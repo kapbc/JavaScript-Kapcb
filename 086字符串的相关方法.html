@@ -36,6 +36,40 @@
             - 该方法于indexOf()效果相同，不同的是lastIndexOf()是从后往前找,存在则返回从后往前计算的索引位置
                 如果不存在则返回-1
             - 可以指定第二个参数，指定开始查找的索引位置(包含指定的参数索引值)
+
+        - slice()
+            - 可以从字符串中截取指定的内容
+            - 不会影响原字符串，而是将截取到的内容返回
+            - 参数：
+                第一个参数：开始位置的索引(包括开始位置)
+                第二个参数：结束位置的索引(不包括结束位置),第二个参数可以省略，如果省略第二个参数则会截取到
+                    后边所有
+                也可以传递负数作为参数，负数将会从后边开始计算
+
+        - subString()
+            - 可以用来截取一个字符串，与slice()类似
+            - 参数：
+                第一个参数：开始截取的索引位置(包括开始位置)
+                第二个参数：结束位置的索引(不包括结束位置)
+            - 不同的是这个方法不能接受负值作为参数，如果传递了一个负值，则默认使用0
+            - 而且它会自动调整参数的位置，如果第二个参数小于第一个参数则会自动交换
+
+        - subStr()
+            - 截取字符串
+            - 参数：
+                1.截取开始位置的索引
+                2.截取字符的长度
+
+        - split()
+            - 可以将一个字符串拆分为一个数组
+            - 参数：
+                - 需要一个字符串作为参数，以该字符串作为分隔
+
+        - toUpperCase()
+            - 将字符串转换为大写并返回
+
+        - toLowerCase()
+            - 将字符串转换为小写并返回
      -->
     <script>
         var str = "kapcb";
@@ -61,6 +95,19 @@
 
         var result6 = str.lastIndexOf("h");
         console.log(result6);
+
+        var str2 = "abc,bcd,efg,hij";
+        var result7 = str2.split(",");
+        console.log(result7);
+        console.log(Array.isArray(result7));
+        console.log(result7[2]);
+        console.log(result7.length);
+
+        let str3 = "bdgsdasd";
+        var result8 = str3.toUpperCase();
+        console.log(result8);
+        var result9 = result8.toLowerCase();
+        console.log(result9);
     </script>
 </head>
 
