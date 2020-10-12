@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串和正则的相关方法</title>
+    <!-- 
+        split()
+            - 可以将一个字符串拆分为一个数组
+            - 方法中可以传递一个正则表达式作为参数，这样方法将会根据正则表达式去拆分字符串
+
+        search()
+            - 可以搜索字符串中国是否含有指定内容
+            - 如果搜索到指定内容，则会返回第一次出现的索引，如果没有搜索到返回-1
+            - 可以接收一个正则表达式作为参数，根据正则表达式去检索字符串
+
+        match()
+            - 可以根据正则表达式从一个字符串中将符合条件的内容提取出来
+            - 默认情况下match()只会找到第一个符合要求的内容，找到以后就i停止检索
+                可以设置正则表达式为全局匹配模式，就会匹配到所有内容
+                可以为一个正则表达式设置多个匹配模式，且无顺序要求
+            - match()会将匹配到的内容封装到一个数组中返回，即使只查询到一个结果
+
+     -->
+    <script>
+        var str = "1a2b3c4d5e6f7";
+        var result = str.split(/[A-z]/);
+        console.log(result);
+
+
+        var str1 = "hello kapcb adc";
+        var result1 = str1.search(/[1-9]/);
+        var result2 = str1.search(/a[bd]c/);
+        console.log(result1);
+        console.log(result2);
+
+        var result3 = str.match(/[A-z]/ig);
+        console.log(result3);
+        console.log(Array.isArray(result3));
+        console.log(result3[2]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
