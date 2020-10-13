@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式语法</title>
+    <!-- 
+        创建一个正则表达式，检查一个字符串中是否含有aaa
+
+        - 量词：
+            - 通过一个量词可以设置一个内容出现的次数
+            - 语法：{n} 正好出现n次
+            - 量词只对它前面的一个内容起作用
+            - {m,n} 出现 m~n 次
+            - {m,} 出现m次以上
+            - + 至少出现一次，相当于{1,}
+            - * 0个或多个，相当于{0,}
+            - ? 0个或1个,相当于{0,1}
+        
+        检查一个字符串是否以a开头
+            - ^ 表示开头
+            - $ 表示结尾
+     -->
+    <script>
+        var str = "adsdsdvsdfaaa";
+        var reg = /a{3}/;
+        console.log(reg.test(str));
+
+        var reg1 = /(ab){3}/;
+        var str1 = "ababab"
+        console.log(reg1.test(str1));
+
+        var reg2 = /ab{1,3}c/;
+        console.log(reg2.test("abc"));
+        console.log(reg2.test("abbc"));
+        console.log(reg2.test("abbbc"));
+        console.log(reg2.test("abbbbc"));
+
+        var reg3 = /ab+c/;
+        console.log(reg3.test("abc"));
+
+        var reg4 = /ab*c/;
+        console.log(reg4.test("abc"));
+
+        var reg5 = /^a/;
+        console.log(reg5.test("dadcdvd"))
+        console.log(reg5.test("adcdvd"))
+
+        var reg6 = /b$/;
+        console.log(reg6.test("dsdsb"));
+        console.log(reg6.test("dsdsbd"));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
