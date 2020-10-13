@@ -21,6 +21,16 @@
         检查一个字符串是否以a开头
             - ^ 表示开头
             - $ 表示结尾
+        如果在正则表达式中同时使用^ $ 则要求字符串必须完全符合正则表达式
+
+        创建一个正则编表达式检查一个字符串是否是一个手机号
+            - 手机号的规则：
+                # 1.一共11位
+                # 2.第一位以1开头
+                # 3.第二位以3-9之间的任意数字
+                # 4.第三位以后任意数字，长度为9
+
+                ^1[3-9][0-9]{9}$
      -->
     <script>
         var str = "adsdsdvsdfaaa";
@@ -50,6 +60,10 @@
         var reg6 = /b$/;
         console.log(reg6.test("dsdsb"));
         console.log(reg6.test("dsdsbd"));
+
+        var phoneNubmer = "15623041759";
+        var reg7 = /^1[3-9][0-9]{9}$/;
+        console.log(reg7.test(phoneNubmer));
     </script>
 </head>
 
