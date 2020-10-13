@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式的语法</title>
+    <!-- 
+        检查一个字符串中是否含有.
+            - .表示任意字符
+            - 在正则表达式中使用 \ 表示转义字符,使用 \. 来表示 .
+            - \\ 表示 \
+            - 在字符串中使用 \\ 表示 \ ，否则会将 \" 转义
+
+        使用构造函数时，参数是一个字符串，而 \ 在字符串中是一个转义字符，如果要使用 \ 则需要使用 \\ 来表示 \
+
+            - \w：表示任意字母、数字、还有(下划线)_，相当于[A-z0-9_]
+            - \W：表示除了字母、数字、下划线，相当于[^A-z0-9_]
+            - \s：表示空格
+            - \S：除了空格
+            - \d：表示任意数字[0-9]
+            - \D：除了数字[^0-9]
+            - \b：单词边界
+            - \B：除了单词边界
+
+     -->
+    <script>
+        var reg = /\./;
+        console.log(reg.test("das.d"));
+
+        var reg1 = /\\/;
+        console.log(reg1.test("b.\\"));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
