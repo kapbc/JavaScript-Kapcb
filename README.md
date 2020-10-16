@@ -369,7 +369,56 @@
     	<td><strong>练习</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>078练习</strong></a></td>
     </tr>
+    <tr>
+    	<td><strong>数组的方法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>079数组的方法</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>函数的方法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>080函数的方法</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>arguments</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>081arguments</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>Date</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>082Date</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>Math</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>083Math</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>包装类</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>085包装类</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>字符串的相关方法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>086字符串的相关方法</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>正则表达式</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>087正则表达式</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>正则表达式</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>088正则表达式</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>字符串和正则的相关方法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>089字符串和正则的相关方法</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>正则表达式语法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>090正则表达式语法</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>正则表达式的语法</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>091正则表达式的语法</strong></a></td>
+    </tr>
 </table>
+
 
 
 ### 感言
