@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button id="btn">我是一个按钮</button>
+    <!-- 
+        浏览器已经提供了文档节点的对象，这个对象是window属性，可以在页面中直接使用
+        文档节点代表的是整个网页
+     -->
+    <script>
+        console.log(document);
+        console.log(document.getElementById("btn"));
+        var btn = document.getElementById("btn");
+        var text = btn.innerHTML;
+        console.log(text);
+        btn.innerHTML = "我是kapcb";
+
+    </script>
+</body>
+</html>
