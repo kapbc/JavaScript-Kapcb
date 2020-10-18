@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邮件的正则表达式</title>
+    <!-- 
+        电子邮件的正则表达式
+        任意数字下划线，任意字母数字下划线 @ 任意字母数字，.任意字母（2-5位） .任意字母（2-5位）
+        \w{3} (\.\w+)* @ [A-z0-9]+ (\.[A-z]{2,5}){1,2}
+     -->
+    <script>
+        var reg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
+        var email = "eircccallroot@163.com";
+        var error = "1231@123.com.1456";
+        var errorTest = "123456qq.com"
+        console.log(reg.test(email));
+        console.log(reg.test(error));
+        console.log(reg.test(errorTest));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
