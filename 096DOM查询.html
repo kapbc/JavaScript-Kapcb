@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM查询</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        #total {
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+
+        .inner,
+        .outer {
+            width: 600px;
+            height: 400px;
+            background-color: #fff;
+            border: 2px black solid;
+            margin: 10px 300px;
+            float: left;
+        }
+
+        .outer {
+            width: 600px;
+            height: 100px;
+        }
+
+        .outer input {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+
+        ul li {
+            width: 80px;
+            height: 50px;
+            border: 1px solid black;
+            float: left;
+            margin: 0 10px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #bfa;
+        }
+
+        #btnList {
+            width: 230px;
+            height: 500px;
+            float: left;
+            margin-left: 320px;
+            margin-top: 10px;
+        }
+
+        #btnList div {
+            margin: 13px 1px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var bj = document.getElementById("bj");
+
+            // 这个方法会返回一个类数组对象，所有查询到的元素都会封装到对象中
+            var liNode = document.getElementsByTagName("li");
+
+            var nameEqGender = document.getElementsByName("gender");
+
+            var cityLi = document.getElementById("city");
+
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                bj.style.backgroundColor = "yellow";
+            };
+
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function () {
+                for (var i = 0; i < liNode.length; i++) {
+                    var node = liNode[i];
+                    node.style.backgroundColor = "blue";
+                }
+            };
+
+            var btn03 = document.getElementById("btn03");
+            btn03.onclick = function () {
+                console.log(nameEqGender.length);
+                for (var i = 0; i < nameEqGender.length; i++) {
+                    var val = nameEqGender[i].value;
+                    console.log(val);
+                }
+            };
+
+            var btn04 = document.getElementById("btn04");
+            btn04.onclick = function () {
+                var list = cityLi.getElementsByTagName("li");
+                for (var i = 0; i < list.length; i++) {
+                    console.log(list[i].innerText);
+                }
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>你喜欢哪个城市?</p>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>广州</li>
+                <li>深圳</li>
+            </ul>
+            <br />
+            <br />
+            <p>你喜欢那款游戏?</p>
+            <ul id="game">
+                <li id="redGame">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+            <br />
+            <br />
+            <p>你手机的操作系统是?</p>
+            <ul id="os">
+                <li>IOS</li>
+                <li>Android</li>
+                <li style="width:200px">Windows Phone</li>
+            </ul>
+        </div>
+
+        <div class="outer">
+            gender:
+            <input type="radio" name="gender" value="male">
+            Male
+            <input type="radio" name="gender" value="female">
+            Female
+            <br />
+            <br />
+            <input type="text" name="name" id="username" value="kapcb" />
+        </div>
+    </div>
+
+    <div id="btnList">
+        <div><button id="btn01">查找#bj节点</button></div>
+        <div><button id="btn02">查找所有li节点</button></div>
+        <div><button id="btn03">查找name=gender的所有节点</button></div>
+        <div><button id="btn04">查找#city节点下所有li节点</button></div>
+        <div><button id="btn05">查找#city所有子节点</button></div>
+        <div><button id="btn06">查找#phone第一个子节点</button></div>
+        <div><button id="btn07">查找#bj父节点</button></div>
+        <div><button id="btn08">查找#android的前一个兄弟节点</button></div>
+        <div><button id="btn09">获取#username的value属性</button></div>
+        <div><button id="btn01">设置#username的value属性</button></div>
+        <div><button id="btn01">返回#bj的文本值</button></div>
+    </div>
+</body>
+
+</html>
