@@ -6,101 +6,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM查询</title>
     <style>
-        ul {
+        /* body {
+            background-color: bisque;
+        } */
+
+        li {
             list-style-type: none;
-        }
-
-        #total {
-            width: 600px;
-            height: 400px;
             float: left;
+            margin-right: 15px;
+            width: 70px;
+            height: 25px;
+            line-height: 25px;
+            font-size: 14px;
+            text-align: center;
+            border: 1px black solid;
         }
 
-        .inner,
-        .outer {
-            width: 600px;
+        #wrapper {
             height: 400px;
-            background-color: #fff;
+            width: 1000px;
+            position: relative;
+            left: 300px;
+            top: 20px;
+        }
+
+        #wrapper .inner {
+            width: 430px;
+            height: 250px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
             border: 2px black solid;
-            margin: 10px 300px;
-            float: left;
+        }
+
+        .inner p {
+            font-size: 18px;
+            margin-left: 40px;
         }
 
         .outer {
-            width: 600px;
-            height: 100px;
+            position: absolute;
+            left: 20px;
+            top: 290px;
+            width: 410px;
+            height: 70px;
+            padding-left: 20px;
+            border: 2px black solid;
         }
 
         .outer input {
-            margin-left: 10px;
             margin-top: 10px;
         }
 
-        p {
-            margin-left: 10px;
+        .selectButton {
+            position: absolute;
+            height: 350px;
+            width: 250px;
+            right: 250px;
+            top: 20px;
+
         }
 
-        ul li {
-            width: 80px;
-            height: 50px;
-            border: 1px solid black;
-            float: left;
-            margin: 0 10px;
+        .selectButton button {
+            width: 220px;
+            height: 25px;
             text-align: center;
-            line-height: 50px;
-            background-color: #bfa;
-        }
-
-        #btnList {
-            width: 230px;
-            height: 500px;
-            float: left;
-            margin-left: 320px;
-            margin-top: 10px;
-        }
-
-        #btnList div {
-            margin: 13px 1px;
+            margin: 3px 15px;
         }
     </style>
     <script>
         window.onload = function () {
-            var bj = document.getElementById("bj");
+            var bjNode = document.getElementById("bj");
 
-            // 这个方法会返回一个类数组对象，所有查询到的元素都会封装到对象中
             var liNode = document.getElementsByTagName("li");
 
             var nameEqGender = document.getElementsByName("gender");
 
-            var cityLi = document.getElementById("city");
+            var cityNode = document.getElementById("city");
+
+            var phoneNode = document.getElementById("phone");
+
+            var usernameNode = document.getElementById("username");
+
 
             var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+            var btn03 = document.getElementById("btn03");
+            var btn04 = document.getElementById("btn04");
+            var btn05 = document.getElementById("btn05");
+            var btn06 = document.getElementById("btn06");
+            var btn07 = document.getElementById("btn07");
+            var btn08 = document.getElementById("btn08");
+            var btn09 = document.getElementById("btn09");
+            var btn10 = document.getElementById("btn10");
+
             btn01.onclick = function () {
-                bj.style.backgroundColor = "yellow";
+                bjNode.style.backgroundColor = "blue";
+            };
+            btn01.onmouseleave = function () {
+                bjNode.style.backgroundColor = "white";
             };
 
-            var btn02 = document.getElementById("btn02");
             btn02.onclick = function () {
                 for (var i = 0; i < liNode.length; i++) {
-                    var node = liNode[i];
-                    node.style.backgroundColor = "blue";
+                    liNode[i].style.backgroundColor = "yellow";
                 }
             };
+            btn02.onmouseleave = function () {
+                resetStyle(liNode);
+            };
 
-            var btn03 = document.getElementById("btn03");
             btn03.onclick = function () {
-                console.log(nameEqGender.length);
                 for (var i = 0; i < nameEqGender.length; i++) {
                     var val = nameEqGender[i].value;
                     console.log(val);
                 }
             };
 
-            var btn04 = document.getElementById("btn04");
+            var citySonNode = cityNode.getElementsByTagName("li");
             btn04.onclick = function () {
-                var list = cityLi.getElementsByTagName("li");
-                for (var i = 0; i < list.length; i++) {
-                    console.log(list[i].innerText);
+                if (citySonNode != null && citySonNode.length > 0) {
+                    for (var i = 0; i < citySonNode.length; i++) {
+                        citySonNode[i].style.backgroundColor = "pink";
+                    }
+                } else {
+                    alert("未选中任何元素!!!");
+                }
+            };
+
+            btn04.onmouseleave = function () {
+                resetStyle(citySonNode);
+            };
+
+            btn05.onclick = function () {
+                alert("该按钮已被废弃!!!");
+            };
+
+            var phoneSonNode = phoneNode.getElementsByTagName("li");
+            btn06.onclick = function () {
+                if (phoneSonNode != null && phoneSonNode.length > 0) {
+                    phoneSonNode[0].style.backgroundColor = "yellow";
+                }
+            };
+
+            btn06.onmouseleave = function () {
+                resetStyle(phoneSonNode);
+            };
+
+
+            btn07.onclick = function () {
+                var bjParentNode = bjNode.parentNode;
+                alert(bjParentNode);
+            };
+
+            btn08.onclick = function () {
+                if (phoneSonNode != null && phoneSonNode.length > 0) {
+                    for (var i = 0; i < phoneSonNode.length; i++) {
+                        if (phoneSonNode[i].innerText === "Android") {
+                            alert(phoneSonNode[i - 1].innerText);
+                        }
+                    }
+                }
+            };
+
+            btn09.onclick = function () {
+                var val = usernameNode.value;
+                alert(val);
+            };
+
+            btn10.onclick = function () {
+                alert(bjNode.innerText);
+            };
+
+            var resetStyle = function () {
+                var arg = arguments[0];
+                if (arg != null && arg.length <= 0) {
+                    alert("未选中任何目标元素!!!");
+                } else {
+                    for (var i = 0; i < arg.length; i++) {
+                        arg[i].style.backgroundColor = "white";
+                    }
                 }
             };
         };
@@ -108,7 +193,8 @@
 </head>
 
 <body>
-    <div id="total">
+    <div class="test"></div>
+    <div id="wrapper">
         <div class="inner">
             <p>你喜欢哪个城市?</p>
             <ul id="city">
@@ -118,48 +204,42 @@
                 <li>深圳</li>
             </ul>
             <br />
-            <br />
-            <p>你喜欢那款游戏?</p>
+            <p>你喜欢哪款游戏?</p>
             <ul id="game">
-                <li id="redGame">红警</li>
-                <li>实况</li>
+                <li>红警</li>
+                <li>实况足球</li>
                 <li>极品飞车</li>
                 <li>魔兽</li>
             </ul>
             <br />
-            <br />
             <p>你手机的操作系统是?</p>
-            <ul id="os">
+            <ul id="phone">
                 <li>IOS</li>
-                <li>Android</li>
-                <li style="width:200px">Windows Phone</li>
+                <li id="android">Android</li>
+                <li style="width: 150px;">Windows Phone</li>
             </ul>
         </div>
-
         <div class="outer">
             gender:
-            <input type="radio" name="gender" value="male">
+            <input type="radio" name="gender" value="male" />
             Male
-            <input type="radio" name="gender" value="female">
+            <input type="radio" name="gender" value="female" />
             Female
-            <br />
             <br />
             <input type="text" name="name" id="username" value="kapcb" />
         </div>
-    </div>
-
-    <div id="btnList">
-        <div><button id="btn01">查找#bj节点</button></div>
-        <div><button id="btn02">查找所有li节点</button></div>
-        <div><button id="btn03">查找name=gender的所有节点</button></div>
-        <div><button id="btn04">查找#city节点下所有li节点</button></div>
-        <div><button id="btn05">查找#city所有子节点</button></div>
-        <div><button id="btn06">查找#phone第一个子节点</button></div>
-        <div><button id="btn07">查找#bj父节点</button></div>
-        <div><button id="btn08">查找#android的前一个兄弟节点</button></div>
-        <div><button id="btn09">获取#username的value属性</button></div>
-        <div><button id="btn01">设置#username的value属性</button></div>
-        <div><button id="btn01">返回#bj的文本值</button></div>
+        <div class="selectButton">
+            <div><button id="btn01">查找#bj节点</button></div>
+            <div><button id="btn02">查找所有li节点</button></div>
+            <div><button id="btn03">查找name=gender的所有节点</button></div>
+            <div><button id="btn04">查找#city节点下所有li节点</button></div>
+            <div><button id="btn05"><s>查找#city所有子节点</s></button></div>
+            <div><button id="btn06">查找#phone第一个子节点</button></div>
+            <div><button id="btn07">查找#bj父节点</button></div>
+            <div><button id="btn08">查找#android的前一个兄弟节点</button></div>
+            <div><button id="btn09">获取#username的value属性</button></div>
+            <div><button id="btn10">返回#bj的文本值</button></div>
+        </div>
     </div>
 </body>
 
