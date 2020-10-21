@@ -193,54 +193,74 @@
 </head>
 
 <body>
-    <div class="test"></div>
-    <div id="wrapper">
-        <div class="inner">
-            <p>你喜欢哪个城市?</p>
-            <ul id="city">
-                <li id="bj">北京</li>
-                <li>上海</li>
-                <li>广州</li>
-                <li>深圳</li>
-            </ul>
-            <br />
-            <p>你喜欢哪款游戏?</p>
-            <ul id="game">
-                <li>红警</li>
-                <li>实况足球</li>
-                <li>极品飞车</li>
-                <li>魔兽</li>
-            </ul>
-            <br />
-            <p>你手机的操作系统是?</p>
-            <ul id="phone">
-                <li>IOS</li>
-                <li id="android">Android</li>
-                <li style="width: 150px;">Windows Phone</li>
-            </ul>
+<div class="test"></div>
+<div id="wrapper">
+    <div class="inner">
+        <p>你喜欢哪个城市?</p>
+        <ul id="city">
+            <li id="bj">北京</li>
+            <li>上海</li>
+            <li>广州</li>
+            <li>深圳</li>
+        </ul>
+        <br/>
+        <p>你喜欢哪款游戏?</p>
+        <ul id="game">
+            <li>红警</li>
+            <li>实况足球</li>
+            <li>极品飞车</li>
+            <li>魔兽</li>
+        </ul>
+        <br/>
+        <p>你手机的操作系统是?</p>
+        <ul id="phone">
+            <li>IOS</li>
+            <li id="android">Android</li>
+            <li style="width: 150px;">Windows Phone</li>
+        </ul>
+    </div>
+    <div class="outer">
+        gender:
+        <input type="radio" name="gender" value="male"/>
+        Male
+        <input type="radio" name="gender" value="female"/>
+        Female
+        <br/>
+        <input type="text" name="name" id="username" value="kapcb"/>
+    </div>
+    <div class="selectButton">
+        <div>
+            <button id="btn01">查找#bj节点</button>
         </div>
-        <div class="outer">
-            gender:
-            <input type="radio" name="gender" value="male" />
-            Male
-            <input type="radio" name="gender" value="female" />
-            Female
-            <br />
-            <input type="text" name="name" id="username" value="kapcb" />
+        <div>
+            <button id="btn02">查找所有li节点</button>
         </div>
-        <div class="selectButton">
-            <div><button id="btn01">查找#bj节点</button></div>
-            <div><button id="btn02">查找所有li节点</button></div>
-            <div><button id="btn03">查找name=gender的所有节点</button></div>
-            <div><button id="btn04">查找#city节点下所有li节点</button></div>
-            <div><button id="btn05"><s>查找#city所有子节点</s></button></div>
-            <div><button id="btn06">查找#phone第一个子节点</button></div>
-            <div><button id="btn07">查找#bj父节点</button></div>
-            <div><button id="btn08">查找#android的前一个兄弟节点</button></div>
-            <div><button id="btn09">获取#username的value属性</button></div>
-            <div><button id="btn10">返回#bj的文本值</button></div>
+        <div>
+            <button id="btn03">查找name=gender的所有节点</button>
+        </div>
+        <div>
+            <button id="btn04">查找#city节点下所有li节点</button>
+        </div>
+        <div>
+            <button id="btn05"><s>查找#city所有子节点</s></button>
+        </div>
+        <div>
+            <button id="btn06">查找#phone第一个子节点</button>
+        </div>
+        <div>
+            <button id="btn07">查找#bj父节点</button>
+        </div>
+        <div>
+            <button id="btn08">查找#android的前一个兄弟节点</button>
+        </div>
+        <div>
+            <button id="btn09">获取#username的value属性</button>
+        </div>
+        <div>
+            <button id="btn10">返回#bj的文本值</button>
         </div>
     </div>
+</div>
 </body>
 
 </html>

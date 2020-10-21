@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换练习</title>
+    <style>
+        /* 去除默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            width: 590px;
+            /* height: 333px; */
+            margin: 30px auto;
+            background-color: greenyellow;
+            padding: 10px;
+            /* 设置文本居中，内敛元素的文本，即上一页 下一页 */
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            var iNode = document.getElementsByTagName("i")[0];
+
+            var img = document.getElementsByTagName("img")[0];
+            var array = new Array();
+            array.push("/image/1.gif", "/image/2.jpg.webp",
+                "/image/3.jpg.webp", "/image/4.jpg.webp",
+                "/image/6.jpg.webp");
+
+            // 创建一个变量，来保存当前正在显示的图片的索引
+            var index = 0;
+            prev.onclick = function () {
+                index--;
+                if (index < 0) {
+                    index = array.length - 1;
+                }
+                img.src = array[index];
+                iNode.innerText = index + 1;
+            };
+
+            next.onclick = function () {
+                index++;
+                if (index >= array.length) {
+                    index = 0;
+                }
+                img.src = array[index];
+                iNode.innerText = index + 1;
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <p>一共5张图片，当前为第&nbsp;<i>1</i>&nbsp;张！</p>
+        <img src="/image/2.jpg.webp" alt="kapcb">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+
+</html>
