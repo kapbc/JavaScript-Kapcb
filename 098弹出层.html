@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹出层</title>
+    <style>
+        #alertBox {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            text-align: center;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var alertBox = document.getElementById("alertBox");
+            var subButton = document.getElementById("sub");
+            var cancleButton = document.getElementById("cancle");
+            subButton.onclick = function () {
+                alertBox.style.display = "none";
+                setTimeout(show, 3000);
+            };
+
+            var show = function () {
+                alertBox.style.removeProperty("display");
+            };
+
+            cancleButton.onclick = function () {
+                alertBox.style.display = "none";
+                setTimeout(show, 3000)
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="alertBox">
+        <p>您要是用吗?</p>
+        <button id="sub">使用</button>
+        <button id="cancle">取消</button>
+    </div>
+</body>
+
+</html>
