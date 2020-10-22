@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹出层优化</title>
+    <style>
+        #alertBox {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        p {
+            padding-top: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+
+            let alertBox = document.getElementById("alertBox");
+            let submitButton = document.getElementById("submit");
+            let cancleButton = document.getElementById("cancle");
+
+            (function () {
+                let value = window.localStorage.getItem("kapcb");
+                console.log(value)
+                if (value == null || value == "") {
+                    console.log("bbbbb1")
+                    submitButton.onclick = function () {
+                        let date = new Date();
+                        alertBox.style.display = "none";
+                        let time = date.getHours() * 60 * 60 + date.getMinutes() * 60 + date.getSeconds();
+                        console.log(time);
+                        window.localStorage.setItem("kapcb", time + "");
+                        setTimeout(function () {
+                            window.localStorage.removeItem("kapcb");
+                            alertBox.style.removeProperty("display");
+                        }, 10000);
+                    }
+                } else {
+                    let date = new Date();
+                    let time = date.getHours() * 60 * 60 + date.getMinutes() * 60 + date.getSeconds();
+                    let vvv = time - value;
+                    if (vvv >= 10000) {
+                        alertBox.style.removeProperty("display");
+                        window.localStorage.removeItem("kapcb");
+                    } else {
+                        alertBox.style.removeProperty("display");
+                        setTimeout(function () {
+                            window.localStorage.removeItem("kapcb");
+                        }, vvv);
+                    }
+                }
+            })();
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="alertBox">
+        <p>您要使用吗？</p>
+        <a id="submit" href="javascript:;">确定</a>
+        <a id="cancle" href="javascript:;">取消</a>
+    </div>
+</body>
+
+</html>
