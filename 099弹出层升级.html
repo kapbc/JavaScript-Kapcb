@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹出层升级</title>
+    <style>
+        #alertBox {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            text-align: center;
+        }
+
+        p {
+            padding-top: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            let alertBox = document.getElementById("alertBox");
+            let submitButton = document.getElementById("submit");
+            let cancleButton = document.getElementById("cancle");
+            submitButton.onclick = function () {
+                let time = new Date();
+                let localTime = time.getHours() * 60 * 60 + time.getMinutes() * 60 + time.getSeconds();
+                let latestTime = window.localStorage.getItem("kapcb");
+                console.log(latestTime);
+                if (latestTime == "" || latestTime == null) {
+                    alertBox.style.display = "none";
+                    window.localStorage.setItem("kapcb", localTime + "");
+                    setTimeout(function () {
+                        alertBox.style.removeProperty("display");
+                        window.localStorage.removeItem("kapcb");
+                    }, 10000);
+                } else {
+                    alertBox.style.display = "none";
+                    let eTime = new Date();
+                    let elocalTime = time.getHours() * 60 * 60 + time.getMinutes() * 60 + time.getSeconds();
+                    let timeOut = elocalTime - latestTime;
+                    setTimeout(function () {
+                        alertBox.style.removeProperty("display");
+                        window.localStorage.removeItem("kapcb");
+                    }, timeOut)
+                }
+            };
+
+            // (function () {
+            //     let value = window.localStorage.getItem("kapcb");
+            //     if (value != "" || value != null) {
+            //         setTimeout(function () {
+            //             let time = new Date();
+            //             let localTime = time.getHours() * 60 * 60 + time.getMinutes() * 60 + time
+            //                 .getSeconds();
+            //             window.localStorage.removeItem("kapcb");
+            //             window.localStorage.setItem("kapcb", localTime + "");
+            //         }, 5000);
+            //     } else {
+            //         alertBox.style.display = "none";
+            //     }
+            // })();
+        };
+    </script>
+</head>
+
+<body>
+    <div id="alertBox">
+        <p>您要使用吗？</p>
+        <a id="submit" href="javascript:;">确定</a>
+        <a id="cancle" href="javascript:;">取消</a>
+    </div>
+</body>
+
+</html>
