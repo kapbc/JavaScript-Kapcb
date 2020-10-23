@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diglog</title>
+    <style>
+        #alertBox {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 100px auto;
+            background-color: pink;
+            display: none;
+        }
+
+        p {
+            padding-top: 50px;
+        }
+
+        a {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="alertBox">
+        <p>您还要使用吗?</p>
+        <a href="/Test.html" id="submitButton">确定</a>
+        <a href="javascript:;" id="cancleButton">取消</a>
+    </div>
+
+    <a href="/Test.html" id="cancleButton">页面跳转</a>
+
+</body>
+<script>
+    let alertBox = document.getElementById("alertBox");
+    let submitButton = document.getElementById("submitButton");
+    let cancleButton = document.getElementById("cancleButton");
+    let localStroageValue = localStorage.getItem("kapcb");
+    window.onload = function () {
+        let localDate = new Date();
+        localTime = localDate.getHours() * 60 * 60 + localDate.getMinutes() * 60 + localDate.getSeconds();
+        let timeCost = localTime - localStroageValue;
+        millseconds = timeCost * 1000;
+        if (localStroageValue != null && millseconds > 0 && millseconds < 10000) {
+            setTimeout(function () {
+                localStorage.removeItem("kapcb");
+                alertBox.style.display = "block";
+            }, 10000 - millseconds);
+        }
+        if (millseconds > 10000 && localStroageValue != null) {
+            localStorage.removeItem("kapcb");
+            alertBox.style.display = "block";
+        }
+        if (localStroageValue == null) {
+            alertBox.style.display = "block";
+        }
+    }
+
+    if (localStroageValue != null) {
+        alertBox.style.display = "none";
+    } else {
+        alertBox.style.display = "block";
+    }
+
+    cancleButton.onclick = function () {
+        alertBox.style.display = "none";
+        let localDate = new Date();
+        localTime = localDate.getHours() * 60 * 60 + localDate.getMinutes() * 60 + localDate
+            .getSeconds();
+        localStorage.setItem("kapcb", localTime + "");
+        setTimeout(function () {
+            localStorage.removeItem("kapcb");
+            alertBox.style.display = "block";
+        }, 10000)
+    }
+</script>
+
+</html>
