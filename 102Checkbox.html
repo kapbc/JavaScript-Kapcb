@@ -19,21 +19,23 @@
             let checkAllButton = selectQuery("checkAllButton");
             let checkAllBox = selectQuery("checkedAllBox");
             let checkNoButton = selectQuery("checkNoButton");
+            let noCheckButton = selectQuery("noCheckButton");
+            let submitButton = selectQuery("submitButton");
             let selectAllBox = document.getElementsByName("items");
             checkAllButton.onclick = function () {
-                checkAllBox.setAttribute("checked", true);
+                checkAllBox.checked = true;
                 if (selectAllBox.length > 0) {
                     for (var i = 0; i < selectAllBox.length; i++) {
-                        selectAllBox[i].setAttribute("checked", true);
+                        selectAllBox[i].checked = true;
                     }
                 }
             };
 
             checkNoButton.onclick = function () {
-                checkAllBox.removeAttribute("checked");
+                checkAllBox.checked = false;
                 if (selectAllBox.length > 0) {
                     for (var i = 0; i < selectAllBox.length; i++) {
-                        selectAllBox[i].removeAttribute("checked");
+                        selectAllBox[i].checked = false;
                     }
                 }
             };
@@ -42,21 +44,45 @@
             checkAllBox.onclick = function () {
                 count++;
                 if (count % 2 == 0) {
-                    checkAllBox.removeAttribute("checked");
+                    checkAllBox.checked = false;
                     if (selectAllBox.length > 0) {
                         for (var i = 0; i < selectAllBox.length; i++) {
-                            selectAllBox[i].removeAttribute("checked");
+                            selectAllBox[i].checked = false;
                         }
                     }
                 } else {
-                    checkAllBox.setAttribute("checked", true);
+                    checkAllBox.checked = true;
                     if (selectAllBox.length > 0) {
                         for (var i = 0; i < selectAllBox.length; i++) {
-                            selectAllBox[i].setAttribute("checked", true);
+                            selectAllBox[i].checked = true;
                         }
                     }
                 }
             }
+
+            noCheckButton.onclick = function () {
+                console.log("aaaaaaaaaa");
+                for (var i = 0; i < selectAllBox.length; i++) {
+                    if (selectAllBox[i].checked == true) {
+                        selectAllBox[i].checked = false;
+                    } else {
+                        selectAllBox[i].checked = true;
+                    }
+                }
+            };
+
+            submitButton.onclick = function () {
+                if (selectAllBox.length <= 0) {
+                    alert("您还未勾选任何选择，请勾选后再进行提交!!!")
+                } else {
+                    for (var i = 0; i < selectAllBox.length; i++) {
+                        if (selectAllBox[i].checked == true) {
+                            var text = selectAllBox[i].value;
+                        }
+                        console.log(text);
+                    }
+                }
+            };
         };
     </script>
 </head>
