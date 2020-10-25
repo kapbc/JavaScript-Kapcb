@@ -22,7 +22,9 @@
             let noCheckButton = selectQuery("noCheckButton");
             let submitButton = selectQuery("submitButton");
             let selectAllBox = document.getElementsByName("items");
-            checkAllButton.onclick = function () {
+
+
+            var functionForChecked = function () {
                 checkAllBox.checked = true;
                 if (selectAllBox.length > 0) {
                     for (var i = 0; i < selectAllBox.length; i++) {
@@ -31,7 +33,7 @@
                 }
             };
 
-            checkNoButton.onclick = function () {
+            var functionForCancleChecked = function () {
                 checkAllBox.checked = false;
                 if (selectAllBox.length > 0) {
                     for (var i = 0; i < selectAllBox.length; i++) {
@@ -40,28 +42,29 @@
                 }
             };
 
+            // 全选
+            checkAllButton.onclick = function () {
+                functionForChecked();
+            };
+
+            // 全不选
+            checkNoButton.onclick = function () {
+                functionForCancleChecked();
+            };
+
+            // 全不选
             let count = 0;
             checkAllBox.onclick = function () {
                 count++;
                 if (count % 2 == 0) {
-                    checkAllBox.checked = false;
-                    if (selectAllBox.length > 0) {
-                        for (var i = 0; i < selectAllBox.length; i++) {
-                            selectAllBox[i].checked = false;
-                        }
-                    }
+                    functionForCancleChecked();
                 } else {
-                    checkAllBox.checked = true;
-                    if (selectAllBox.length > 0) {
-                        for (var i = 0; i < selectAllBox.length; i++) {
-                            selectAllBox[i].checked = true;
-                        }
-                    }
+                    functionForChecked();
                 }
             }
 
+            // 反选
             noCheckButton.onclick = function () {
-                console.log("aaaaaaaaaa");
                 for (var i = 0; i < selectAllBox.length; i++) {
                     if (selectAllBox[i].checked == true) {
                         selectAllBox[i].checked = false;
@@ -71,17 +74,19 @@
                 }
             };
 
+            //提交
             submitButton.onclick = function () {
-                if (selectAllBox.length <= 0) {
-                    alert("您还未勾选任何选择，请勾选后再进行提交!!!")
-                } else {
-                    for (var i = 0; i < selectAllBox.length; i++) {
-                        if (selectAllBox[i].checked == true) {
-                            var text = selectAllBox[i].value;
-                        }
-                        console.log(text);
+                let array = new Array();
+                for (var i = 0; i < selectAllBox.length; i++) {
+                    if (selectAllBox[i].checked == true) {
+                        var text = selectAllBox[i].value;
+                        array.push(text);
                     }
                 }
+                if (array.length <= 0) {
+                    alert("您还未勾选任何选项，请勾选后再进行提交!!!");
+                }
+                console.log(array);
             };
         };
     </script>
