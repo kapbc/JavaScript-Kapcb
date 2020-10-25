@@ -9,7 +9,55 @@
 
     </style>
     <script>
+        window.onload = function () {
+            let selectQuery = function () {
+                let selectId = arguments[0];
+                let selectElement = document.getElementById(selectId);
+                return selectElement;
+            }
 
+            let checkAllButton = selectQuery("checkAllButton");
+            let checkAllBox = selectQuery("checkedAllBox");
+            let checkNoButton = selectQuery("checkNoButton");
+            let selectAllBox = document.getElementsByName("items");
+            checkAllButton.onclick = function () {
+                checkAllBox.setAttribute("checked", true);
+                if (selectAllBox.length > 0) {
+                    for (var i = 0; i < selectAllBox.length; i++) {
+                        selectAllBox[i].setAttribute("checked", true);
+                    }
+                }
+            };
+
+            checkNoButton.onclick = function () {
+                checkAllBox.removeAttribute("checked");
+                if (selectAllBox.length > 0) {
+                    for (var i = 0; i < selectAllBox.length; i++) {
+                        selectAllBox[i].removeAttribute("checked");
+                    }
+                }
+            };
+
+            let count = 0;
+            checkAllBox.onclick = function () {
+                count++;
+                if (count % 2 == 0) {
+                    checkAllBox.removeAttribute("checked");
+                    if (selectAllBox.length > 0) {
+                        for (var i = 0; i < selectAllBox.length; i++) {
+                            selectAllBox[i].removeAttribute("checked");
+                        }
+                    }
+                } else {
+                    checkAllBox.setAttribute("checked", true);
+                    if (selectAllBox.length > 0) {
+                        for (var i = 0; i < selectAllBox.length; i++) {
+                            selectAllBox[i].setAttribute("checked", true);
+                        }
+                    }
+                }
+            }
+        };
     </script>
 </head>
 
