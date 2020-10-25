@@ -66,6 +66,7 @@
                     selectAllBox[i].checked = !selectAllBox[i].checked;
                     if (!selectAllBox[i].checked) {
                         checkedAllBox.checked = false;
+                        break;
                     }
                 }
             };
@@ -77,6 +78,7 @@
                     for (var j = 0; j < selectAllBox.length; j++) {
                         if (!selectAllBox[j].checked) {
                             checkedAllBox.checked = false;
+                            break;
                         }
                     }
                 }
