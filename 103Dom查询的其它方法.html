@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom查询的其它方法</title>
+    <!-- 
+        在document中有一个属性body，它保存的是body的引用
+
+        document.documentElement保存的是html跟标签
+
+        document.all 代表页面中的所有元素
+
+        *表示所有元素
+     -->
+    <script>
+        window.onload = function () {
+            //获取body标签
+            let body = document.getElementsByTagName("body")[0];
+            console.log(body);
+
+            let bodyByDocument = document.body;
+            console.log(bodyByDocument);
+
+            let html = document.documentElement;
+            console.log(html);
+
+            let all = document.all;
+            console.log(all);
+            console.log(all.length);
+            console.log(typeof all);
+            console.log("=============================")
+            for (var i = 0; i < all.length; i++) {
+                console.log(all[i]);
+            }
+
+            all = document.getElementsByTagName("*");
+            console.log(all);
+        };
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div class="outter"></div>
+</body>
+
+</html>
