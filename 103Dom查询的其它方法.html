@@ -13,6 +13,10 @@
         document.all 代表页面中的所有元素
 
         *表示所有元素
+
+
+        document.querySelector()
+            - 需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个元素节点对象
      -->
     <script>
         window.onload = function () {
@@ -37,13 +41,25 @@
 
             all = document.getElementsByTagName("*");
             console.log(all);
+
+            // 根据元素的class属性值查询一组元素节点对象
+            let outter = document.getElementsByClassName("outter")[0];
+            console.log(outter.innerHTML);
+
+            let div = document.getElementsByTagName("div");
+            console.log(div.length);
+
+            let outterInnerDiv = document.querySelector(".outter div");
+            console.log(outterInnerDiv.innerHTML);
         };
     </script>
 </head>
 
 <body>
     <div></div>
-    <div class="outter"></div>
+    <div class="outter">我是属性为outter中的内容
+        <div>我是outter里面的div</div>
+    </div>
 </body>
 
 </html>
