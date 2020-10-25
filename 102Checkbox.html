@@ -66,11 +66,7 @@
             // 反选
             noCheckButton.onclick = function () {
                 for (var i = 0; i < selectAllBox.length; i++) {
-                    if (selectAllBox[i].checked == true) {
-                        selectAllBox[i].checked = false;
-                    } else {
-                        selectAllBox[i].checked = true;
-                    }
+                    selectAllBox[i].checked = !selectAllBox[i].checked;
                 }
             };
 
@@ -78,15 +74,17 @@
             submitButton.onclick = function () {
                 let array = new Array();
                 for (var i = 0; i < selectAllBox.length; i++) {
-                    if (selectAllBox[i].checked == true) {
+                    if (selectAllBox[i].checked) {
                         var text = selectAllBox[i].value;
                         array.push(text);
                     }
                 }
                 if (array.length <= 0) {
                     alert("您还未勾选任何选项，请勾选后再进行提交!!!");
+                } else {
+                    console.log(array);
+                    alert(array.toString());
                 }
-                console.log(array);
             };
         };
     </script>
