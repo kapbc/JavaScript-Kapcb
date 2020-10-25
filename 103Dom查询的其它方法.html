@@ -17,6 +17,13 @@
 
         document.querySelector()
             - 需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个元素节点对象
+            - IE 8 支持
+            - 使用该方法总会返回唯一的一个元素，如果满足条件的元素有多个，那么它只会返回第一个
+        
+        document.querySelectorAll()
+            - 需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个元素节点对象
+            - 使用该方法会返回满足条件的所有元素封装到一个数组中返回
+            - 即使满足条件的元素只有一个，也会将其封装为数组返回
      -->
     <script>
         window.onload = function () {
@@ -51,6 +58,8 @@
 
             let outterInnerDiv = document.querySelector(".outter div");
             console.log(outterInnerDiv.innerHTML);
+
+            
         };
     </script>
 </head>
