@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkbox</title>
-    <style>
-
-    </style>
+    <!-- 
+        在事件的响应函数中，响应函数是给谁绑定的，this就是谁
+     -->
     <script>
         window.onload = function () {
             let selectQuery = function () {
@@ -52,18 +52,33 @@
                 functionForCancleChecked();
             };
 
-            // 全不选
-
+            // 全选 / 全不选
             checkAllBox.onclick = function () {
                 for (var i = 0; i < selectAllBox.length; i++) {
-                    selectAllBox[i].checked = checkAllBox.checked;
+                    selectAllBox[i].checked = this.checked;
                 }
             };
 
             // 反选
             noCheckButton.onclick = function () {
+                checkedAllBox.checked = true;
                 for (var i = 0; i < selectAllBox.length; i++) {
                     selectAllBox[i].checked = !selectAllBox[i].checked;
+                    if (!selectAllBox[i].checked) {
+                        checkedAllBox.checked = false;
+                    }
+                }
+            };
+
+
+            for (var i = 0; i < selectAllBox.length; i++) {
+                selectAllBox[i].onclick = function () {
+                    checkedAllBox.checked = true;
+                    for (var j = 0; j < selectAllBox.length; j++) {
+                        if (!selectAllBox[j].checked) {
+                            checkedAllBox.checked = false;
+                        }
+                    }
                 }
             };
 
@@ -83,6 +98,7 @@
                     alert(array.toString());
                 }
             };
+
 
 
         };
