@@ -53,15 +53,12 @@
             };
 
             // 全不选
-            let count = 0;
+
             checkAllBox.onclick = function () {
-                count++;
-                if (count % 2 == 0) {
-                    functionForCancleChecked();
-                } else {
-                    functionForChecked();
+                for (var i = 0; i < selectAllBox.length; i++) {
+                    selectAllBox[i].checked = checkAllBox.checked;
                 }
-            }
+            };
 
             // 反选
             noCheckButton.onclick = function () {
@@ -86,6 +83,8 @@
                     alert(array.toString());
                 }
             };
+
+
         };
     </script>
 </head>
