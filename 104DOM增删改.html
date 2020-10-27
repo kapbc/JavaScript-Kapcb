@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM增删改</title>
+    <style>
+        ul li {
+            list-style-type: none;
+            width: 60px;
+            text-align: center;
+            line-height: 40px;
+            border: black 2px solid;
+            background-color: #bfa;
+            float: left;
+            margin: 0 10px;
+        }
+
+        #wrapper {
+            width: 700px;
+            height: 400px;
+            position: relative;
+            top: 100px;
+            left: 500px;
+        }
+
+        #inner{
+            width: 400px;
+            height: 150px;
+            border: black 2px solid;
+            position: absolute;
+            top: 120px;
+            left: 20px;
+        }
+
+        p {
+            /* margin: ; */
+            padding-left: 30px;
+        }
+
+
+
+        #buttonWrapper {
+            width: 240px;
+            height: 250px;
+            position: absolute;
+            top: 90px;
+            left: 450px;
+            text-align: center;
+        }
+
+        button{
+            width: 226px;
+            height: 25px;
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="inner">
+            <p>你喜欢哪个城市?</p>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>广州</li>
+                <li>深圳</li>
+            </ul>
+        </div>
+
+        <div id="buttonWrapper">
+            <div><button id="btn01">创建一个“武汉”节点，添加到#city下</button></div>
+            <div><button id="btn02">将“武汉”节点插入到#bj前面</button></div>
+            <div><button id="btn03">使用“武汉”节点替换#bj前面</button></div>
+            <div><button id="btn04">删除#bj节点</button></div>
+            <div><button id="btn05">读取#city内的HTML代码</button></div>
+            <div><button id="btn05">设置#bj内的HTML代码</button></div>
+        </div>
+    </div>
+</body>
+
+</html>
