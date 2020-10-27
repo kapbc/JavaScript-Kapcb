@@ -18,15 +18,15 @@
         }
 
         #wrapper {
-            width: 700px;
+            width: 1000px;
             height: 400px;
             position: relative;
             top: 100px;
-            left: 500px;
+            left: 300px;
         }
 
-        #inner{
-            width: 400px;
+        #inner {
+            width: 500px;
             height: 150px;
             border: black 2px solid;
             position: absolute;
@@ -35,29 +35,78 @@
         }
 
         p {
-            /* margin: ; */
             padding-left: 30px;
         }
-
-
 
         #buttonWrapper {
             width: 240px;
             height: 250px;
             position: absolute;
             top: 90px;
-            left: 450px;
+            left: 530px;
             text-align: center;
         }
 
-        button{
+        button {
             width: 226px;
             height: 25px;
             margin-top: 15px;
         }
     </style>
     <script>
+        window.onload = function () {
+            let btn01 = document.getElementById("btn01");
+            let li = document.getElementsByTagName("li");
+            let city = document.getElementById("city");
+            let liNode = document.createElement("li");
+            let text = document.createTextNode("武汉");
+            btn01.onclick = function () {
+                if (li[li.length - 1].innerText == "武汉") {
+                    city.removeChild(li[li.length - 1]);
+                } else {
+                    liNode.appendChild(text);
+                    city.appendChild(liNode);
+                }
+            };
 
+            let btn02 = document.getElementById("btn02");
+            btn02.onclick = function () {
+                if (li[0].innerText == "武汉") {
+                    city.removeChild(li[0]);
+                } else {
+                    liNode.appendChild(text);
+                    city.insertBefore(liNode, li[0]);
+                }
+            };
+
+            let btn03 = document.getElementById("btn03");
+            let bjTag = document.getElementsByTagName("li")[0];
+            btn03.onclick = function () {
+                let bj = document.getElementById("bj");
+                if (li[0].innerText == "北京") {
+                    liNode.appendChild(text);
+                    city.replaceChild(liNode, li[0]);
+                } else {
+                    city.replaceChild(bjTag, li[0]);
+                }
+            };
+
+            let btn04 = document.getElementById("btn04");
+            btn04.onclick = function () {
+                if (li[0].innerText == "北京") {
+                    city.removeChild(li[0]);
+                } else {
+                    // return;
+                    city.insertBefore(bjTag, li[0]);
+                }
+            };
+
+            let btn05 = document.getElementById("btn05");
+            btn05.onclick = function () {
+                console.log(city);
+            };
+
+        };
     </script>
 </head>
 
@@ -76,7 +125,7 @@
         <div id="buttonWrapper">
             <div><button id="btn01">创建一个“武汉”节点，添加到#city下</button></div>
             <div><button id="btn02">将“武汉”节点插入到#bj前面</button></div>
-            <div><button id="btn03">使用“武汉”节点替换#bj前面</button></div>
+            <div><button id="btn03">使用“武汉”节点替换#bj节点</button></div>
             <div><button id="btn04">删除#bj节点</button></div>
             <div><button id="btn05">读取#city内的HTML代码</button></div>
             <div><button id="btn05">设置#bj内的HTML代码</button></div>
