@@ -133,9 +133,14 @@
             };
 
             let btn06 = document.getElementById("btn06");
-            btn06.onclick = function(){
-                document.getElementById("bj").innerText = "杭州";
-            }
+            btn06.onclick = function () {
+                let bj = document.getElementById("bj");
+                if (bj.innerText == "北京") {
+                    bj.innerText = "杭州";
+                } else {
+                    bj.innerText = "北京";
+                }
+            };
 
         };
     </script>
