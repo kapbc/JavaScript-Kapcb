@@ -29,7 +29,8 @@
         removeChild()
             - 移除父节点中的指定子节点
             - 语法：父节点.removeChild(子节点);
-    
+        
+        使用innerHTML也可以完成DOM增删改的操作
      -->
     <style>
         ul li {
@@ -142,6 +143,11 @@
                 }
             };
 
+            let btn07 = document.getElementById("btn07");
+            btn07.onclick = function () {
+                city.innerHTML += "<li>广州</li>";
+            };
+
         };
     </script>
 </head>
@@ -165,6 +171,7 @@
             <div><button id="btn04">删除#bj节点</button></div>
             <div><button id="btn05">读取#city内的HTML代码</button></div>
             <div><button id="btn06">设置#bj内的HTML代码</button></div>
+            <div><button id="btn07">123</button></div>
         </div>
     </div>
 </body>
