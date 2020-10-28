@@ -132,6 +132,11 @@
                 console.log(city);
             };
 
+            let btn06 = document.getElementById("btn06");
+            btn06.onclick = function(){
+                document.getElementById("bj").innerText = "杭州";
+            }
+
         };
     </script>
 </head>
@@ -154,7 +159,7 @@
             <div><button id="btn03">使用“武汉”节点替换#bj节点</button></div>
             <div><button id="btn04">删除#bj节点</button></div>
             <div><button id="btn05">读取#city内的HTML代码</button></div>
-            <div><button id="btn05">设置#bj内的HTML代码</button></div>
+            <div><button id="btn06">设置#bj内的HTML代码</button></div>
         </div>
     </div>
 </body>
