@@ -6,14 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>添加删除记录</title>
     <style>
+        .box {
+            width: 450px;
+            margin: 0 auto;
+            margin-top: 90px;
+            padding-bottom: 10px;
+        }
 
+        table {
+            text-align: center;
+        }
+
+        .inputBox {
+            width: 450px;
+            height: 150px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .inputBox label {
+            float: left;
+            width: 120px;
+            line-height: 21px;
+            margin-left: 30px;
+        }
+
+        .inputBox input {
+            margin-bottom: 5px;
+        }
+
+        .inputBox button {
+            width: 70px;
+            margin: 30px 20px;
+
+        }
     </style>
     <script>
+        window.onload = function () {
 
+            let getButton = function () {
+                let button = document.getElementById(arguments[0]);
+                return button;
+            };
+
+            let table = document.getElementById("table");
+            let deleteButton = document.getElementsByTagName("a");
+            let submitButton = getButton("submitButton");
+
+            
+            submitButton.onclick = function () {
+                let input = document.getElementsByTagName("input");
+                let flag = true;
+                for (let i = 0; i < input.length; i++) {
+                    if (input[i].value == "" || input[i].value == null) {
+                        alert(input[i].placeholder + "后再点击确定提交!!!");
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) {
+                    let trNode = document.createElement("tr");
+                    for (let i = 0; i < input.length; i++) {
+                        trNode.innerHTML += "<td>" + input[i].value + "</td>";
+                        input[i].value = "";
+                    }
+                    trNode.innerHTML +=
+                        '<td><a href="javascript:;" onclick="deleteClick(this)">delete</a></td>';
+                    table.appendChild(trNode);
+                }
+            };
+
+            for (let i = 0; i < deleteButton.length; i++) {
+                let button = deleteButton[i];
+                button.onclick = function () {
+                    button.parentNode.parentNode.remove();
+                };
+            };
+        };
+
+        function deleteClick() {
+            arguments[0].parentNode.parentNode.remove();
+        };
     </script>
 </head>
 
 <body>
+
+    <div class="box">
+        <table border="1" id="table">
+            <thead>
+                <td width="53px">用户名</td>
+                <td width="180px">邮箱</td>
+                <td width="110px">联系方式</td>
+                <td width="53px">操作</td>
+            </thead>
+            <tr>
+                <td>kapcb</td>
+                <td>eircccallroot@163.com</td>
+                <td>15623041777</td>
+                <td><a id="delete" href="javascript:;">delete</a></td>
+            </tr>
+            <tr>
+                <td>ccc</td>
+                <td>eircccallroot@yeah.net</td>
+                <td>15623041789</td>
+                <td><a id="delete" href="javascript:;">delete</a></td>
+            </tr>
+            <tr>
+                <td>eirc</td>
+                <td>eircccallroot@126.com</td>
+                <td>15623041769</td>
+                <td><a id="delete" href="javascript:;">delete</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="inputBox">
+        <label>请输入用户名:</label>
+        <input type="text" name="username" placeholder="请输入用户名" /> <br />
+        <label>请输入邮箱:</label>
+        <input type="email" name="email" placeholder="请输入邮箱" /> <br />
+        <label>请输入联系方式:</label>
+        <input type="text" name="phone" placeholder="请输入联系方式" /> <br />
+        <button id="submitButton">确定</button>
+        <button id="cancleButton">取消</button>
+    </div>
 
 </body>
 
