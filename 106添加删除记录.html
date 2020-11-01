@@ -123,7 +123,7 @@
                         input[i].value = "";
                     }
                     trNode.innerHTML +=
-                        '<td><a href="javascript:;" name="delete">delete</a></td>';
+                        '<td><a href="javascript:;" onclick="deleteButton(this)">delete</a></td>';
                     tbody.appendChild(trNode);
                 }
             };
@@ -134,7 +134,7 @@
             let cancle = document.getElementById("a-cancle");
 
             for (let i = 0; i < deleteButton.length; i++) {
-                
+
                 let button = deleteButton[i];
                 button.onclick = function () {
                     pop.style.display = "block";
@@ -153,8 +153,12 @@
                     };
                 };
             };
+
         };
-        
+
+        function deleteButton() {
+            arguments[0].parentNode.parentNode.remove();
+        };
     </script>
 </head>
 
