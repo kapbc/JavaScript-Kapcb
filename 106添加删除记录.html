@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>添加删除记录</title>
+
+    <!-- 
+
+        点击超链接以后，超链接会跳转页面，这个是超链接的默认行为
+        但是有时不希望出线默认行为，可以通过在响应函数的最后return false来取消默认行为
+
+        也可以使用javascript:;也可以取消默认行为
+     -->
     <style>
         .box {
             width: 600px;
@@ -38,8 +46,22 @@
         .inputBox button {
             width: 70px;
             margin: 30px 20px;
-
         }
+
+        .pop {
+            width: 350px;
+            height: 200px;
+            background-color: pink;
+            left: 800px;
+            top: 230px;
+        }
+
+        /* #pop-alert{
+            width: 60px;
+            line-height: 30px;
+            top: 0px;
+            left: 10px;
+        } */
     </style>
     <script>
         window.onload = function () {
@@ -79,7 +101,8 @@
             for (let i = 0; i < deleteButton.length; i++) {
                 let button = deleteButton[i];
                 button.onclick = function () {
-                    button.parentNode.parentNode.remove();
+
+                    this.parentNode.parentNode.remove();
                 };
             };
         };
@@ -132,6 +155,13 @@
         <button id="cancleButton">取消</button>
     </div>
 
+    <div class="pop">
+        <a href="">ccc</a>
+        <p id="pop-alert">提示!<a>X</a></p>
+        <p>您确定要删除吗？删除后无法恢复!</p>
+        <button id="pop-submit">确定</button>
+        <button id="pop-cancle">取消</button>
+    </div>
 </body>
 
 </html>
