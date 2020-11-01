@@ -7,7 +7,7 @@
     <title>添加删除记录</title>
     <style>
         .box {
-            width: 450px;
+            width: 600px;
             margin: 0 auto;
             margin-top: 90px;
             padding-bottom: 10px;
@@ -18,15 +18,15 @@
         }
 
         .inputBox {
-            width: 450px;
-            height: 150px;
+            width: 500px;
+            height: 190px;
             margin: 30px auto;
             text-align: center;
         }
 
         .inputBox label {
             float: left;
-            width: 120px;
+            width: 160px;
             line-height: 21px;
             margin-left: 30px;
         }
@@ -53,13 +53,13 @@
             let deleteButton = document.getElementsByTagName("a");
             let submitButton = getButton("submitButton");
 
-            
+
             submitButton.onclick = function () {
                 let input = document.getElementsByTagName("input");
                 let flag = true;
                 for (let i = 0; i < input.length; i++) {
                     if (input[i].value == "" || input[i].value == null) {
-                        alert(input[i].placeholder + "后再点击确定提交!!!");
+                        alert("[" + input[i].placeholder + "]" + " ,后再点击确定提交!!!");
                         flag = false;
                         break;
                     }
@@ -95,10 +95,10 @@
     <div class="box">
         <table border="1" id="table">
             <thead>
-                <td width="53px">用户名</td>
-                <td width="180px">邮箱</td>
-                <td width="110px">联系方式</td>
-                <td width="53px">操作</td>
+                <td width="100px">用户名</td>
+                <td width="224px">邮箱</td>
+                <td width="135px">联系方式</td>
+                <td width="65px">操作</td>
             </thead>
             <tr>
                 <td>kapcb</td>
