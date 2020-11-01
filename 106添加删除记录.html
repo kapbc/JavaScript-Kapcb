@@ -52,16 +52,46 @@
             width: 350px;
             height: 200px;
             background-color: pink;
-            left: 800px;
+            position: absolute;
+            left: 40%;
             top: 230px;
+            border-radius: 1em;
+            z-index: 999;
+            display: none;
         }
 
-        /* #pop-alert{
+
+        #pop-alert {
             width: 60px;
             line-height: 30px;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        #pop-alert a {
+            position: absolute;
             top: 0px;
-            left: 10px;
-        } */
+            left: 300px;
+            text-decoration: none;
+            color: black;
+        }
+
+        #pop-title {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+        }
+
+        .wrapper_button {
+            margin: 140px auto;
+            margin-left: 60px;
+        }
+
+        .wrapper_button button {
+            width: 50px;
+            margin: 0 30px;
+        }
     </style>
     <script>
         window.onload = function () {
@@ -71,8 +101,8 @@
                 return button;
             };
 
-            let table = document.getElementById("table");
-            let deleteButton = document.getElementsByTagName("a");
+            let tbody = document.getElementById("tbody");
+            let deleteButton = document.getElementsByName("delete");
             let submitButton = getButton("submitButton");
 
 
@@ -93,23 +123,38 @@
                         input[i].value = "";
                     }
                     trNode.innerHTML +=
-                        '<td><a href="javascript:;" onclick="deleteClick(this)">delete</a></td>';
-                    table.appendChild(trNode);
+                        '<td><a href="javascript:;" name="delete">delete</a></td>';
+                    tbody.appendChild(trNode);
                 }
             };
 
+            let pop = document.getElementsByClassName("pop")[0];
+            let popSubmit = document.getElementById("pop-submit");
+            let cancleButton = document.getElementById("pop-cancle");
+            let cancle = document.getElementById("a-cancle");
+
             for (let i = 0; i < deleteButton.length; i++) {
+                
                 let button = deleteButton[i];
                 button.onclick = function () {
+                    pop.style.display = "block";
 
-                    this.parentNode.parentNode.remove();
+                    popSubmit.onclick = function () {
+                        this.parentNode.parentNode.style.display = "none";
+                        button.parentNode.parentNode.remove();
+                    };
+
+                    cancleButton.onclick = function () {
+                        this.parentNode.parentNode.style.display = "none";
+                    };
+
+                    cancle.onclick = function () {
+                        this.parentNode.parentNode.style.display = "none";
+                    };
                 };
             };
         };
-
-        function deleteClick() {
-            arguments[0].parentNode.parentNode.remove();
-        };
+        
     </script>
 </head>
 
@@ -123,24 +168,26 @@
                 <td width="135px">联系方式</td>
                 <td width="65px">操作</td>
             </thead>
-            <tr>
-                <td>kapcb</td>
-                <td>eircccallroot@163.com</td>
-                <td>15623041777</td>
-                <td><a id="delete" href="javascript:;">delete</a></td>
-            </tr>
-            <tr>
-                <td>ccc</td>
-                <td>eircccallroot@yeah.net</td>
-                <td>15623041789</td>
-                <td><a id="delete" href="javascript:;">delete</a></td>
-            </tr>
-            <tr>
-                <td>eirc</td>
-                <td>eircccallroot@126.com</td>
-                <td>15623041769</td>
-                <td><a id="delete" href="javascript:;">delete</a></td>
-            </tr>
+            <tbody id="tbody">
+                <tr>
+                    <td>kapcb</td>
+                    <td>eircccallroot@163.com</td>
+                    <td>15623041777</td>
+                    <td><a name="delete" href="javascript:;">delete</a></td>
+                </tr>
+                <tr>
+                    <td>ccc</td>
+                    <td>eircccallroot@yeah.net</td>
+                    <td>15623041789</td>
+                    <td><a name="delete" href="javascript:;">delete</a></td>
+                </tr>
+                <tr>
+                    <td>eirc</td>
+                    <td>eircccallroot@126.com</td>
+                    <td>15623041769</td>
+                    <td><a name="delete" href="javascript:;">delete</a></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 
@@ -156,11 +203,12 @@
     </div>
 
     <div class="pop">
-        <a href="">ccc</a>
-        <p id="pop-alert">提示!<a>X</a></p>
-        <p>您确定要删除吗？删除后无法恢复!</p>
-        <button id="pop-submit">确定</button>
-        <button id="pop-cancle">取消</button>
+        <p id="pop-alert">提示!<a id="a-cancle" href="javascript:;">X</a></p>
+        <p id="pop-title">您确定要删除吗？删除后无法恢复!</p>
+        <div class="wrapper_button">
+            <button id="pop-submit">确定</button>
+            <button id="pop-cancle">取消</button>
+        </div>
     </div>
 </body>
 
