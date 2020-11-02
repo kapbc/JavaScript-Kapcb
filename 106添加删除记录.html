@@ -186,7 +186,7 @@
 
     for (let i = 0; i < deleteButton.length; i++) {
         let button = deleteButton[i];
-        button.onclick = function () {
+        button.addEventListener("click", function () {
             pop.style.display = "block";
 
             popSubmit.onclick = function () {
@@ -201,7 +201,7 @@
             cancle.onclick = function () {
                 this.parentNode.parentNode.style.display = "none";
             };
-        };
+        }, false);
     };
 
     function deleteButtonForAddElement() {
