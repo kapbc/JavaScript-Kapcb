@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作内联样式</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <!-- 
+        元素.style.样式名 = 样式值;
+     -->
+    <script>
+        window.onload = function () {
+            // 点击按钮之后，修改box1的大小
+            let btn01 = document.getElementById("btn01");
+            let box1 = document.getElementsByClassName("box1")[0];
+            btn01.onclick = function () {
+                // alert("aaaa");
+                box1.style.width = "150px";
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">点位一下</button>
+    <div class="box1">
+    </div>
+</body>
+
+</html>
