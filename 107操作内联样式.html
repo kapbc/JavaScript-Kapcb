@@ -20,6 +20,9 @@
         通过style属性设置的样式都是内联样式,内联样式有较高的优先级,所以通过JS修改的样式往往会立即显示
         如果在样式中声明了 !important,则此时样式会有最高的优先级,即使通过JS修改也不能覆盖该样式,此时会导致
         JS样式修改失效,所以尽量不要为样式添加 !important
+
+        读取元素的样式:
+            let element = 元素.style.样式名;
      -->
     <script>
         window.onload = function () {
