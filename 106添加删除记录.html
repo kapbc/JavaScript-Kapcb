@@ -7,10 +7,8 @@
     <title>添加删除记录</title>
 
     <!-- 
-
         点击超链接以后，超链接会跳转页面，这个是超链接的默认行为
         但是有时不希望出线默认行为，可以通过在响应函数的最后return false来取消默认行为
-
         也可以使用javascript:;也可以取消默认行为
      -->
     <style>
@@ -93,73 +91,6 @@
             margin: 0 30px;
         }
     </style>
-    <script>
-        window.onload = function () {
-
-            let getButton = function () {
-                let button = document.getElementById(arguments[0]);
-                return button;
-            };
-
-            let tbody = document.getElementById("tbody");
-            let deleteButton = document.getElementsByName("delete");
-            let submitButton = getButton("submitButton");
-
-
-            submitButton.onclick = function () {
-                let input = document.getElementsByTagName("input");
-                let flag = true;
-                for (let i = 0; i < input.length; i++) {
-                    if (input[i].value == "" || input[i].value == null) {
-                        alert("[" + input[i].placeholder + "]" + " ,后再点击确定提交!!!");
-                        flag = false;
-                        break;
-                    }
-                }
-                if (flag) {
-                    let trNode = document.createElement("tr");
-                    for (let i = 0; i < input.length; i++) {
-                        trNode.innerHTML += "<td>" + input[i].value + "</td>";
-                        input[i].value = "";
-                    }
-                    trNode.innerHTML +=
-                        '<td><a href="javascript:;" onclick="deleteButton(this)">delete</a></td>';
-                    tbody.appendChild(trNode);
-                }
-            };
-
-            let pop = document.getElementsByClassName("pop")[0];
-            let popSubmit = document.getElementById("pop-submit");
-            let cancleButton = document.getElementById("pop-cancle");
-            let cancle = document.getElementById("a-cancle");
-
-            for (let i = 0; i < deleteButton.length; i++) {
-
-                let button = deleteButton[i];
-                button.onclick = function () {
-                    pop.style.display = "block";
-
-                    popSubmit.onclick = function () {
-                        this.parentNode.parentNode.style.display = "none";
-                        button.parentNode.parentNode.remove();
-                    };
-
-                    cancleButton.onclick = function () {
-                        this.parentNode.parentNode.style.display = "none";
-                    };
-
-                    cancle.onclick = function () {
-                        this.parentNode.parentNode.style.display = "none";
-                    };
-                };
-            };
-
-        };
-
-        function deleteButton() {
-            arguments[0].parentNode.parentNode.remove();
-        };
-    </script>
 </head>
 
 <body>
@@ -215,5 +146,81 @@
         </div>
     </div>
 </body>
+
+<script>
+    let getButton = function () {
+        let button = document.getElementById(arguments[0]);
+        return button;
+    };
+
+    let pop = document.getElementsByClassName("pop")[0];
+    let popSubmit = document.getElementById("pop-submit");
+    let cancleButton = document.getElementById("pop-cancle");
+    let cancle = document.getElementById("a-cancle");
+    let tbody = document.getElementById("tbody");
+    let deleteButton = document.getElementsByName("delete");
+    let submitButton = getButton("submitButton");
+
+
+    submitButton.onclick = function () {
+        let input = document.getElementsByTagName("input");
+        let flag = true;
+        for (let i = 0; i < input.length; i++) {
+            if (input[i].value == "" || input[i].value == null) {
+                alert("[" + input[i].placeholder + "]" + " ,后再点击确定提交!!!");
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            let trNode = document.createElement("tr");
+            for (let i = 0; i < input.length; i++) {
+                trNode.innerHTML += "<td>" + input[i].value + "</td>";
+                input[i].value = "";
+            }
+            trNode.innerHTML +=
+                '<td><a href="javascript:;" onclick="deleteButtonForAddElement(this)">delete</a></td>';
+            tbody.appendChild(trNode);
+        }
+    };
+
+    for (let i = 0; i < deleteButton.length; i++) {
+        let button = deleteButton[i];
+        button.onclick = function () {
+            pop.style.display = "block";
+
+            popSubmit.onclick = function () {
+                this.parentNode.parentNode.style.display = "none";
+                button.parentNode.parentNode.remove();
+            };
+
+            cancleButton.onclick = function () {
+                this.parentNode.parentNode.style.display = "none";
+            };
+
+            cancle.onclick = function () {
+                this.parentNode.parentNode.style.display = "none";
+            };
+        };
+    };
+
+    function deleteButtonForAddElement() {
+        let node = arguments[0];
+        pop.style.display = "block";
+
+        popSubmit.onclick = function () {
+            this.parentNode.parentNode.style.display = "none";
+            node.parentNode.parentNode.remove();
+        };
+
+        cancleButton.onclick = function () {
+            this.parentNode.parentNode.style.display = "none";
+        };
+
+        cancle.onclick = function () {
+            this.parentNode.parentNode.style.display = "none";
+        };
+    };
+</script>
 
 </html>
