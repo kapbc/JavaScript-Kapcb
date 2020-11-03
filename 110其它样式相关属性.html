@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其它样式相关属性</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            padding: 10px;
+            border: 2px black solid;
+        }
+    </style>
+    <!-- 
+
+        clientHight
+        clientWidth
+        - 这两个属性可以获取元素的可见宽度和高度
+        - 这些属性返回值都是数值，可以直接进行计算
+        - 会获取元素宽度和高度，包括内容区和内边距（不包含边框）
+     -->
+    <script>
+        window.onload = function () {
+            let box1 = document.getElementsByClassName("box1")[0];
+            let btn01 = document.getElementById("btn01");
+
+            btn01.onclick = function(){
+                alert(box1.clientHeight);
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <button id="btn01">点我一下</button>
+    <br /><br />
+    <div class="box1"></div>
+</body>
+
+</html>
