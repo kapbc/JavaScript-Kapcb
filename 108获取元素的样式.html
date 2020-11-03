@@ -5,16 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>获取元素的样式</title>
-    <script>
-
-    </script>
     <style>
-
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
     </style>
+
+    <!-- 
+        如何获取元素当前显示的样式
+            语法：元素.currentStyle.样式名
+            它可以用来读取当前元素正在显示的样式
+
+            IE8使用：元素.currentStyle.样式名
+            
+            其它浏览器使用：getComputedStyle()
+                - 两个参数：1.要获取样式的元素
+                           2.可以传递伪元素，一般都传null
+                - 该方法会返回一个对象，对象中封装了当前元素对应的样式，可以通过对象 . 样式名来读取样式
+
+            - 读取元素样式，返回的值带有单位，例如：px
+            - 若要使用读取元素样式的返回值，需取出其中的数字，使用parseInt()即可
+            - 若未设置 width / height 属性，在查询时，会根据窗口的尺寸，返回相应的值
+            - 在查询 background-color 属性时，会返回对应的 rgb 值
+            - 若不设置 background-color 属性，在查询时，会返回rgba(0,0,0,0)
+
+     -->
+    <script>
+        // 读取box1的样式
+        window.onload = function () {
+            let btn01 = document.getElementById("btn01");
+            let box1 = document.getElementById("box1");
+            btn01.onclick = function () {
+                // alert(box1.style.width);
+                alert(getComputedStyle(box1, null).height);
+            };
+        }
+    </script>
 </head>
 
 <body>
-
+    <button id="btn01">点我一下</button>
+    <br /><br />
+    <div id="box1"></div>
 </body>
 
 </html>
