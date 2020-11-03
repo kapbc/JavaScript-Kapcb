@@ -15,10 +15,10 @@
     <script>
         window.onload = function () {
             let btn = document.getElementById("btn");
+            let box = document.getElementsByClassName("outer")[0];
 
             // window.getComputedStyle 指定为window对象的属性，避免 getComputedStyle 变量未定义报错
             let getStyle = function () {
-                let box = document.getElementsByClassName("outer")[0];
                 if (window.getComputedStyle) {
                     console.log(getComputedStyle(box, null).backgroundColor);
                 } else {
@@ -26,7 +26,13 @@
                 }
             }
 
-            btn.onclick = getStyle();
+            // 优化
+            let getStyleOptimization = function (element, styleName) {
+                return window.getComputedStyle ? getComputedStyle(element, null).styleName : element.currentStyle.styleName;
+            }
+
+            // btn.onclick = getStyle();
+            btn.onclick = getStyleOptimization(box, "width")
 
         };
     </script>
