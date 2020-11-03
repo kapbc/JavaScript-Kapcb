@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getStyle()方法</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let btn = document.getElementById("btn");
+
+            // window.getComputedStyle 指定为window对象的属性，避免 getComputedStyle 变量未定义报错
+            let getStyle = function () {
+                let box = document.getElementsByClassName("outer")[0];
+                if (window.getComputedStyle) {
+                    console.log(getComputedStyle(box, null).backgroundColor);
+                } else {
+                    console.log(box.currentStyle.backgroundColor);
+                }
+            }
+
+            btn.onclick = getStyle();
+
+        };
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我获取下面元素的样式</button>
+    <br /><br />
+    <div class="outer"></div>
+</body>
+
+</html>
