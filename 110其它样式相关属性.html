@@ -21,6 +21,29 @@
         - 这两个属性可以获取元素的可见宽度和高度
         - 这些属性返回值都是数值，可以直接进行计算
         - 会获取元素宽度和高度，包括内容区和内边距（不包含边框）
+        - 这些属性都是只读的，不能修改
+
+        offsetWidth
+        offsetHeight
+        - 获取元素的整个宽度和高度，包括内容区、内边距和边框
+
+        offsetParent
+        - 用来获取当前元素的定位父元素
+        - 会获取到离当前元素最近的开启了定位的祖先元素
+            如果所有的祖先元素都没有开启定位，则返回body
+
+        offsetLeft
+        - 当前元素相对于其定位f父元素的水平偏移量
+        offsetTop
+        - 当前元素相对于其定位父元素的垂直偏移量
+
+        scrollHeight
+        - 获取元素滚动区域的高度
+        scrollWidth
+        - 获取元素滚动区域的宽度
+        - 当满足 scrollHeight - scrollWidth == clientHeight 说明垂直滚动条滚动到底了
+        - 当满足 scrollWidth - scrollHeight == clientWidth 说明水平滚动条滚动到底了
+        
      -->
     <script>
         window.onload = function () {
@@ -28,7 +51,10 @@
             let btn01 = document.getElementById("btn01");
 
             btn01.onclick = function(){
-                alert(box1.clientHeight);
+                // alert(box1.clientHeight);
+                // alert(box1.offsetHeight);
+                let op = box1.offsetParent;
+                console.log(op);
             };
         };
     </script>
