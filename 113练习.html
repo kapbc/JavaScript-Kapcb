@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <!-- 
+        使div可以跟随鼠标移动
+
+     -->
+    <script>
+        window.onload = function () {
+            let box1 = document.getElementById("box1");
+            document.onmousemove = function (event) {
+                // 获取到鼠标的坐标
+                event = event || window.event;
+
+                let x = event.clientX;
+                let y = event.clientY;
+                // 设置box1的偏移量
+
+                box1.style.position = "absolute";
+                box1.style.left = x + "px";
+                box1.style.top = y + "px";
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+
+    </div>
+
+</body>
+
+</html>
