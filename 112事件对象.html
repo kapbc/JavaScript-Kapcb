@@ -37,10 +37,17 @@
             let showMsg = document.getElementById("showMsg");
 
             area.onmousemove = function (event) {
-                 /*
-                  * clientX 可以获取鼠标指针的水平坐标
-                  * clientY 可以获取鼠标指针的垂直坐标
-                  */
+                /*
+                 * clientX 可以获取鼠标指针的水平坐标
+                 * clientY 可以获取鼠标指针的垂直坐标
+                 *
+                 * if (!event) {} 兼容性问题
+                 */
+                // if (!event) {
+                //     event = window.event;
+                // }
+
+                event = event || window.event;
                 let x = event.clientX;
                 let y = event.clientY;
                 showMsg.innerHTML = "x = " + x + ", y = " + y;
