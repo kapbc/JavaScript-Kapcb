@@ -23,8 +23,9 @@
                 // 获取到鼠标的坐标
                 event = event || window.event;
 
-                let x = event.clientX;
-                let y = event.clientY;
+                // pageX和pageY可以用来获取鼠标相对于当前页面的坐标
+                let x = event.pageX;
+                let y = event.pageY;
                 // 设置box1的偏移量
 
                 box1.style.position = "absolute";
@@ -35,7 +36,7 @@
     </script>
 </head>
 
-<body>
+<body style="height: 1000px;">
     <div id="box1">
 
     </div>
