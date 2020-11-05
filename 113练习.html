@@ -23,14 +23,21 @@
                 // 获取到鼠标的坐标
                 event = event || window.event;
 
+                // chrome 认为浏览器的滚动条是body的，可以通过body.scrollTop来获取
+                // 火狐等浏览器认为浏览器的滚动条是html的
+                // let st = document.body.scrollTop;
+
+                let st = document.body.scrollTop || document.documentElement.scrollTop;
+
                 // pageX和pageY可以用来获取鼠标相对于当前页面的坐标
-                let x = event.pageX;
-                let y = event.pageY;
+                // 但是这两个属性在IE8中不支持，所以需要兼容IE8就必须使用clientX和clientY
+                let x = event.clientX;
+                let y = event.clientY;
                 // 设置box1的偏移量
 
                 box1.style.position = "absolute";
                 box1.style.left = x + "px";
-                box1.style.top = y + "px";
+                box1.style.top = y + st + "px";
             }
         };
     </script>
