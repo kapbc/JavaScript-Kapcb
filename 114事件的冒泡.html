@@ -20,17 +20,23 @@
 
         事件冒泡(Bubble)
         - 冒泡指的就是事件的向上传导,当后代元素上的事件被触发时,其祖先元素的相同事件也会被触发
-        - 在大部分情况下,事件的冒泡都是非常有用的 
+        - 在大部分情况下,事件的冒泡都是非常有用的，如果不希望发生事件冒泡可以通过事件对象
+            来取消冒泡 
+        - 将事件对象的 cancelBubble 设置为true，即可取消冒泡
      -->
     <script>
         window.onload = function () {
             let s1 = document.getElementById("s1");
-            s1.onclick = function () {
+            s1.onclick = function (event) {
+                event = event || window.event;
                 console.log("我是span的点击函数");
+                event.cancelBubble = true;
             };
 
             let box1 = document.getElementById("box1");
-            box1.onclick = function () {
+            box1.onclick = function (event) {
+                event = event || window.event;
+                event.cancelBubble = true;
                 console.log("我是div的点击函数");
             };
 
