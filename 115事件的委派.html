@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的委派</title>
+    <style>
+
+    </style>
+    <!-- 
+
+        为每一个超链接都绑定单击响应函数
+     -->
+    <script>
+        window.onload = function () {
+            let allA = document.getElementsByTagName("a");
+
+            for (let i = 0; i < allA.length; i++) {
+                allA[i].onclick = function () {
+                    alert("单机响应函数!");
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <button id="btn01">添加超链接</button>
+    <ul id="u">
+        <li><a href="javascript:;">超链接1</a></li>
+        <li><a href="javascript:;">超链接2</a></li>
+        <li><a href="javascript:;">超链接3</a></li>
+    </ul>
+</body>
+
+</html>
