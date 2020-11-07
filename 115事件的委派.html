@@ -17,20 +17,30 @@
             let allA = document.getElementsByTagName("a");
             let u = document.getElementById("u");
 
-            for (let i = 0; i < allA.length; i++) {
-                allA[i].onclick = function () {
-                    alert("a标签的跳转!");
-                }
-            }
-
             // 为每个超链接都绑定了一个单击响应函数，这种操作比较麻烦，而且这种操作只能为
             // 已有的超链接设置事件,而新添加的超链接必须重新绑定
+            // for (let i = 0; i < allA.length; i++) {
+            //     allA[i].onclick = function () {
+            //         alert("a标签的跳转!");
+            //     }
+            // }
+
             let btn01 = document.getElementById("btn01");
             btn01.onclick = function () {
                 let li = document.createElement("li");
                 li.innerHTML = '<a href="javascript:;">新建的超链接</a>'
                 u.appendChild(li);
             };
+
+            // 希望只绑定一次事件即可应用到多个元素上,即使元素是动态添加上的
+            // 我们可以尝试给其元素绑定共同的祖先元素
+
+            // 为 ul 绑定一个单机响应函数
+
+            u.onclick = function () {
+                alert("我是ul的单机响应函数");
+            }
+
         };
     </script>
 </head>
