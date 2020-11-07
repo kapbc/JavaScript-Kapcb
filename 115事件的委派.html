@@ -15,12 +15,22 @@
     <script>
         window.onload = function () {
             let allA = document.getElementsByTagName("a");
+            let u = document.getElementById("u");
 
             for (let i = 0; i < allA.length; i++) {
                 allA[i].onclick = function () {
-                    alert("单机响应函数!");
+                    alert("a标签的跳转!");
                 }
             }
+
+            // 为每个超链接都绑定了一个单击响应函数，这种操作比较麻烦，而且这种操作只能为
+            // 已有的超链接设置事件,而新添加的超链接必须重新绑定
+            let btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                let li = document.createElement("li");
+                li.innerHTML = '<a href="javascript:;">新建的超链接</a>'
+                u.appendChild(li);
+            };
         };
     </script>
 </head>
