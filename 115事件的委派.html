@@ -28,7 +28,7 @@
             let btn01 = document.getElementById("btn01");
             btn01.onclick = function () {
                 let li = document.createElement("li");
-                li.innerHTML = '<a href="javascript:;">新建的超链接</a>'
+                li.innerHTML = '<a href="javascript:;" class="link">新建的超链接</a>'
                 u.appendChild(li);
             };
 
@@ -41,8 +41,19 @@
             // 
             // - 事件委派是利用了冒泡，利用冒泡可以减少事件绑定的次数，提高程序的性能
             // 为 ul 绑定一个单机响应函数
-            u.onclick = function () {
-                alert("我是ul的单机响应函数");
+
+            // 如果触发事件的是我们希望的元素，则执行函数，否则不执行
+
+            // target
+            //  - event中的target表示触发事件的对象
+            u.onclick = function (event) {
+                event = event || window.event;
+                console.log(event.target);
+                // alert("我是ul的单机响应函数");
+
+                if (event.target.className == "link") {
+                    alert("我是a标签");
+                }
             }
 
         };
@@ -52,9 +63,12 @@
 <body>
     <button id="btn01">添加超链接</button>
     <ul id="u">
-        <li><a href="javascript:;">超链接1</a></li>
-        <li><a href="javascript:;">超链接2</a></li>
-        <li><a href="javascript:;">超链接3</a></li>
+        <li>
+            <p>我是p元素</p>
+        </li>
+        <li><a href="javascript:;" class="link">超链接1</a></li>
+        <li><a href="javascript:;" class="link">超链接2</a></li>
+        <li><a href="javascript:;" class="link">超链接3</a></li>
     </ul>
 </body>
 
