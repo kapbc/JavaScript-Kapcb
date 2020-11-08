@@ -32,6 +32,9 @@
         addEventListener()中的 this 是绑定事件的对象
         attachEvent() 中的 this 是window
         需要统一两个方法的 this
+
+        this是谁由调用方式决定
+        callBack.call(obj)
         
      -->
     <script>
@@ -42,22 +45,36 @@
             //     alert("aaa");
             // };
 
-            btn01.addEventListener('click', function () {
-                alert("aaa");
-            }, false);
-            btn01.addEventListener('click', function () {
-                alert("bbb");
-            }, false);
+            // btn01.addEventListener('click', function () {
+            //     alert("aaa");
+            // }, false);
+            // btn01.addEventListener('click', function () {
+            //     alert("bbb");
+            // }, false);
 
 
             // 定义一个函数，用来为指定元素绑定响应函数
             // 参数：
             // 1.obj 要绑定事件的对象
-            // 2.eventStr 事件名称的字符串
+            // 2.eventStr 事件名称的字符串(不要on)
             // 3.callback 回调函数
-            function bund(obj, eventStr, callback) {
+            function bind(obj, eventStr, callback) {
+                if (obj.addEventListener) {
+                    // 大部分浏览器兼容的方式
+                    obj.addEventListener(eventStr, callback, false);
+                } else {
+                    // IE8 及一下
+                    obj.attachEvent("on" + callback, function(){
+                        // 在匿名函数中调用回调函数
+                        callback.call(obj);
+                    });
+                }
 
             };
+
+            bind(btn01, "click", function () {
+                alert(this);
+            });
         };
     </script>
 </head>
