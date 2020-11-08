@@ -28,6 +28,11 @@
             2.回调函数
         这个方法可以同时为一个事件绑定多个响应函数，但是执行顺序是后绑定先执行
         
+
+        addEventListener()中的 this 是绑定事件的对象
+        attachEvent() 中的 this 是window
+        需要统一两个方法的 this
+        
      -->
     <script>
         window.onload = function () {
@@ -47,9 +52,9 @@
 
             // 定义一个函数，用来为指定元素绑定响应函数
             // 参数：
-                // 1.obj 要绑定事件的对象
-                // 2.eventStr 事件名称的字符串
-                // 3.callback 回调函数
+            // 1.obj 要绑定事件的对象
+            // 2.eventStr 事件名称的字符串
+            // 3.callback 回调函数
             function bund(obj, eventStr, callback) {
 
             };
