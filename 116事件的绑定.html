@@ -5,13 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>事件的绑定</title>
-    <script>
+    <!-- 
 
+        使用 对象.事件 = 函数 的形式绑定响应函数
+            他只能同时为一个元素的一个事件绑定一个响应函数，不能绑定多个，如果绑定了多个，则后面的会覆盖掉前面的事件
+            
+     -->
+    <script>
+        window.onload = function () {
+            let btn01 = document.getElementById("btn01");
+            // 为 btn01 绑定单机响应事件
+            btn01.onclick = function () {
+                alert("aaa");
+            };
+        };
     </script>
 </head>
 
 <body>
-
+    <button id="btn01">点我一下</button>
 </body>
 
 </html>
