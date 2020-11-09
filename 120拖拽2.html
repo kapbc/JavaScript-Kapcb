@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽2</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+        }
+    </style>
+    <!-- 
+
+        当拖拽一个网页中的内容时，浏览器会默认去搜索引擎中搜索内容，会导致拖拽功能的异常,这个时浏览器提供的默认行为
+        如果不希望发生这个默认行为，可以通过 return false 取消默认行为即可,但是对IE8不起作用
+     -->
+    <script>
+        window.onload = function () {
+            let box1 = document.getElementById("box1");
+            box1.onmousedown = function (event) {
+                event = event || window.event;
+                let absoluteLeft = event.clientX - box1.offsetLeft;
+                let absoluteTop = event.clientY - box1.offsetTop;
+
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    let left = event.clientX - absoluteLeft;
+                    let top = event.clientY - absoluteTop;
+
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px";
+                };
+
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+
+                return false;
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+</body>
+
+</html>
