@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let box1 = document.getElementById("box1");
+            box1.onmousedown = function () {
+                let absoluteLeft = event.clientX - box1.offsetLeft;
+                let absoluteRight = event.clientY - box1.offsetTop;
+                console.log("left=" + (event.clientX - box1.offsetLeft));
+                console.log("top=" + (event.clientY - box1.offsetTop));
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    let left = event.clientX - absoluteLeft;
+                    let top = event.clientY - absoluteRight;
+                    console.log("left:" + left);
+                    console.log("top:" + top);
+
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px";
+                };
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>
