@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            // 分别为两个按钮绑定单机响应函数
+            let btn01 = document.getElementById("btn01");
+            let btn02 = document.getElementById("btn02");
+            bind(btn01, "click", function () {
+                alert("aaa");
+            });
+
+            bind(btn02, "click", function () {
+                alert("bbb");
+            });
+
+        };
+
+        function bind(obj, eventStr, callback) {
+            if (obj.addEventListener) {
+                obj.addEventListener(eventStr, callback, false);
+            } else {
+                obj.attachEvent("on" + eventStr, callback);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <button id="btn01">按钮1</button>
+    <br />
+    <button id="btn02">按钮2</button>
+
+</body>
+
+</html>
