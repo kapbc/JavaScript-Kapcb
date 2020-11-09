@@ -11,15 +11,56 @@
             height: 100px;
             background-color: #bfa;
             position: absolute;
+            /* z-index: 9999; */
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 200px;
+            top: 200px;
         }
     </style>
-    <script>
+    <!-- 
 
+        拖拽box1元素
+            - 拖拽的流程
+                1.当鼠标被拖拽元素上按下时，开始拖拽 onmousedown
+                2.当鼠标移动被拖拽元素跟随鼠标移动 onmousemove
+                3.当鼠标松开时，被拖拽元素固定在当前位置 onmouseup 
+     -->
+    <script>
+        window.onload = function () {
+            let box1 = document.getElementById("box1");
+            box1.onmousedown = function () {
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    // 获取鼠标的坐标
+                    let left = event.clientX;
+                    let top = event.clientY;
+
+                    // 修改 box1 的位置
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px"; 
+                };
+
+                document.onmouseup = function () {
+                    // 取消 documnet的onmousemove事件，既停止移动
+                    document.onmousemove = null;
+
+                    // 取消  document的onmouseup事件，保证事件只会触发一次
+                    document.onmouseup = null;
+                };
+            };
+                  };
     </script>
 </head>
 
 <body>
     <div id="box1"></div>
+    <div id="box2"></div>
 </body>
 
 </html>
