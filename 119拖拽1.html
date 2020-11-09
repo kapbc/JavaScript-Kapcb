@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>拖拽</title>
     <style>
         #box1 {
             width: 100px;
@@ -19,18 +19,28 @@
             box1.onmousedown = function () {
                 let absoluteLeft = event.clientX - box1.offsetLeft;
                 let absoluteRight = event.clientY - box1.offsetTop;
-                console.log("left=" + (event.clientX - box1.offsetLeft));
-                console.log("top=" + (event.clientY - box1.offsetTop));
+
                 document.onmousemove = function (event) {
                     event = event || window.event;
                     let left = event.clientX - absoluteLeft;
                     let top = event.clientY - absoluteRight;
-                    console.log("left:" + left);
-                    console.log("top:" + top);
+
+                    // 控制拖拽物体只能在浏览器视口内，不允许出现滚动条
+                    if (left < 0) {
+                        left = 0;
+                    } else if (left > window.innerWidth - box1.offsetWidth) {
+                        left = window.innerWidth - box1.offsetWidth;
+                    }
+                    if (top < 0) {
+                        top = 0;
+                    } else if (top > window.innerHeight - box1.innerHeight) {
+                        top = window.innerHeight - box1.offsetHeight
+                    }
 
                     box1.style.left = left + "px";
                     box1.style.top = top + "px";
                 };
+
                 document.onmouseup = function () {
                     document.onmousemove = null;
                     document.onmouseup = null;
