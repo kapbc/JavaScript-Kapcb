@@ -46,7 +46,7 @@
 
 <table>
     <tr>
-    	<td><strong>HelloWorld</strong></td>
+    	<td style="width: 200px"><strong>HelloWorld</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>001HelloWorld</strong></a></td>
     </tr>
     <tr>
