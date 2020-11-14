@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚轮的事件</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            min-height: 30px;
+            background-color: pink;
+        }
+    </style>
+    <!-- 
+
+        当鼠标滚轮向下滚动时，box1变长
+        当鼠标滚轮向上滚动时，box1变短
+     -->
+    <script>
+        window.onload = function () {
+            let box1 = document.getElementById("box1");
+
+            // 为 box1 绑定鼠标滚轮的事件
+            // onmousewheel 鼠标滚轮滚动的事件，但是火狐浏览器不支持该属性
+            // 在火狐中需要使用 DOMMouseScroll 来绑定滚动事件,注意该事件需要使用addEventListener函数来绑定
+            box1.onmousewheel = function (event) {
+                // 判断鼠标滚动的方向
+                event = event || window.event;
+                // event.wheelDelta 可以获取鼠标滚轮滚动的方向,向上滚是正数，向下滚是负数
+                // alert(event.wheelDelta);
+
+                // 在火狐浏览器中使用 event.detail来获取滚动的方向
+                // 向上滚是负值，向下滚是正值
+
+                if (event.wheelDelta > 0 || event.detail < 0) {
+                    box1.style.height = box1.clientHeight - 10 + "px";
+                    // let space = event.wheelDelta || event.detail;
+                    // // alert(space);
+                    // let spaceHieght = (Math.abs(space) - box1.clientHeight);
+                    // console.log(spaceHieght);
+                    // box1.style.height = (box1.clientHeight - spaceHieght) + "px";
+                } else if (event.wheelDelta < 0 || event.detail > 0) {
+                    box1.style.height = box1.clientHeight + 10 + "px";
+                    // alert("向下滚");
+                    // let space = event.wheelDelta || event.detail;
+                    // let spaceHieght = (Math.abs(space) - box1.clientHeight);
+                    // console.log(spaceHieght);
+                    // box1.style.height = (box1.clientHeight + spaceHieght) + "px";
+                }
+
+
+            };
+
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>
