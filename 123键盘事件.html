@@ -16,6 +16,12 @@
             - 
 
         键盘事件一般都会绑定给一些可以获取到焦点的对象,或者是document对象
+
+        事件对象中还提供了
+        altKey: 判断 alt 是否被按下
+        ctrlKey: 判断 ctrl 是否被按下
+        shiftKey: 判断 shift 是否被按下
+
      -->
     <script>
         window.onload = function () {
@@ -26,7 +32,11 @@
             document.onkeyup = function (event) {
                 // 可以通过 keyCode 来获取键盘键入的Unicode编码
                 event = event || window.event;
-                alert(event.keyCode);
+
+                // 判断 y 和 ctrl 是否同时被按下
+                if (event.keyCode == 89 && event.ctrlKey) {
+                    alert("y和ctrl都被按下了!");
+                }
             };
         };
     </script>
