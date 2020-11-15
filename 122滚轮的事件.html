@@ -17,6 +17,10 @@
 
         当鼠标滚轮向下滚动时，box1变长
         当鼠标滚轮向上滚动时，box1变短
+
+        使用 addEvenListener() 方法绑定的响应函数，取消默认行为不能使用 return false
+        需要使用 event 来取消默认行为 event.preventDefault();
+        但是 IE8 不支持 event.preventDefault(); 
      -->
     <script>
         window.onload = function () {
@@ -49,6 +53,12 @@
                     // console.log(spaceHieght);
                     // box1.style.height = (box1.clientHeight + spaceHieght) + "px";
                 }
+
+                event.preventDefault();
+
+                // 如果滚动时，浏览器有滚动条滚动条会随之滚动
+                // 这是浏览器的默认行为，如果不希望发生，可以取消默认行为
+                return falsel;
 
 
             };
