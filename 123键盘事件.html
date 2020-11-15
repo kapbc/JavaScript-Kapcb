@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+    <!-- 
+
+        键盘事件:
+        onkeydown:表示按键被按下
+            - 对于onkeydown来说，如果按着一个键不松手，事件会一直被触发
+            - 当onkeydown连续触发时，第一次和第二次之间过间隔会稍微长一点，其它的会非常快，这种操作是为了防止误操作的发生
+
+        onkeyup:表示按键被松开
+            - 
+
+        键盘事件一般都会绑定给一些可以获取到焦点的对象,或者是document对象
+     -->
+    <script>
+        window.onload = function () {
+            // document.onkeydown = function () {
+            //     alert("aaa");
+            // };
+
+            document.onkeyup = function (event) {
+                // 可以通过 keyCode 来获取键盘键入的Unicode编码
+                event = event || window.event;
+                alert(event.keyCode);
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box1" style="width: 100px; height: 100px; background-color: #bfa;"></div>
+
+    <br />
+    <br />
+
+    <input type="text">
+
+</body>
+
+</html>
