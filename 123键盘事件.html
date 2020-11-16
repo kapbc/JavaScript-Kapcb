@@ -22,6 +22,8 @@
         ctrlKey: 判断 ctrl 是否被按下
         shiftKey: 判断 shift 是否被按下
 
+        在文本框中输入内容，onkeydown 属于默认行为,如果在 onkeydown 中取消了默认行为，则键盘输入的内容将不会出现在文本框中
+            使文本框中不能输入数字,数字的 keyCode 为 48-57
      -->
     <script>
         window.onload = function () {
@@ -29,14 +31,22 @@
             //     alert("aaa");
             // };
 
-            document.onkeyup = function (event) {
+            let input = document.getElementsByTagName("input")[0];
+
+            input.onkeydown = function (event) {
                 // 可以通过 keyCode 来获取键盘键入的Unicode编码
                 event = event || window.event;
 
                 // 判断 y 和 ctrl 是否同时被按下
-                if (event.keyCode == 89 && event.ctrlKey) {
-                    alert("y和ctrl都被按下了!");
+                // if (event.keyCode == 89 && event.ctrlKey) {
+                //     alert("y和ctrl都被按下了!");
+                // }
+
+                if (48 <= event.keyCode && event.keyCode <= 57) {
+                    return false;
+
                 }
+
             };
         };
     </script>
