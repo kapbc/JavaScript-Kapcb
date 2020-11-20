@@ -17,6 +17,17 @@
                     - Window对象代表的是整个浏览器的窗口，同时window也是网页中的全局对象
                 Navigator
                     - 代表当前浏览器的信息，通过该对象可以来识别不同的浏览器
+                    - 由于历史原因，Navigator对象中的大部分属性都已经不能帮助我们识别浏览器了
+                    - 一般只使用userAgent属性来判断浏览器的信息
+                        userAgent是一个字符串，这个字符串中包含有用来描述浏览器信息的内容，不同的浏览器有不同的userAgent
+
+                        火狐浏览器：Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
+                        Chrome浏览器：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+                        IE浏览器：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362
+
+                        如果通过UserAgent不能够判断，还可以通过一些浏览器中特有的对象来判断浏览器的信息
+                        比如：ActiveXObject、
+                     
                 Location
                     - 代表当前浏览器的地址栏信息，通过Location可以获取地址栏信息，或者操作浏览器跳转页面
                 History
@@ -25,9 +36,31 @@
                 Screen
                     - 代表用户的屏幕信息，通过该对象可以获取到用户的屏幕的相关信息，显示器的相关信息 
 
+                这些BOM对象在浏览器中都是作为window对象的属性保存的
+                    可以通过window对象来使用，也可以直接使用
+
      -->
     <script>
+        console.log(window.navigator);
+        console.log(location);
+        console.log(history);
+        console.log(navigator.appName);
+        console.log(navigator.userAgent);
+        if (/edge/i.test(navigator.userAgent)) {
+            alert("IE浏览器");
+        }
+        if (/firefox/i.test(navigator.userAgent)) {
+            alert("火狐浏览器");
+        }
+        if (/chrome/i.test(navigator.userAgent) && !/edge/i.test(navigator.userAgent)) {
+            alert("chrome浏览器");
+        }
 
+        if ("ActiveXObject" in window) {
+            alert("我是IE浏览器");
+        } else {
+            alert("我不是IE浏览器");
+        }
     </script>
 </head>
 
