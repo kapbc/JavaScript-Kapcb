@@ -16,9 +16,10 @@
             ];
             let index = 0;
             let imgInterval = setInterval(() => {
-                if (index === 5) {
-                    index = 0;
-                }
+                // if (index === imgArray.length) {
+                //     index = 0;
+                // }
+                index = index % imgArray.length;
                 imgTag.src = imgArray[index];
                 index++;
                 if (index === 25) {
