@@ -11,28 +11,41 @@
     <script>
         window.onload = function () {
             let imgTag = document.getElementById("imgTag");
+            let btnStart = document.getElementById("btn-img-start");
+            let btnStop = document.getElementById("btn-img-stop");
+            let imgInterval;
+            let index = 0;
+            
             let imgArray = ["image/1.gif", "image/2.jpg.webp", "image/3.jpg.webp", "image/4.jpg.webp",
                 "image/6.jpg.webp"
             ];
-            let index = 0;
-            let imgInterval = setInterval(() => {
-                // if (index === imgArray.length) {
-                //     index = 0;
-                // }
-                index = index % imgArray.length;
-                imgTag.src = imgArray[index];
-                index++;
-                if (index === 25) {
-                    clearInterval(imgInterval);
-                }
 
-            }, 3000);
+            btnStart.onclick = function () {
+                
+                imgInterval = setInterval(() => {
+                    // if (index === imgArray.length) {
+                    //     index = 0;
+                    // }
+                    index = index % imgArray.length;
+                    imgTag.src = imgArray[index];
+                    index++;
+                }, 3000);
+            };
+
+            btnStop.onclick = function () {
+                clearInterval(imgInterval);
+            };
         };
     </script>
 </head>
 
 <body>
     <img id="imgTag" src="image/1.gif" alt="">
+    <br />
+    <br />
+    <br />
+    <button id="btn-img-start">开始轮播图片</button>
+    <button id="btn-img-stop">停止轮播图片</button>
 </body>
 
 </html>
