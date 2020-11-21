@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+
+    <!-- 
+        Location
+            该对象中封装了浏览器地址栏信息
+
+            如果直接打印location，则可获取到地址栏信息的当前页面的完整路径
+
+            如果直接将location属性修改为一个完整的路径或一个相对路径，则页面页面会自动跳转到该路径,并且会生成响应的历史记录
+
+            assign()
+                用来跳转到其它的页面，作用和location一样
+
+            reload()
+                重新加载该页面(刷新)
+                如果在方法中传递一个true作为参数，会强制清空缓存刷新页面
+
+            replace()
+                使用新的文档替换当前文档
+                可以使用新的页面替换当前页面，调用完毕也会跳转页面,跳转到目标页面之后，不会生成历史记录(不能回退到上一个页面)
+                
+
+     -->
+    <script>
+        window.onload = function () {
+            let button = document.getElementsByTagName("button")[0];
+            button.onclick = function () {
+                // alert(window.location)
+                // location = "https://www.baidu.com";
+                location.replace("https://www.baidu.com");
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <h1>location</h1>
+
+    <button>点我一下</button>
+    <input type="text" />
+</body>
+
+</html>
