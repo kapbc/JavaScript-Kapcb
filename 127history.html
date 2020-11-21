@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+    <!-- 
+        History
+            -对象可以操作浏览器向前或者向后
+
+            length:可以获取到当此访问的链接的数量
+
+            back():可以用来回退到上一个页面，作用和浏览器的回退按钮一样
+
+            forward():可以跳转到下一个页面，作用和浏览器的前进按钮一样
+
+            go():可以用来条状到指定的页面，需要一个整数作为参数
+                1：表示向前跳转一个页面，相当于forward()
+                2：表示向前跳转两个页面
+
+                -1：表示向后跳转一个页面，相当于back()
+                -2：表示向后跳转两个页面
+     -->
+    <script>
+        window.onload = function(){
+            let button = document.getElementsByTagName("button")[0];
+            button.onclick =function(){
+                history.back();
+            };
+        }
+    </script>
+</head>
+<body>
+    <h1>Test01</h1>
+    <a href="128test02.html">去test02</a>
+
+    <button>点我一下</button>
+</body>
+</html>
