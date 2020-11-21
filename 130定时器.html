@@ -6,13 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>定时器</title>
     <style></style>
-    <script>
+    <!-- 
 
+        如果希望一段程序每间隔一点事件执行一次，可以使用定时调用
+
+        setInterval()
+            - 定时调用
+            - 可以将一个函数每隔一段时间执行一次
+            - 参数：
+                1.回调函数，该函数会每隔一段时间调用一次
+                2.每次调用间隔的事件，单位是毫秒（1s = 1000ms）
+            - 返回值：
+                返回Number类型的数字
+                这个数字用来作为定时器的唯一标识
+
+        clearInterval()
+            - 关闭定时器
+            - 参数：
+                方法中需要定时器的标识作为参数，这样将关闭标识所对应的定时器
+     -->
+    <script>
+        window.onload = function () {
+            let count = document.getElementById("count");
+
+            let number = 0;
+            // 是count中的内容可以自动切换
+
+            let num = setInterval(function () {
+                count.innerHTML = number++;
+                if (number === 15) {
+                    clearInterval(num);
+                }
+            }, 1000)
+
+            console.log(num);
+
+            // clearInterval(num);
+        };
     </script>
 </head>
 
 <body>
-
+    <h1 id="count"></h1>
 </body>
 
 </html>
