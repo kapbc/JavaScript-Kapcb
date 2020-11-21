@@ -7,6 +7,9 @@
     <title>切换图片练习</title>
     <!-- 
         使图片可以自动切换
+
+        clearInterval() 可以接受任意参数，如果参数是一个有效的定时器标识，则停止对应的定时器
+            如果参数不是一个有效的标识，则什么也不做
      -->
     <script>
         window.onload = function () {
@@ -15,13 +18,18 @@
             let btnStop = document.getElementById("btn-img-stop");
             let imgInterval;
             let index = 0;
-            
+
             let imgArray = ["image/1.gif", "image/2.jpg.webp", "image/3.jpg.webp", "image/4.jpg.webp",
                 "image/6.jpg.webp"
             ];
 
+            // 每点击一次按钮，就会开启一个定时器，点击多次就会开启多个定时器，这就导致
+            // 图片的切换速度过快，并且只能关闭最后一次开启的定时器
             btnStart.onclick = function () {
-                
+
+                // 开启定时器之前，需要当前元素上的其它定时器关闭
+                clearInterval(imgInterval); 
+
                 imgInterval = setInterval(() => {
                     // if (index === imgArray.length) {
                     //     index = 0;
