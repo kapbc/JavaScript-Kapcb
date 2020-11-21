@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器的调用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box01 {
+            width: 100px;
+            height: 100px;
+            left: 0;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 获取 box01
+            let box01 = document.getElementById("box01");
+            let btn01 = document.getElementById("btn01");
+
+            btn01.onclick = function (event) {
+                event = event || window.event;
+                setInterval(() => {
+                    //  获取box1原来的lfet值
+                    let oldValue = parseInt(getStyle(box01, "left"));
+                    console.log(oldValue);
+                    let newValue = 10 + oldValue;
+                    box01.style.left = newValue + "px";
+                }, 30);
+            }
+        };
+
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <button id="btn01">点击按钮后box向右移动</button>
+    <br />
+    <br />
+    <div id="box01"></div>
+
+</body>
+
+</html>
