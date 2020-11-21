@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换图片练习</title>
+    <!-- 
+        使图片可以自动切换
+     -->
+    <script>
+        window.onload = function () {
+            let imgTag = document.getElementById("imgTag");
+            let imgArray = ["image/1.gif", "image/2.jpg.webp", "image/3.jpg.webp", "image/4.jpg.webp",
+                "image/6.jpg.webp"
+            ];
+            let index = 0;
+            let imgInterval = setInterval(() => {
+                if (index === 5) {
+                    index = 0;
+                }
+                imgTag.src = imgArray[index];
+                index++;
+                if (index === 25) {
+                    clearInterval(imgInterval);
+                }
+
+            }, 3000);
+        };
+    </script>
+</head>
+
+<body>
+    <img id="imgTag" src="image/1.gif" alt="">
+</body>
+
+</html>
