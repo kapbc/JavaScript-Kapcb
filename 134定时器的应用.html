@@ -24,14 +24,18 @@
             // 获取 box01
             let box01 = document.getElementById("box01");
             let btn01 = document.getElementById("btn01");
-
+            let timer;
             btn01.onclick = function (event) {
+                clearInterval(timer);
                 event = event || window.event;
-                setInterval(() => {
+                timer = setInterval(() => {
                     //  获取box1原来的lfet值
                     let oldValue = parseInt(getStyle(box01, "left"));
-                    console.log(oldValue);
-                    let newValue = 10 + oldValue;
+                    let newValue = 11 + oldValue;
+                    if (newValue >= 800) {
+                        newValue = 800;
+                        clearInterval(timer);
+                    }
                     box01.style.left = newValue + "px";
                 }, 30);
             }
@@ -54,6 +58,9 @@
     <br />
     <br />
     <div id="box01"></div>
+
+    <div style=" height: 1000px; width: 1px; border-left:black 1px solid; position: absolute; left: 800px; top: 0;">
+    </div>
 
 </body>
 
