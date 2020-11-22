@@ -28,37 +28,61 @@
             let btnLeft = document.getElementById("btnLeft");
             let btnRight = document.getElementById("btnRight");
             let btnbox2Right = document.getElementById("btnbox2Right");
+            let btn01 = document.getElementById("btn01");
             let box1 = document.getElementById("box1");
             let box2 = document.getElementById("box2");
 
             btnLeft.onclick = function () {
-                removeTheDiv(box1, 10, 30, 0);
-            }
+                removeTheDiv(box1, "left", 10, 30, 0);
+            };
 
             btnRight.onclick = function () {
-                removeTheDiv(box1, 10, 30, 800);
-            }
+                removeTheDiv(box1, "left", 10, 30, 800, function () {
+                    removeTheDiv(box2, "left", 10, 30, 800, function () {
+                        removeTheDiv(box2, "width", 10, 30, 400, function () {
+                            removeTheDiv(box2, "height", 10, 30, 400, function () {
+                                removeTheDiv(box2, "top", 10, 30, 0,
+                                    function () {
+                                        alert("动画执行完毕!");
+                                    });
+                            });
+                        });
+                    });
+                });
+            };
 
             btnbox2Right.onclick = function () {
-                removeTheDiv(box2, 10, 30, 800);
-            }
+                removeTheDiv(box2, "left", 10, 30, 800, function () {
+                    alert("kapcb awesome man!!!")
+                });
+            };
+
+            btn01.onclick = function () {
+                removeTheDiv(box2, "width", 10, 30, 800, function () {
+                    alert("移动完毕");
+                });
+            };
         };
 
-        let interval;
+        // 目前定时器的标识由全局变量 interval 保存
+        // 所有正在执行的定时器都在这个变量中保存
 
-        function removeTheDiv(obj, speed, time, target) {
+        function removeTheDiv(obj, attr, speed, time, target, callback) {
             if (speed != 0) {
-                clearInterval(interval);
-                let currentPosition = parseInt(getStyle(obj, "left"));
+                clearInterval(obj.interval);
+                let currentPosition = parseInt(getStyle(obj, attr));
                 speed = currentPosition > target ? -speed : speed;
-                interval = setInterval(() => {
-                    let oldPosition = parseInt(getStyle(obj, "left"));
+                obj.interval = setInterval(() => {
+                    let oldPosition = parseInt(getStyle(obj, attr));
                     let newPosition = oldPosition + speed;
                     if ((speed > 0 && newPosition > target) || (speed < 0 && newPosition < target)) {
-                        clearInterval(interval);
+                        clearInterval(obj.interval);
                         newPosition = target;
+
+                        // 动画执行完毕 调用回调函数
+                        callback();
                     }
-                    obj.style.left = newPosition + "px";
+                    obj.style[attr] = newPosition + "px";
                 }, time);
             }
         }
@@ -78,10 +102,13 @@
     <button id="btnLeft">box1向左移动</button>
     <button id="btnRight">box1向右移动</button>
     <button id="btnbox2Right">box2向右移动</button>
+    <button id="btn01">测试按钮</button>
     <br /><br />
     <div id="box1">box1</div>
     <div id="box2">box2</div>
     <div style="height: 1000px; width: 0px; border-left: black 1px solid; position: absolute; left: 800px; top: 0px;">
+    </div>
+    <div style="height: 0; width: 1000px; border-bottom: 1px black solid; position: absolute; left: 0; top: 800px;">
     </div>
 </body>
 
