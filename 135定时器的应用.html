@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器的应用</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let btnLeft = document.getElementById("btnLeft");
+            let btnRight = document.getElementById("btnRight");
+            let box1 = document.getElementById("box1");
+
+            btnLeft.onclick = function () {
+                removeTheDiv(box1, 30, 10, 0);
+            };
+
+            btnRight.onclick = function () {
+                removeTheDiv(box1, 30, 10, 800);
+            };
+        };
+
+        let intervalName;
+        let oldValue;
+        let newValue;
+
+        // 只左右移动
+        // obj:移动对象
+        // time:时间间隔
+        // speed:移动速度
+        // target:目标位置
+        function removeTheDiv(obj, time, speed, target) {
+            let currentPosition = parseInt(getStyle(obj, "left"));
+            speed = currentPosition < target ? speed : -speed;
+            clearInterval(intervalName);
+            intervalName = setInterval(() => {
+                oldValue = parseInt(getStyle(obj, "left"));
+                newValue = oldValue + speed;
+                if (speed < 0 ? newValue < target : newValue > target) {
+                    clearInterval(intervalName);
+                    newValue = target;
+                }
+                obj.style.left = newValue + "px";
+            }, time);
+            return false;
+        };
+
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <button id="btnLeft">点击按钮向左移动</button>
+    <button id="btnRight">点击按钮向右移动</button>
+    <br /><br />
+    <div id="box1"></div>
+    <div style="height: 1000px; width: 0; border-left: black 1px solid; position: absolute; left: 800px; top: 0;"></div>
+</body>
+
+</html>
