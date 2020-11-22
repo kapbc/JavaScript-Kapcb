@@ -80,7 +80,7 @@
                         newPosition = target;
 
                         // 动画执行完毕 调用回调函数
-                        callback();
+                        callback && callback();
                     }
                     obj.style[attr] = newPosition + "px";
                 }, time);
