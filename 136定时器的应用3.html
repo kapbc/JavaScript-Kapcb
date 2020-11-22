@@ -17,23 +17,70 @@
         #box2 {
             width: 100px;
             height: 100px;
-            background-color: black;
+            background-color: orange;
             position: absolute;
             top: 180px;
             left: 0;
         }
     </style>
     <script>
+        window.onload = function () {
+            let btnLeft = document.getElementById("btnLeft");
+            let btnRight = document.getElementById("btnRight");
+            let btnbox2Right = document.getElementById("btnbox2Right");
+            let box1 = document.getElementById("box1");
+            let box2 = document.getElementById("box2");
 
+            btnLeft.onclick = function () {
+                removeTheDiv(box1, 10, 30, 0);
+            }
+
+            btnRight.onclick = function () {
+                removeTheDiv(box1, 10, 30, 800);
+            }
+
+            btnbox2Right.onclick = function () {
+                removeTheDiv(box2, 10, 30, 800);
+            }
+        };
+
+        let interval;
+
+        function removeTheDiv(obj, speed, time, target) {
+            if (speed != 0) {
+                clearInterval(interval);
+                let currentPosition = parseInt(getStyle(obj, "left"));
+                speed = currentPosition > target ? -speed : speed;
+                interval = setInterval(() => {
+                    let oldPosition = parseInt(getStyle(obj, "left"));
+                    let newPosition = oldPosition + speed;
+                    if ((speed > 0 && newPosition > target) || (speed < 0 && newPosition < target)) {
+                        clearInterval(interval);
+                        newPosition = target;
+                    }
+                    obj.style.left = newPosition + "px";
+                }, time);
+            }
+        }
+
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
+        }
     </script>
 </head>
 
 <body>
-    <button id="butLeft">向左移动</button>
-    <button id="btnRight">向右移动</button>
+    <button id="btnLeft">box1向左移动</button>
+    <button id="btnRight">box1向右移动</button>
+    <button id="btnbox2Right">box2向右移动</button>
     <br /><br />
-    <div id="box1"></div>
-    <div id="box2"></div>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
     <div style="height: 1000px; width: 0px; border-left: black 1px solid; position: absolute; left: 800px; top: 0px;">
     </div>
 </body>
