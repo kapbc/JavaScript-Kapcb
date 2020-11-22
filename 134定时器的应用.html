@@ -25,9 +25,8 @@
             let box01 = document.getElementById("box01");
             let btn01 = document.getElementById("btn01");
             let timer;
-            btn01.onclick = function (event) {
+            btn01.onclick = function () {
                 clearInterval(timer);
-                event = event || window.event;
                 timer = setInterval(() => {
                     //  获取box1原来的lfet值
                     let oldValue = parseInt(getStyle(box01, "left"));
