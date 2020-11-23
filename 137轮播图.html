@@ -17,7 +17,7 @@
             /* width: 3050px; */
             /* 开启绝对定位 */
             position: absolute;
-            left: -600px;
+            left: 0px;
         }
 
         #imgList li {
@@ -60,7 +60,7 @@
 
         /* 设置鼠标移入的效果 */
         a:hover {
-            background-color: #fff ;
+            background-color: #fff;
         }
     </style>
     <script>
@@ -94,9 +94,12 @@
                     // alert("aaaa");
                     // 获取点击超链接的索引
                     defaultIndex = this.num;
-                    let leftPosition = -defaultIndex * 605 + "px";
-                    imgList.style.left = leftPosition;
+                    // let leftPosition = -defaultIndex * 605 + "px";
+                    // imgList.style.left = leftPosition;
                     setA();
+                    remove(imgList, "left", 10, 20, -605 * defaultIndex, function () {
+
+                    });
                 };
             };
 
@@ -112,6 +115,32 @@
                 a[defaultIndex].style.backgroundColor = "#fff";
             }
 
+        };
+
+
+        function remove(obj, attr, speed, time, target, callback) {
+            clearInterval(obj.interval);
+            let currentPosition = parseInt(getStyle(imgList, attr));
+            speed = currentPosition > target ? -speed : speed;
+            obj.interval = setInterval(() => {
+                let oldPosition = parseInt(getStyle(obj, attr));
+                let newPosition = oldPosition + speed;
+                if ((newPosition > target && speed > 0) || (newPosition < target && speed < 0)) {
+                    newPosition = target;
+                    clearInterval(obj.interval);
+                    callback && callback();
+                }
+                obj.style[attr] = newPosition + "px";
+            }, time);
+        };
+
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
         };
     </script>
 </head>
