@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #outer {
+            background-color: red;
+            width: 600px;
+            height: 300px;
+            margin: 90px auto;
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            width: 600px;
+            height: 300px;
+        }
+
+        #imgList {
+            height: 300px;
+            position: absolute;
+            left: 0;
+            transition-property: left;
+            transition-duration: .8s;
+            transition-timing-function: ease-in-out;
+            transition-delay: .2s;
+        }
+
+        #imgList li {
+            float: left;
+            margin: 0 5px;
+        }
+
+        #nav {
+            position: absolute;
+            bottom: 15px;
+        }
+
+        #nav a {
+            width: 20px;
+            height: 3px;
+            margin: 0 3px;
+            background-color: orange;
+            float: left;
+            opacity: .7;
+        }
+
+        #nav a:hover {
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let outer = document.getElementById("outer");
+            let imgList = document.getElementById("imgList");
+            let imgArray = imgList.getElementsByTagName("img");
+
+            imgList.style.width = imgArray.length * 610 + "px";
+
+
+            let nav = document.getElementById("nav");
+            let navArray = nav.getElementsByTagName("a");
+
+            nav.style.left = (outer.offsetWidth - nav.offsetWidth) / 2 + "px";
+
+            let defaultIndex = 0;
+
+            navArray[defaultIndex].style.backgroundColor = "#fff";
+
+            for (let i = 0; i < navArray.length; i++) {
+                navArray[i].num = i;
+                navArray[i].onmouseover = function () {
+                    defaultIndex = this.num;
+                    setColor()
+                    imgList.style.left = -610 * defaultIndex + "px";
+                };
+            };
+
+            function setColor() {
+                for (let i = 0; i < navArray.length; i++) {
+                    navArray[i].style.backgroundColor = "";
+                };
+
+                navArray[defaultIndex].style.backgroundColor = "#fff";
+            };
+
+            outer.onmouseleave = function () { 
+                
+             };
+
+        };
+
+        function genderRemove(obj, attr, speed, time, target, callback) {
+            clearInterval(obj.interval);
+            let currentPosition = parseInt(getStyle(obj, attr));
+            speed = currentPosition > target ? -speed : speed;
+            obj.interval = setInterval(() => {
+                let oldPosition = parseInt(getStyle(obj, attr));
+                let newPosition = oldPosition + speed;
+                if ((newPosition > target && speed > 0) || (newPosition < target && speed < 0)) {
+                    clearInterval(obj.interval);
+                    callback && callback();
+                }
+                obj.style[attr] = newPosition + "px";
+            }, time);
+        }
+
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/8.jpg" alt=""></li>
+        </ul>
+        <div id="nav">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+
+</html>
