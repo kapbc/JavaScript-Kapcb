@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>轮播图2</title>
+    <title>test</title>
     <style>
         * {
             margin: 0;
@@ -34,10 +34,10 @@
             height: 300px;
             position: absolute;
             left: 0;
-            transition-property: left;
+            /* transition-property: left;
             transition-duration: .8s;
             transition-timing-function: ease-in-out;
-            transition-delay: .2s;
+            transition-delay: .2s; */
         }
 
         #imgList li {
@@ -84,8 +84,10 @@
             for (let i = 0; i < navArray.length; i++) {
                 navArray[i].num = i;
                 navArray[i].onmouseover = function () {
+                    clearInterval(num);
                     defaultIndex = this.num;
-                    setColor()
+                    setColor();
+                    setTranistion();
                     imgList.style.left = -610 * defaultIndex + "px";
                 };
             };
@@ -98,11 +100,31 @@
                 navArray[defaultIndex].style.backgroundColor = "#fff";
             };
 
-            outer.onmouseleave = function () { 
-                
-             };
+            outer.onmouseenter = function () {
+                clearInterval(imgList.interval);
+            };
+
+            function setTranistion() {
+                imgList.style.transition = "";
+                imgList.style.transitionProperty = "left";
+                imgList.style.transitionDelay = ".2s";
+                imgList.style.transitionDuration = ".8s";
+                imgList.style.transitionTimingFunction = "ease-in-out";
+            }
+
+            let position = 0;
+            let num = setInterval(() => {
+
+                position -= 610;
+                if(position<=-parseInt(imgList.style.width)){
+                    // clearInterval(num);
+                    position=0;
+                }
+                genderRemove(imgList, "left", 10, 10, position);
+            }, 3000);
 
         };
+
 
         function genderRemove(obj, attr, speed, time, target, callback) {
             clearInterval(obj.interval);
@@ -112,9 +134,11 @@
                 let oldPosition = parseInt(getStyle(obj, attr));
                 let newPosition = oldPosition + speed;
                 if ((newPosition > target && speed > 0) || (newPosition < target && speed < 0)) {
+                    newPosition = target;
                     clearInterval(obj.interval);
                     callback && callback();
                 }
+                console.log(newPosition);
                 obj.style[attr] = newPosition + "px";
             }, time);
         }
