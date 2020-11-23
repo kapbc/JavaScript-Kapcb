@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 设置 li 样式 */
+        #imgList {
+            list-style: none;
+            /* width: 3050px; */
+            /* 开启绝对定位 */
+            position: absolute;
+            /* left: 0; */
+        }
+
+        #imgList li {
+            /* 设置浮动 */
+            float: left;
+            /* 设置左右外边距 */
+            margin: 0 7px;
+        }
+
+        .outer {
+            /* 设置宽高 */
+            width: 600px;
+            height: 470px;
+            margin: 90px auto;
+            /* 设置背景颜色 */
+            background-color: #bfa;
+            padding: 5px;
+            /* 开启相对定位，使子元素相对于父元素定位 */
+            position: relative;
+            /* 裁剪溢出的图片 */
+            overflow: hidden;
+        }
+
+        .nav {
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .nav a {
+            background-color: orange;
+            float: left;
+            width: 15px;
+            height: 15px;
+            margin: 0 3px;
+            /* 设置透明 */
+            opacity: .5;
+            /* 兼容IE的透明 */
+            filter: alpha(opacity=50);
+        }
+
+        /* 设置鼠标移入的效果 */
+        a:hover {
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 动态设置 imgList 的宽度
+            let imgList = document.getElementById("imgList");
+            // 获取页面中所有的图片
+            let array = document.getElementsByTagName("img");
+            imgList.style.width = (array.length + 14) * 610 + "px";
+
+            // 设置导航按钮居中
+            let nav = document.getElementsByClassName("nav")[0];
+            let outer = document.getElementsByClassName("outer")[0];
+            // 设置nav的left值
+            nav.style.left = (outer.offsetWidth - nav.offsetWidth) / 2 + "px";
+
+            // 默认图片的索引
+            let defaultIndex = 0;
+
+            // 获取所有的a标签
+            let a = document.getElementsByTagName("a");
+
+            a[defaultIndex].style.backgroundColor = "#fff";
+
+            // 点击超链接切换图片
+            // 为所有的单机响应函数绑定点击事件
+            for (let i = 0; i < a.length; i++) {
+                // 为每一个超链接添加 num 属性
+                a[i].num = i;
+                a[i].onclick = function () {
+                    // alert("aaaa");
+                    // 获取点击超链接的索引
+                    defaultIndex = this.num;
+                    // let leftPosition = -defaultIndex * 605 + "px";
+                    // imgList.style.left = leftPosition;
+                    setA();
+                    remove(imgList, "left", 10, 20, -605 * defaultIndex, function () {
+
+                    });
+                };
+            };
+
+            // 开启自动切换图片
+            autoChange();
+
+            // 设置选中a标签的样式
+            function setA() {
+                // 判断当前索引是否是最后一张
+                if (defaultIndex >= array.length - 1) {
+                    defaultIndex = 0;
+
+                    // 此时显示的最后一张图片，最后一张图片和一张是一样的
+                    // 通过CSS将最后一张图片切换成第一张
+                    imgList.style.left = 0;
+                    console.log(imgList.style.left);
+                }
+                console.log(imgList.style.left);
+
+                // 遍历所有的a并将它们的背景颜色设置为红色
+                for (let i = 0; i < a.length; i++) {
+                    a[i].style.backgroundColor = "";
+                }
+
+                // 将选中的a设置为红色
+                a[defaultIndex].style.backgroundColor = "#fff";
+            };
+
+
+            // 创建一个函数，开启自动切换图片
+            function autoChange() {
+                // 开启一个定时器，定时切换图片
+                setInterval(() => {
+                    // 使索引自增
+                    defaultIndex++;
+                    // 执行动画，切换图片
+                    defaultIndex %= array.length;
+                    remove(imgList, "left", 20, 20, -605 * defaultIndex, function () {
+                        // 修改导航按钮
+                        setA();
+                    });
+
+                }, 3000);
+            };
+
+        };
+
+
+        function remove(obj, attr, speed, time, target, callback) {
+            clearInterval(obj.interval);
+            let currentPosition = parseInt(getStyle(imgList, attr));
+            speed = currentPosition > target ? -speed : speed;
+            obj.interval = setInterval(() => {
+                let oldPosition = parseInt(getStyle(obj, attr));
+                let newPosition = oldPosition + speed;
+                if ((newPosition > target && speed > 0) || (newPosition < target && speed < 0)) {
+                    callback && callback();
+                    newPosition = target;
+                    clearInterval(obj.interval);
+                }
+                obj.style[attr] = newPosition + "px";
+            }, time);
+        };
+
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <!-- 创建一个外部div作为外部容器 -->
+    <div class="outer">
+        <!-- 创建ul用于放置图片 -->
+        <ul id="imgList">
+            <li><img src="/image/1.gif" alt=""></li>
+            <li><img src="/image/2.jpg.webp" alt=""></li>
+            <li><img src="/image/3.jpg.webp" alt=""></li>
+            <li><img src="/image/4.jpg.webp" alt=""></li>
+            <li><img src="/image/6.jpg.webp" alt=""></li>
+            <li><img src="/image/1.gif" alt=""></li>
+        </ul>
+        <!-- 创建导航按钮 -->
+        <div class="nav">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+
+</html>
