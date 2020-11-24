@@ -18,6 +18,7 @@
             /* 开启绝对定位 */
             position: absolute;
             /* left: 0; */
+            left: 0;
         }
 
         #imgList li {
@@ -25,6 +26,11 @@
             float: left;
             /* 设置左右外边距 */
             margin: 0 7px;
+        }
+
+        img {
+            width: 600px;
+            height: 470px;
         }
 
         .outer {
@@ -91,14 +97,15 @@
                 // 为每一个超链接添加 num 属性
                 a[i].num = i;
                 a[i].onclick = function () {
+                    clearInterval(inter);
                     // alert("aaaa");
                     // 获取点击超链接的索引
                     defaultIndex = this.num;
                     // let leftPosition = -defaultIndex * 605 + "px";
                     // imgList.style.left = leftPosition;
                     setA();
-                    remove(imgList, "left", 10, 20, -605 * defaultIndex, function () {
-
+                    remove(imgList, "left", 10, 20, -615 * defaultIndex, function () {
+                        autoChange();
                     });
                 };
             };
@@ -115,7 +122,6 @@
                     // 此时显示的最后一张图片，最后一张图片和一张是一样的
                     // 通过CSS将最后一张图片切换成第一张
                     imgList.style.left = 0;
-                    console.log(imgList.style.left);
                 }
                 console.log(imgList.style.left);
 
@@ -127,17 +133,17 @@
                 // 将选中的a设置为红色
                 a[defaultIndex].style.backgroundColor = "#fff";
             };
-
+            var inter;
 
             // 创建一个函数，开启自动切换图片
             function autoChange() {
                 // 开启一个定时器，定时切换图片
-                setInterval(() => {
+                inter = setInterval(() => {
                     // 使索引自增
                     defaultIndex++;
                     // 执行动画，切换图片
                     defaultIndex %= array.length;
-                    remove(imgList, "left", 20, 20, -605 * defaultIndex, function () {
+                    remove(imgList, "left", 20, 20, -615 * defaultIndex, function () {
                         // 修改导航按钮
                         setA();
                     });
@@ -156,11 +162,13 @@
                 let oldPosition = parseInt(getStyle(obj, attr));
                 let newPosition = oldPosition + speed;
                 if ((newPosition > target && speed > 0) || (newPosition < target && speed < 0)) {
-                    callback && callback();
                     newPosition = target;
-                    clearInterval(obj.interval);
                 }
                 obj.style[attr] = newPosition + "px";
+                if (newPosition == target) {
+                    clearInterval(obj.interval);
+                    callback && callback();
+                }
             }, time);
         };
 
