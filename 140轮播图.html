@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            padding: 5px;
+            background-color: pink;
+            width: 600px;
+            height: 300px;
+            margin: 90px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        img {
+            width: 600px;
+            height: 300px;
+        }
+
+        #imgList {
+            position: absolute;
+            height: 300px;
+            left: 0;
+        }
+
+        #imgList li {
+            float: left;
+            margin: 0 5px;
+        }
+
+        #nav {
+            position: absolute;
+            bottom: 15px;
+        }
+
+        #nav a {
+            width: 20px;
+            height: 3px;
+            background-color: orange;
+            float: left;
+            margin: 0 3px;
+            opacity: .7;
+        }
+
+        #nav a:hover {
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let imgList = document.getElementById("imgList");
+            let outer = document.getElementById("outer");
+            let imgArray = imgList.getElementsByTagName("img");
+            let nav = document.getElementById("nav");
+            let aArray = nav.getElementsByTagName("a");
+            imgList.style.width = (600 + 10) * imgArray.length + "px";
+
+            nav.style.left = (outer.offsetWidth - nav.offsetWidth) / 2 + "px";
+
+            let index = 0;
+            aArray[index].style.backgroundColor = "#fff";
+
+            for (let i = 0; i < aArray.length; i++) {
+                aArray[i].num = i;
+                aArray[i].onclick = function () {
+                    clearInterval(inter);
+                    index = this.num;
+                    setColor(index);
+                    remove(imgList, "left", 10, 10, -610 * index, function () {
+                        autoRemove();
+                    });
+                };
+            };
+
+            outer.onmouseenter = function () {
+                clearInterval(inter);
+            };
+
+            function setColor(index) {
+                if (index == imgArray.length - 1) {
+                    index = 0;
+                    imgList.style.left = 0;
+                }
+                for (let i = 0; i < aArray.length; i++) {
+                    aArray[i].style.backgroundColor = "orange";
+                }
+
+                aArray[index].style.backgroundColor = "#fff";
+            };
+
+            autoRemove();
+
+            var inter;
+
+            function autoRemove() {
+                inter = setInterval(() => {
+                    index++;
+                    index %= imgArray.length;
+                    remove(imgList, "left", 10, 10, -610 * index, function () {
+                        setColor(index);
+                    })
+                }, 3000);
+            }
+
+        };
+
+        function remove(obj, attr, speed, time, target, callback) {
+            clearInterval(obj.interval);
+            let current = parseInt(getStyle(obj, attr));
+            speed = current > target ? -speed : speed;
+            obj.interval = setInterval(() => {
+                let old = parseInt(getStyle(obj, attr));
+                let newPosition = old + speed;
+                if ((speed < 0 && newPosition < target) || (speed > 0 && newPosition > target)) {
+                    newPosition = target;
+                }
+                obj.style[attr] = newPosition + "px";
+                if (newPosition == target) {
+                    callback && callback();
+                    clearInterval(obj.interval);
+                }
+            }, time);
+        }
+
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/6.jpg" alt=""></li>
+            <li><img src="images/1.jpg" alt=""></li>
+        </ul>
+        <div id="nav">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+
+</html>
