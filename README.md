@@ -541,6 +541,62 @@
     	<td><strong>练习1</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>125练习1</strong></a></td>
     </tr>
+    <tr>
+    	<td><strong>BOM</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>126BOM</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>history</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>127history</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>test02</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>128test02</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>location</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>129location</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>定时器</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>130定时器</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>切换图片练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>131切换图片练习</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>div练习</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>132div练习</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>延时调用</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>133延时调用</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>定时器的应用</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>134定时器的应用</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>定时器的应用2</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>135定时器的应用2</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>定时器的应用3</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>136定时器的应用3</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>轮播图</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>137轮播图</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>轮播图2</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>138轮播图2</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>轮播图3</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>139轮播图3</strong></a></td>
+    </tr>
 </table>
 
 
