@@ -597,6 +597,14 @@
     	<td><strong>轮播图3</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>139轮播图3</strong></a></td>
     </tr>
+    <tr>
+    	<td><strong>轮播图</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>140轮播图</strong></a></td>
+    </tr>
+    <tr>
+    	<td><strong>类的操作</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>141类的操作</strong></a></td>
+    </tr>
 </table>
 
 
