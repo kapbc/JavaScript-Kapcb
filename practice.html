@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+
+<body>
+
+    <ul>
+        <li id="father1">
+            <span onclick=" deleteA(this)">点我一下删除</span>
+        </li>
+        <li id="father2">
+            <span onclick=" deleteA(this)">点我一下删除</span>
+        </li>
+        <li id="father3">
+            <span onclick=" deleteA(this)">点我一下删除</span>
+        </li>
+        <li id="father4">
+            <span onclick=" deleteA(this)">点我一下删除</span>
+        </li>
+        <li id="father5">
+            <span onclick=" deleteA(this)">点我一下删除</span>
+        </li>
+    </ul>
+</body>
+
+<script>
+    function deleteA(atrr) {
+        let liNode = arguments[0].parentNode;
+        console.log(liNode.id);
+    }
+</script>
+
+</html>
