@@ -11,12 +11,82 @@
             height: 100px;
             background-color: pink;
         }
+
+        .b2 {
+            /* width: 200px; */
+            height: 200px;
+            background-color: yellow;
+        }
     </style>
+    <!-- 
+    
+        通过 style 属性来修改元素的属性，每修改一个样式，浏览器就需要重新渲染一次，这样执行的性能是比较差的，而且这种形式在
+            需要修改多个样式的常见下，也是非常不方便的。
+
+        一行代码修改多个样式
+
+        可以通过修改元素的 class 属性来间接修改样式，这样一来，只需要修改一次，即可同时修改多个样式
+            浏览器只需要重新渲染页面一次，性能比较高，并且它这种方式可以使表现和行为分离
+    -->
+    <script>
+        window.onload = function () {
+            let btn = document.getElementById("btn01");
+            let box = document.getElementById("box1");
+
+            btn.onclick = function () {
+                // box.style.width = "200px";
+                // box.style.height = "200px";
+                // box.style.backgroundColor = "#bfa";
+                // addClass(box, "b2");
+                toggleClass(box, "b2");
+            };
+        };
+
+        // 定义一个函数，用于添加指定的 class 属性值
+        // obj:要添加calss属性的元素
+        // className:要添加的class值
+        function addClass(obj, className) {
+            if (hasClass(obj, className)) {
+                return;
+            }
+            obj.className += " " + className;
+        }
+
+        // 判断一个元素中是否含有指定的class属性值
+        function hasClass(obj, className) {
+            // 创建一个正则表达式
+            // let reg = /\b\b/;
+            let reg = new RegExp("\\b" + className + "\\b");
+            return reg.test(obj.className);
+        }
+
+        // 删除一个元素中指定的class属性
+        function removeClass(obj, className) {
+            // 创建一个正则表达式
+            let reg = new RegExp("\\b" + " " + className + "\\b");
+
+            // 删除指定的 class 属性
+            obj.className = obj.className.replace(reg, "");
+        }
+
+
+        // 切换
+        // 如果元素中具有该类，则删除
+        // 如果元素中没有改类，则添加
+        function toggleClass(obj, className) {
+            if (hasClass(obj, className)) {
+                removeClass(obj, className);
+            } else {
+                addClass(obj, className);
+            }
+
+        }
+    </script>
 </head>
 
 <body>
-    <button id="btn01"></button>
-    <div class="box1" class="b1"></div>
+    <button id="btn01">点我</button>
+    <div id="box1" class="b1 b2"></div>
 </body>
 
 </html>
