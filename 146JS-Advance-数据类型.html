@@ -20,8 +20,19 @@
 
     2.判断
         - typeof
+            - 可以判断undefined
+            - 可以判断number
+            - 可以判断string
+            - 可以判断boolean
+
+
         - instanceof
+            - 判断对象的具体类型
+
+
         - === (等值等型,不会做数据类型的转换)/ == (会自动进行数据类型的转换)
+            - 可以判断undefined
+            - 可以判断null
 -->
 </body>
 <script>
@@ -44,8 +55,33 @@
     /**
      * typeof 返回值为数据类型的字符串表达
      */
-    console.log(typeof a);  // ‘undefined’
+    console.log(undefined === 'undefined');
+    console.log(typeof a, typeof a === 'undefined', a === undefined);  // ‘undefined’
     console.log(undefined === a);
 
+
+    a = "kapcb";
+    console.log(typeof a === "string");
+
+    a = true;
+    console.log(typeof a === "boolean");
+
+    a = null;
+    console.log(typeof a);  // object
+
+    console.log(a === null);
+
+    let person = {
+        b2: [1, 'abc', console.log],
+        b3: function () {
+            console.log("kapcb nb");
+        }
+    };
+
+    console.log(person instanceof Object);
+
+    console.log(typeof person.b2[0]);
+    console.log(typeof person.b2[1]);
+    console.log(typeof person.b2[2]);
 </script>
 </html>
