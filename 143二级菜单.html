@@ -6,60 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>二级菜单</title>
     <link rel="stylesheet" href="css/sdmenu.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-
-        a {
-            border: 0;
-            text-decoration: none;
-            color: black;
-            line-height: 25px;
-            background-color: rgba(252, 252, 228, 0.664);
-
-        }
-
-        a:hover {
-            background-color: rgb(92, 143, 92);
-            color: white;
-        }
-
-        #my_menu {
-            width: 180px;
-        }
-
-
-        #my_menu span,
-        a {
-            display: block;
-            padding-left: 10px;
-            font-size: 14px;
-        }
-
-        .menuSpan {
-            line-height: 25px;
-            color: white;
-            overflow: hidden;
-        }
-
-        #my_menu div {
-            overflow: hidden;
-        }
-
-        body {
-            font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
-        }
-    </style>
     <script>
         window.onload = function () {
             // 当 div 具有 collapsed 这个类时，div就是折叠的状态
             // 当没有的时候就是展开的状态
             // 点击菜单切换菜单的显示状态
-            let menuSpan = document.getElementsByClassName("menuSpan")[0];
-            let
+            let menuSpan = document.querySelectorAll(".menuSpan");
+
+            // 定义一个变量来保存当前打开的菜单
+            let openDiv = menuSpan[0].parentNode;
+
+            for (let i = 0; i < menuSpan.length; i++) {
+                menuSpan[i].onclick = function () {
+                    // this 代表当前点击的span
+                    let div = this.parentNode;
+                    toggleClass(div, "collapsed");
+                    addClass(openDiv, "collapsed");
+                    // 修改openDiv为当前打开的菜单
+                    openDiv = div;
+                }
+            };
+
+
+        };
+
+
+        function addClass(obj, name) {
+            if (hasClass(obj, name)) {
+                return;
+            }
+            obj.className += " " + name;
+        };
+
+        function hasClass(obj, name) {
+            let reg = new RegExp("\\b" + name + "\\b");
+            return reg.test(obj.className);
+        };
+
+        function removeClass(obj, name) {
+            let reg = new RegExp("\\b" + name + "\\b");
+            obj.className = obj.className.replace(reg, "");
+        };
+
+        function toggleClass(obj, name) {
+            if (hasClass(obj, name)) {
+                removeClass(obj, name);
+                return;
+            }
+            addClass(obj, name);
         };
     </script>
 </head>
@@ -89,7 +83,7 @@
             <a href="#">CSS例子</a>
         </div>
         <div class="collapsed">
-            <div class="menuSpan">测试电流</div>
+            <span class="menuSpan">测试电流</span>
             <a href="#">Current or not</a>
             <a href="#">Current or not</a>
             <a href="#">Current or not</a>

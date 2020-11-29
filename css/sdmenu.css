@@ -2,17 +2,49 @@
 
 /* sdmenu */
 
-div.sdmenu {
-    width: 150px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    padding-bottom: 10px;
-    background: url() no-repeat right bottom;
-    color: #fff;
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
+#my_menu {
+    width: 150px;
+    margin: 0 auto;
+}
 
-div.sdmenu div.collapsed {
+#my_menu span {
+    display: block;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    /* background-color: pink; */
+}
+
+a {
+    padding-left: 20px;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    border: 0;
+    line-height: 25px;
+    background-color: #bfa;
+}
+
+a:hover{
+    background-color: rgb(92, 143, 92);
+    color: white;
+}
+
+body {
+    font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+}
+
+.collapsed{
     height: 25px;
+}
+
+#my_menu div{
+    overflow: hidden;
 }
