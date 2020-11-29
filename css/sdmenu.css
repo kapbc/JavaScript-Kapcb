@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* sdmenu */
+
+div.sdmenu {
+    width: 150px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding-bottom: 10px;
+    background: url() no-repeat right bottom;
+    color: #fff;
+}
+
+
+div.sdmenu div.collapsed {
+    height: 25px;
+}

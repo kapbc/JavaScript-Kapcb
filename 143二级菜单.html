@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>二级菜单</title>
+    <link rel="stylesheet" href="css/sdmenu.css">
     <style>
         * {
             margin: 0;
@@ -12,10 +13,40 @@
             list-style-type: none;
         }
 
-        a,
-        img {
+        a {
             border: 0;
             text-decoration: none;
+            color: black;
+            line-height: 25px;
+            background-color: rgba(252, 252, 228, 0.664);
+
+        }
+
+        a:hover {
+            background-color: rgb(92, 143, 92);
+            color: white;
+        }
+
+        #my_menu {
+            width: 180px;
+        }
+
+
+        #my_menu span,
+        a {
+            display: block;
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+        .menuSpan {
+            line-height: 25px;
+            color: white;
+            overflow: hidden;
+        }
+
+        #my_menu div {
+            overflow: hidden;
         }
 
         body {
@@ -23,7 +54,13 @@
         }
     </style>
     <script>
-
+        window.onload = function () {
+            // 当 div 具有 collapsed 这个类时，div就是折叠的状态
+            // 当没有的时候就是展开的状态
+            // 点击菜单切换菜单的显示状态
+            let menuSpan = document.getElementsByClassName("menuSpan")[0];
+            let
+        };
     </script>
 </head>
 
