@@ -6,7 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>二级菜单</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
 
+        a,
+        img {
+            border: 0;
+            text-decoration: none;
+        }
+
+        body {
+            font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+        }
     </style>
     <script>
 
@@ -14,6 +28,38 @@
 </head>
 
 <body>
+    <div id="my_menu" class="sdmenu">
+        <div>
+            <span class="menuSpan">在线工具</span>
+            <a href="#">图像优化</a>
+            <a href="#">收藏夹图标生成器</a>
+            <a href="#">邮件</a>
+            <a href="#">htaccess密码</a>
+            <a href="#">梯度图像</a>
+            <a href="#">按钮生成器</a>
+        </div>
+        <div class="collapsed">
+            <span class="menuSpan">支持我们</span>
+            <a href="#">推荐我们</a>
+            <a href="#">链接我们</a>
+            <a href="#">网络资源</a>
+        </div>
+        <div class="collapsed">
+            <span class="menuSpan">合作伙伴</span>
+            <a href="#">JavaScript工具包</a>
+            <a href="#">CSS驱动</a>
+            <a href="#">CodingForums</a>
+            <a href="#">CSS例子</a>
+        </div>
+        <div class="collapsed">
+            <div class="menuSpan">测试电流</div>
+            <a href="#">Current or not</a>
+            <a href="#">Current or not</a>
+            <a href="#">Current or not</a>
+            <a href="#">Current or not</a>
+            <a href="#">Current or not</a>
+        </div>
+    </div>
 
 </body>
 
