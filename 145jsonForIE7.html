@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <!-- 
+
+        在IE 7中
+            - eval()
+                - 这个函数可以用来执行一段字符串形式的JS代码，并将结果返回
+                - 如果使用 eval() 字符串中含有 {} ，它会将 {} 当成是代码块
+                    如果不希望将其当成代码块解析，则需要在字符串前后各加一个括号表示这是一个整体
+
+            - eval()：这个函数的功能很强大，能够直接执行一段字符串中的JS代码，但是在开发中一般尽量避免使用
+                ，首先它的执行性能比较差，然后它还有安全隐患
+        
+            如果需要兼容 IE 7 及一下的JSON操作，可以通过引入外部 JS 文件进行处理(json2.js)
+     -->
+    <script>
+        let obj = '{"name": "kapcb","age": 18,"gender": "男"}';
+
+        let str = "alert('aaa');";
+
+        let obj1 = eval("(" + obj + ")");
+        console.log(obj1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
