@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+</head>
+<body>
+<!--
+    1.分类
+        - 1.基本(值)类型
+            - String(字符串): 任意字符串
+            - Number(数值): 任意的数值
+            - boolean(布尔): true / false
+            - undefined: undefined
+            - null: null
+        - 2.引用类型(对象类型)
+            - Object: 任意对象都是Object类型
+            - Array(数组): 一种特殊的对象,任意数组(数值下标属性,内部数据是有序的)
+            - Function(函数): 一种特殊的对象
+
+    2.判断
+        - typeof
+        - instanceof
+        - === (等值等型,不会做数据类型的转换)/ == (会自动进行数据类型的转换)
+-->
+</body>
+<script>
+    let obj = {
+        name: "kapcb",
+        age: 13,
+        gender: "男"
+    };
+
+    function test() {
+        let a = 3;
+    }
+
+    let array = [3, 'abc'];
+    console.log(array[1]);
+
+    let a;
+    console.log(a); // undefined
+
+    /**
+     * typeof 返回值为数据类型的字符串表达
+     */
+    console.log(typeof a);  // ‘undefined’
+    console.log(undefined === a);
+
+</script>
+</html>
