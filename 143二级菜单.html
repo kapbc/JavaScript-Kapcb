@@ -20,22 +20,49 @@
                 menuSpan[i].onclick = function () {
                     // this 代表当前点击的span
                     let div = this.parentNode;
-                    toggleClass(div, "collapsed");
-                    addClass(openDiv, "collapsed");
+
+                    toggleMenu(div);
+
+                    // 判断 openDiv是否和div相同
+                    if (openDiv != div && !hasClass(openDiv, "collapsed")) {
+                        // 为了可以用以处理动画的过渡效果，希望在这里将addClass修改为toggleClass
+                        // 此处的toggleClass不需要移除的功能
+                        // addClass(openDiv, "collapsed");
+                        toggleMenu(openDiv);
+                    }
                     // 修改openDiv为当前打开的菜单
                     openDiv = div;
-                }
+                };
             };
+        };
 
 
+        function toggleMenu(obj) {
+            // 在切换之前获取元素的高度
+            let begin = obj.offsetHeight;
+
+            // 切换div的显示
+            toggleClass(obj, "collapsed");
+
+            // 切换之后获取元素的高度
+            let end = obj.offsetHeight;
+
+            // 动画效果就是将高度从 begin -> end 过渡
+            // 将元素的高度重置为 begin
+            obj.style.height = begin + "px";
+
+            // 执行动画，从begin -> end 过渡
+            remove(obj, "height", 10, 40, end, function () {
+                // 动画执行完毕，内联样式没有存在的意义
+                obj.style.height = "";
+            });
         };
 
 
         function addClass(obj, name) {
-            if (hasClass(obj, name)) {
-                return;
+            if (!hasClass(obj, name)) {
+                obj.className += " " + name;
             }
-            obj.className += " " + name;
         };
 
         function hasClass(obj, name) {
@@ -48,13 +75,43 @@
             obj.className = obj.className.replace(reg, "");
         };
 
+        // 切换元素的class属性
         function toggleClass(obj, name) {
             if (hasClass(obj, name)) {
                 removeClass(obj, name);
-                return;
+            } else {
+                addClass(obj, name);
             }
-            addClass(obj, name);
         };
+
+        // 定时器 切换过渡效果
+        function remove(obj, attr, speed, time, target, callback) {
+            clearInterval(obj.interval);
+            let current = parseInt(getStyle(obj, attr));
+            speed = target > current ? speed : -speed;
+            obj.interval = setInterval(() => {
+                let oldPosition = parseInt(getStyle(obj, attr));
+                let newPosition = oldPosition + speed;
+                if ((speed > 0 && newPosition > target) || (speed < 0 && newPosition < target)) {
+                    newPosition = target;
+                }
+                obj.style[attr] = newPosition + "px";
+                if (newPosition == target) {
+                    clearInterval(obj.interval);
+                    callback && callback();
+                }
+            }, time);
+        }
+
+        // 获取元素的指定样式
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            }
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            }
+        }
     </script>
 </head>
 
@@ -73,6 +130,8 @@
             <span class="menuSpan">支持我们</span>
             <a href="#">推荐我们</a>
             <a href="#">链接我们</a>
+            <a href="#">网络资源</a>
+            <a href="#">网络资源</a>
             <a href="#">网络资源</a>
         </div>
         <div class="collapsed">
