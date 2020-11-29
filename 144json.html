@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <!-- 
+        JSON
+            - JS中的对象只有JS自己认识，其它语言都不认识 
+            - JSON就是一个特殊格式的字符串，这个字符串可以被任意的语言所识别
+                并且可以转换成任意语言的对象，JSON在开发中主要用来数据的交互
+            - JSON
+                - JavaScript Object Natation JS对象表示法
+                - JSON和JS对象格式一样，只不过JSON字符串中的属性名必须加双引号
+                    其它的和JS语法一致
+                
+                    JSON分类：
+                        1.对象 {}
+                        2.数组 []
+
+                    JSON中允许的值：
+                        1.字符串
+                        2.数值
+                        3.布尔值
+                        4.null
+                        5.对象(不包含函数对象)
+                        6.数组
+
+        JSON ------ JS
+            JSON.parse()
+                - 可以将一个JSON字符串转换为JS对象
+                - 它需要一个JSON字符串作为参数，改字符串会转换为JS对象并返回
+
+
+        JS ------ JSON
+            JSON.stringify()
+                - 可以将一个JS对象转换为JSON字符串
+                - 它需要一个JS对象作为参数，会返回一个JSON字符串
+
+        JSON这个对象在IE 7及一下的浏览器中不支持，在这些浏览器中调用会出错
+     -->
+    <script>
+        // 创建一个JSON对象
+        let obj = '{"name": "kapcb","age": 18,"gender": "男"}';
+
+        // 创建一个JSON数组
+        let arr = '[1,2,3,"hello",true]';
+
+        let obj2 = '{"array":[1,2,3]}';
+
+        let arr2 = '[{"name": "kapcb","age": 18,"gender": "男"},{"name": "kapcb","age": 18,"gender": "男"}]';
+        console.log(obj.age);
+        console.log(obj.gender);
+
+        // 将JSON字符串转换为JS中的对象
+        // 在JS中为我们提供了一个工具类，就叫JSON
+        // 这个对象可以帮助将一个JSON对象转换为JS对象，或者将JS对象转换为JSON对象
+
+        console.log(JSON);
+
+        // JSON --> js
+        let a = JSON.parse(obj);
+        console.log(a);
+        console.log(a.name);
+
+        let obj3 = {
+            name: "ccc",
+            age: 13,
+            gender: "女"
+        };
+        let jsonObj = JSON.stringify(obj3);
+        console.log(jsonObj);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
