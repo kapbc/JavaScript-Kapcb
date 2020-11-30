@@ -24,6 +24,9 @@
             - 可以判断number
             - 可以判断string
             - 可以判断boolean
+            - 可以判断function
+
+            - 不能判断 null 与 object 、object与array
 
 
         - instanceof
@@ -33,6 +36,8 @@
         - === (等值等型,不会做数据类型的转换)/ == (会自动进行数据类型的转换)
             - 可以判断undefined
             - 可以判断null
+
+        - 函数对象添加()即可执行
 -->
 </body>
 <script>
@@ -75,13 +80,22 @@
         b2: [1, 'abc', console.log],
         b3: function () {
             console.log("kapcb nb");
-        }
+            return function () {
+                return "aaaa";
+            };
+        },
     };
 
-    console.log(person instanceof Object);
+    console.log("--------------test---------------")
+    console.log(person instanceof Object);  // true
+    console.log(person instanceof Array);   // true
+    console.log(typeof person.b2[0], person.b2[0] instanceof Object);   // number false
+    console.log(typeof person.b2[1], person.b2[1] instanceof Object);   // string false
+    console.log(typeof person.b2[2], person.b2[2] instanceof Object);   // function true
+    console.log(person.b2 instanceof Array, person.b2 instanceof Object);   // true true
+    console.log(person.b3 instanceof Function, person.b3 instanceof Object);    // true true
+    console.log(typeof person.b3 === 'function');   // true
 
-    console.log(typeof person.b2[0]);
-    console.log(typeof person.b2[1]);
-    console.log(typeof person.b2[2]);
+    console.log(person.b3()());     // kapcb nb  aaaa
 </script>
 </html>
