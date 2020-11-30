@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+</head>
+<body>
+<!--
+    1. undefined和null的区别
+        - undefined代表定义了，但是未赋值
+        - null代表定义了且赋值了，但是值未null
+
+    2.什么时候给变量赋值null
+
+    3.严格区别变量类型与数据类型
+
+-->
+</body>
+<script>
+
+    /**
+     * 实例：实例对象
+     * 类型：类型对象
+     */
+
+    function Person(name, age) {    // 构造函数     类型
+        this.name = name;
+        this.age = age;
+    }
+
+    let person = new Person("kapcb", 18);   // 根据类型创建的实例对象
+
+    let a;
+    console.log(a);
+    a = null;
+    console.log(a);
+</script>
+</html>
