@@ -11,7 +11,7 @@
 <!--
     关于引用变量赋值的问题
         - n(n >= 2)个引用变量指向同一个对象,通过一个变量修改对象内部数据,其它所有变量看到的是修改之后的数据
-
+        - n(n >= 2)个引用变量指向同一个对象，其中一个应用变量指向另一个对象，另一个应用变量依然指向前一个对象
 -->
 
 <script>
@@ -27,6 +27,18 @@
 
     fn(obj1);
     console.log(obj1.name); // Bob
+
+    let a = {age: 12};
+    let b = a;
+    a = {name: "Bob", age: 24};
+    console.log(b.age, a.name, a.age);  // 12 Bob 24
+
+    function fn2(obj) {
+        obj = {age: 16};
+    };
+    fn2(a);
+    // 函数执行完，函数内部的局部变量会被释放，一旦释放之后 obj 就成为垃圾对象，外部就访问不到该对象，所以a.age访问不到16，因为已经被回收
+    console.log(a.age); // 24
 
 </script>
 </html>
