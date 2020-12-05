@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引用变量赋值的问题</title>
+</head>
+<body>
+
+</body>
+
+<!--
+    关于引用变量赋值的问题
+        - n(n >= 2)个引用变量指向同一个对象,通过一个变量修改对象内部数据,其它所有变量看到的是修改之后的数据
+
+-->
+
+<script>
+    let obj1 = {name: 'Tom'};
+    let obj2 = obj1;
+
+    obj1.name = "Jack";
+    console.log(obj2.name);
+
+    function fn(obj) {
+        obj.name = "Bob";
+    };
+
+    fn(obj1);
+    console.log(obj1.name); // Bob
+
+</script>
+</html>
