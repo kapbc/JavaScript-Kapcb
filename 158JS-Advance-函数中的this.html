@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数中的this</title>
+</head>
+<!--
+    1.this是什么？
+        - 任何函数本质上都是通过某个对象来调用的(window)
+        - 所有函数内部都有一个变量this
+        - 它的值是调用函数的当前对象
+
+    2.如何确定this的值？
+        - 如果没有直接指定就是window调用
+            - test(): window
+            - p.test(): p
+            - new Test(): 新创建的对象
+            - p.call(obj): obj
+-->
+<body>
+
+</body>
+<script>
+
+    function Person(color) {
+
+        console.log("this one : " + this);
+
+        this.color = color;
+
+        this.getColor = function () {
+            console.log("this tow : " + this);
+            return this.color;
+        };
+
+        this.setColor = function (color) {
+            console.log("this three : " + this);
+            return this.color;
+        };
+    };
+
+    console.log("============1111=============")
+    Person("red");  // this 是 window
+
+    console.log("============2222=============")
+    let person = new Person("yellow"); // this 是 Object person
+
+    console.log("============3333=============")
+    person.getColor(); // this 是 Object person
+
+    console.log("============4444=============")
+    let obj = {};
+    person.setColor.call(obj, "black");  // this 是 Object obj
+
+    console.log("============5555=============")
+    let test = person.setColor;
+    test(); // this 是 window
+
+    console.log("============6666=============")
+
+    function fun1() {
+        function fun2() {
+            console.log(this)
+        };
+        fun2(); // this 是 window
+    };
+
+    fun1();
+</script>
+</html>
