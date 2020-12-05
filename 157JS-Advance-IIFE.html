@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IIFE</title>
+</head>
+
+<!--
+    1.理解
+        - 全程: Immediately - Invoked Function Expression(立即执行函数)
+
+    2.作用
+        - 隐藏实现
+        - 不会污染外部命名空间(变量 / 常量)
+        - 可以用它(匿名函数自调用)来编写JS模块
+-->
+<body>
+
+</body>
+
+<script>
+
+    let a = "ccc";
+
+    /**
+     * 匿名函数自调用
+     */
+    (function () {
+        let a = "kapcb nb!"
+        console.log(a);
+    })();
+
+    console.log("================");
+    console.log(a);
+
+    (function () {
+
+        let a = 1;
+
+        function test() {
+            console.log(++a);
+        };
+
+        /**
+         * 向外暴露一个全局函数
+         * @returns {{test: test}}
+         */
+        window.$ = function () {
+            return {
+                test: test,
+            }
+        };
+
+    })();
+
+    /**
+     * 1.$是一个函数
+     *
+     * 2.$执行后返回的是一个对象
+     */
+    $().test();
+
+</script>
+</html>
