@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象相关问题</title>
+</head>
+<body>
+
+</body>
+<!--
+    问题: 什么时候必须使用 ['属性名'] 的方式?
+        - 1.属性名包含特殊字符: - 、空格 、
+        - 2.变量名不确定, 如在封装方法的时候需要传入的变量，需要使用['属性名']来访问该属性
+-->
+
+<script>
+    let person = {};
+
+    /**
+     * 给 person 对象添加一个属性: content-type: text/json
+     */
+    // person.content-type = "text/json"; 属性名包含特殊字符，飘红
+    person['content-type'] = "text/json";
+
+    console.log(person['content-type']);
+
+    /**
+     * 变量名不确定
+     */
+    let propName = "myAge";
+    let value = 18
+    // person.propName = value;  不可用
+
+    person[propName] = value;
+    console.log(person[propName]);
+</script>
+</html>
