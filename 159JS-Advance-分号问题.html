@@ -14,6 +14,28 @@
 5.强有力的例子:vue.js
 -->
 <body>
-
 </body>
+<script>
+    let a = 3
+
+        /**
+         * IIFE
+         * @type {number}
+         */
+    ;(function () {
+        alert(a);
+    })()
+
+    /**
+     * 中括号开头的前一条语句
+     *
+     * 如果不添加分号，浏览器会理解成
+     * let b = 4[1, 2, 3, 4, 5, 6].forEach(function (element) {console.log(element);})
+     */
+    let b = 4
+    ;[1, 2, 3, 4, 5, 6].forEach(function (element) {
+        console.log(element);
+    })
+
+</script>
 </html>
