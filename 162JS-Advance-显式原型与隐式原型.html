@@ -40,5 +40,14 @@
      */
     console.log(Fn.prototype === fn.__proto__);    // true
 
+    /**
+     * 为原型对象添加方法
+     */
+    Fn.prototype.test = function () {
+        console.log("kapcb nb");
+    }
+
+    fn.test();
+
 </script>
 </html>
