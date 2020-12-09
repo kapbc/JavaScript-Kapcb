@@ -34,5 +34,22 @@
     console.log(fn);
     console.log(fn2);
 
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.setName = function (name) {
+        this.name = name;
+    }
+
+    Person.prototype.getName = function () {
+        return this.name
+    }
+
+    let person = new Person("ccc",13);
+    person.setName("kapcb");
+    console.log(person);
+
 </script>
 </html>
