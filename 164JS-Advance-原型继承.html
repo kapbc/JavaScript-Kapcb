@@ -5,17 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>原型继承</title>
 </head>
-<!--
-
-
--->
 <body>
 
 </body>
 <script>
 
     /**
-     * 1.函数的显示原型指向的对象: 默认是空Object对象
+     * 1.函数的显示原型指向的对象: 默认是空Object对象(但Object不满足)
      */
+
+    function Fn() {
+        console.log("kapcb nb");
+    }
+
+    let fn = new Fn();
+
+    console.log(Fn.prototype instanceof Object);    // true
+    console.log(fn.__proto__ instanceof Object);    // true
+
+    /**
+     *
+     */
+    console.log(Object.prototype instanceof Object);    // false
+    console.log(Function.prototype instanceof Object);    // true
+
+    /**
+     * 2.所有函数都是Function的实例(包括它本身)
+     */
+    console.log(Function.__proto__ === Function.prototype);     // true
+
+    /**
+     * Object的原型对象是原型链的尽头(Object原型对象的隐式原型为 null)
+     */
+    console.log(Object.prototype.__proto__);
+
 </script>
 </html>
