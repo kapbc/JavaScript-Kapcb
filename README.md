@@ -693,6 +693,10 @@
     	<td><strong>JS-Advance-原型链</strong></td>
         <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>163JS-Advance-原型链</strong></a></td>
     </tr>
+    <tr>
+    	<td><strong>JS-Advance-原型继承</strong></td>
+        <td> <a style="text-decoration: none;" href="#" target="_blank"><strong>164JS-Advance-原型继承</strong></a></td>
+    </tr>
 </table>
 
 
