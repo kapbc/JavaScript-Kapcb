@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instanceof</title>
+    <!--
+        1.instanceof是如何判断的？
+            - 表达式： A instanceof B
+            - 如果B函数的显式原型对象在A对象的原型链上,返回true,否则返回false
+        2.Function是通过new自己产生的实例
+    -->
+</head>
+<body>
+
+</body>
+<script>
+    function Foo() {
+
+    }
+
+    let f = new Foo();
+    console.log(f instanceof Foo);
+    console.log(f instanceof Object);
+</script>
+</html>
