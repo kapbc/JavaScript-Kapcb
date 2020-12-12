@@ -22,5 +22,16 @@
     let f = new Foo();
     console.log(f instanceof Foo);
     console.log(f instanceof Object);
+    console.log("-------------------");
+    console.log(Object instanceof Function);    // true
+    console.log(Object instanceof Object);      // true
+    console.log(Function instanceof Function);      // true
+    console.log(Function instanceof Object);        // true
+
+    function foo() {
+
+    }
+
+    console.log(Object instanceof Foo);     // false
 </script>
 </html>
