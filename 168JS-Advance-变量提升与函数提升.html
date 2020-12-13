@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量提升与函数提升</title>
+</head>
+
+<!--
+    1.变量提升
+        - 通过var定义(声明)的变量, 在定义语句之前就可以访问
+        - 值:undefined
+    2.函数声明提升
+        - 通过function声明的函数，在之前就可以直接调用
+        - 值:函数定义(对象)
+    3.问题:变量提升与函数提升是如何产生的?
+-->
+<body>
+
+</body>
+<script>
+
+    /**
+     * 面试题: 输出是什么？ ==》 undefined 变量声明在打印之后, 且赋值也是在打印之后, 在打印时, 已经在 fn函数中找到了a变量 ,但是还未赋值
+     * @type {number}
+     */
+    var a = 3;
+
+    function fn() {
+        console.log(a);
+        var a = 4;
+    };
+    fn();
+
+    console.log(b); // 变量提升
+    f2();  // 函数提升
+
+    var b = 3;   // 在定义之前就可以访问b变量, 只是在这行代码之前都是 undefined
+
+    function f2() {
+        console.log("f2()");
+    };
+</script>
+</html>
