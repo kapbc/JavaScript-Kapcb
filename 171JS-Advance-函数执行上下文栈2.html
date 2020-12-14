@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数执行上下文栈</title>
+</head>
+<!--
+    1. 一次输出什么?
+    2. 整个过程中产生了几个执行行下文? 5个
+-->
+<body>
+
+</body>
+<script>
+    console.log("global begin: " + i);  // global begin : undefined
+    var i = 1;
+    foo(1);
+
+    function foo(i) {
+        if (i == 4) {
+            return;
+        }
+        console.log("foo() begin:" + i);    // 1 ,2 ,3
+        foo(i + 1);
+        console.log("foo() end:" + i);     // 3, 2, 1
+    };
+
+    console.log("global end:" + i);     // 1
+
+</script>
+</html>
