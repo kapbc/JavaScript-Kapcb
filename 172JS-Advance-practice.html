@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    /**
+     * 测试题 1: 先执行变量提升, 在执行函数提升
+     */
+    function a() {
+
+    };
+    var a;
+    console.log(typeof a);  //Function
+
+    /**
+     * 测试题 2: 先执行变量提升
+     */
+    if (!(b in window)) {
+        var b = 1;
+    }
+    console.log(b); // undefined
+
+
+    /**
+     * 测试题 3: 在 c 赋值为 1 之前已经执行完 var c; 还有 function c(c) {console.log(c);};的代码 最后再给  c = 1;
+     * @type {number}
+     */
+    var c = 1;
+
+    function c(c) {
+        console.log(c);
+    }
+
+    c(2);
+</script>
+</html>
