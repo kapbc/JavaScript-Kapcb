@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域与作用域链</title>
+</head>
+<!--
+    1.理解
+        - 就一块"地盘", 一个代码段所在的区域
+        - 他是静态的(相对于上下文对象), 在编写代码时就确定了
+    2.分类
+        - 全局作用域
+        - 函数作用域
+        - 没有块作用域(ES6有)
+    3.作用
+        - 隔离变量, 不用作用域下同名变量不会有冲突
+-->
+<body>
+
+</body>
+
+<script>
+    let a = 10, b = 10;
+
+    function fn(x) {
+        let a = 100, c = 300;
+        console.log("fn()", a, b, c, x);
+
+        function bar(x) {
+            let a = 100;
+        }
+    }
+
+</script>
+</html>
