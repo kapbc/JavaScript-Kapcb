@@ -15,6 +15,8 @@
         - 没有块作用域(ES6有)
     3.作用
         - 隔离变量, 不用作用域下同名变量不会有冲突
+
+    函数作用域: n+1 (n: 函数定义的次数)
 -->
 <body>
 
@@ -28,9 +30,14 @@
         console.log("fn()", a, b, c, x);
 
         function bar(x) {
-            let a = 100;
+            let a = 1000, b = 400;
+            console.log("bar()", a, b, c, d, x);
         }
-    }
+
+        bar(100);
+        bar(200);
+    };
+    fn(10);
 
 </script>
 </html>
