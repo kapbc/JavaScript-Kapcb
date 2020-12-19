@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域链</title>
+</head>
+<!--
+    1.理解:
+        - 多个上下级关系的作用域形成的链, 它的方向是从下向上的(从内到外)
+        - 查找变量时就是沿着作用域链来查找的
+    2.查找一个变量的规则
+        - 在当前作用域下的执行上下文中查找对应的属性, 如果有直接返回, 否则进入 2
+        - 在上一级作用域的执行上下文中查找对应的属性, 如果有就直接返回, 否则就进入3
+        - 再次执行2的相同操作, 指导全局作用域, 如果找不到就抛出找不到异常
+-->
+<body>
+
+</body>
+<script>
+    let a = 1;
+
+    function fn1() {
+        let b = 2;
+
+        function fn2() {
+            let c = 3;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);     // d is not defined
+        };
+        fn2();
+    };
+
+    fn1();
+</script>
+</html>
